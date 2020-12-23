@@ -1,0 +1,9 @@
+<bean id="myInterceptor" class="org.apache.camel.spring.interceptor.ContainerWideInterceptor"/>
+
+        <!-- here we have the 1st CamelContext -->
+<camelContext id="camel1" xmlns="http://camel.apache.org/schema/spring">
+<route>
+    <from uri="timer://foo?period=1000"/>
+    <to uri="mock:result"/>
+</route>
+</camelContext>
