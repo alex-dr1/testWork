@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>11</java.version>
-		<camel-version>3.8.0-SNAPSHOT</camel-version>
+		<camel-version>3.7.0</camel-version>
     </properties>
 
     <dependencyManagement>
@@ -65,6 +65,7 @@
             <groupId>org.apache.camel.springboot</groupId>
             <artifactId>camel-spring-boot-starter</artifactId>
         </dependency>
+
     </dependencies>
 
     <build>
