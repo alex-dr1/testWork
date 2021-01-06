@@ -16,7 +16,7 @@ public class MoexServiceImpl implements MoexService {
 
 	@Override
 	public Securities fetchSecuritiesBySecId(String secId) {
-		Object obj = producerTemplate.requestBody("direct:run-fetch-sec", secId);
+		Object obj = producerTemplate.requestBody("direct:fetchSecurities", secId);
 		if(obj instanceof Securities){
 			return (Securities) obj;
 		}

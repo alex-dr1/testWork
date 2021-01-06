@@ -24,7 +24,7 @@ class MoexServiceImplTest {
 	@Test
 	void shouldFetchSecurities(){
 		//TODO MOCK
-		//System.out.println(moexService.fetchSecuritiesBySecId("AFKS"));
+		System.out.println("> " + moexService.fetchSecuritiesBySecId("BISVP"));
 		assertNull(null);
 	}
 

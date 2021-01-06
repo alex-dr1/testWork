@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="../src/main/resources/xsd/securities.xsd">
+    <data id="securities">
+        <rows>
+            <row id="2699" secid="AFKS" name="АФК &quot;Система&quot; ПАО ао" regnumber="1-05-01669-A" emitent_title="ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО &quot;АКЦИОНЕРНАЯ ФИНАНСОВАЯ КОРПОРАЦИЯ &quot;СИСТЕМА&quot;" />
+            <row id="411869597" secid="AKH1" name="Фьючерсный контракт AFKS-3.21" regnumber="" emitent_title="ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО &quot;АКЦИОНЕРНАЯ ФИНАНСОВАЯ КОРПОРАЦИЯ &quot;СИСТЕМА&quot;" />
+            <row id="411184895" secid="AKZ0" name="Фьючерсный контракт AFKS-12.20" regnumber="" emitent_title="ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО &quot;АКЦИОНЕРНАЯ ФИНАНСОВАЯ КОРПОРАЦИЯ &quot;СИСТЕМА&quot;" />
+            <row id="412506703" secid="AFKS_CLT" name="AFKS_CLT" regnumber="" emitent_title="ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО &quot;АКЦИОНЕРНАЯ ФИНАНСОВАЯ КОРПОРАЦИЯ &quot;СИСТЕМА&quot;" />
+            <row id="412425327" secid="AKM1" name="Фьючерсный контракт AFKS-6.21" regnumber="" emitent_title="ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО &quot;АКЦИОНЕРНАЯ ФИНАНСОВАЯ КОРПОРАЦИЯ &quot;СИСТЕМА&quot;" />
+            <row id="8070" secid="AFKS-2007" name="АФК &quot;Система&quot; ОАО ао" regnumber="1-04-01669-A" emitent_title="" />
+            <row id="411184893" secid="AKU0" name="Фьючерсный контракт AFKS-9.20" regnumber="" emitent_title="ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО &quot;АКЦИОНЕРНАЯ ФИНАНСОВАЯ КОРПОРАЦИЯ &quot;СИСТЕМА&quot;" />
+        </rows>
+    </data>
+</document>
