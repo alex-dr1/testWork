@@ -4,28 +4,35 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import ru.alex.testwork.domain.Securities;
+import ru.alex.testwork.domain.entity.SecuritiesEntity;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 @SpringBootTest
 class MoexServiceImplTest {
 
-	Securities securities;
+	SecuritiesEntity securities;
 
 	@Autowired
 	MoexService moexService;
 
 	@BeforeEach
 	void setUp() {
-		securities = new Securities(2699L, "AFKS", "1-05-01669-A", "АФК \"Система\" ПАО ао", "ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО \"АКЦИОНЕРНАЯ ФИНАНСОВАЯ КОРПОРАЦИЯ \"СИСТЕМА\"");
+		securities = new SecuritiesEntity();
+		securities.setId(2699L);
+		securities.setSecId("AFKS");
+		securities.setRegNumber("1-05-01669-A");
+		securities.setName("АФК \"Система\" ПАО ао");
+		securities.setEmitentTitle("ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО \"АКЦИОНЕРНАЯ ФИНАНСОВАЯ КОРПОРАЦИЯ \"СИСТЕМА\"");
 	}
 
 	@Test
 	void shouldFetchSecurities(){
 		//TODO MOCK
-		System.out.println("> " + moexService.fetchSecuritiesBySecId("BISVP"));
-		assertNull(null);
+		SecuritiesEntity sec = moexService.fetchSecuritiesBySecId("AFKS");
+		System.out.println("> " + sec);
+		assertEquals(securities, sec);
 	}
 
 }

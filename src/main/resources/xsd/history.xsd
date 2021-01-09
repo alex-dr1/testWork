@@ -8,15 +8,15 @@
                             <xs:element name="rows">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="row" maxOccurs="unbounded" minOccurs="1">
+                                        <xs:element name="row" maxOccurs="unbounded" minOccurs="0">
                                             <xs:complexType>
                                                 <xs:simpleContent>
                                                     <xs:extension base="xs:string">
-                                                        <xs:attribute type="xs:string" name="id" use="required"/>
-                                                        <xs:attribute type="xs:string" name="secid" use="required"/>
-                                                        <xs:attribute type="xs:string" name="name" use="required"/>
-                                                        <xs:attribute type="xs:string" name="regnumber" use="required"/>
-                                                        <xs:attribute type="xs:string" name="emitent_title" use="required"/>
+                                                        <xs:attribute type="xs:string" name="SECID" use="required"/>
+                                                        <xs:attribute type="xs:string" name="TRADEDATE" use="required"/>
+                                                        <xs:attribute type="xs:string" name="NUMTRADES" use="required"/>
+                                                        <xs:attribute type="xs:string" name="OPEN" use="required"/>
+                                                        <xs:attribute type="xs:string" name="CLOSE" use="required"/>
                                                     </xs:extension>
                                                 </xs:simpleContent>
                                             </xs:complexType>
@@ -25,7 +25,7 @@
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
-                        <xs:attribute type="xs:string" name="id" fixed="securities"/>
+                        <xs:attribute type="xs:string" name="id" fixed="history"/>
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>

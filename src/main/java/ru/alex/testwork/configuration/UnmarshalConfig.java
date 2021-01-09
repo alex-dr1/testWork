@@ -1,9 +1,9 @@
-package ru.alex.testwork.config;
+package ru.alex.testwork.configuration;
 
 import org.apache.camel.converter.jaxb.JaxbDataFormat;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import ru.alex.testwork.domain.xml.securities.SecuritiesListXml;
+import ru.alex.testwork.domain.xml.history.HistoryListXml;
 import ru.alex.testwork.domain.xml.securities.SecuritiesXml;
 
 import javax.xml.bind.JAXBContext;
@@ -16,7 +16,7 @@ public class UnmarshalConfig {
 	public JaxbDataFormat getJaxbListSecurities() throws JAXBException {
 
 		JaxbDataFormat jaxbListSec = new JaxbDataFormat();
-		JAXBContext con = JAXBContext.newInstance(SecuritiesListXml.class);
+		JAXBContext con = JAXBContext.newInstance(ru.alex.testwork.domain.xml.securities.SecuritiesListXml.class);
 		jaxbListSec.setContext(con);
 
 		return jaxbListSec;
@@ -30,5 +30,15 @@ public class UnmarshalConfig {
 		jaxbSec.setContext(con);
 
 		return jaxbSec;
+	}
+
+	@Bean("jaxbListHis")
+	public JaxbDataFormat getJaxbListHistory() throws JAXBException {
+
+		JaxbDataFormat jaxbListHis = new JaxbDataFormat();
+		JAXBContext con = JAXBContext.newInstance(HistoryListXml.class);
+		jaxbListHis.setContext(con);
+
+		return jaxbListHis;
 	}
 }

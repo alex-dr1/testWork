@@ -8,7 +8,7 @@ import java.util.List;
 @XmlRootElement(name = "rows")
 public class HistoryListXml {
 
-	private List<HistoryXml>  historyXmlList = new ArrayList<>();
+	private List<HistoryXml> historyXmlList = new ArrayList<>();
 
 	public List<HistoryXml> getHistoryXmlList() {
 		return historyXmlList;

@@ -11,7 +11,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class HistoryXml {
 	/*
 	 name="TRADEDATE" type="date" bytes="10" max_size="0"
-	 name="SHORTNAME" type="string" bytes="189" max_size="0"
 	 name="SECID" type="string" bytes="36" max_size="0"
 	 name="NUMTRADES" type="double"
 	 name="OPEN" type="double"
@@ -20,8 +19,6 @@ public class HistoryXml {
 
 	@XmlAttribute(name = "TRADEDATE")
 	private String tradeDate;
-	@XmlAttribute(name = "SHORTNAME")
-	private String shortname;
 	@XmlAttribute(name = "SECID")
 	private String secId;
 	@XmlAttribute(name = "NUMTRADES")
@@ -33,9 +30,8 @@ public class HistoryXml {
 
 	public HistoryXml() {}
 
-	public HistoryXml(String tradeDate, String shortname, String secId, String numTrades, String open, String close) {
+	public HistoryXml(String tradeDate, String secId, String numTrades, String open, String close) {
 		this.tradeDate = tradeDate;
-		this.shortname = shortname;
 		this.secId = secId;
 		this.numTrades = numTrades;
 		this.open = open;
@@ -48,14 +44,6 @@ public class HistoryXml {
 
 	public void setTradeDate(String tradeDate) {
 		this.tradeDate = tradeDate;
-	}
-
-	public String getShortname() {
-		return shortname;
-	}
-
-	public void setShortname(String shortname) {
-		this.shortname = shortname;
 	}
 
 	public String getSecId() {
@@ -94,7 +82,6 @@ public class HistoryXml {
 	public String toString() {
 		return "HistoryXml{" +
 				"tradeDate='" + tradeDate + '\'' +
-				", shortname='" + shortname + '\'' +
 				", secId='" + secId + '\'' +
 				", numTrades='" + numTrades + '\'' +
 				", open='" + open + '\'' +

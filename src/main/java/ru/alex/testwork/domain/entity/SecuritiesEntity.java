@@ -1,41 +1,23 @@
-package ru.alex.testwork.domain;
+package ru.alex.testwork.domain.entity;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
+import ru.alex.testwork.domain.xml.history.HistoryXml;
+import ru.alex.testwork.domain.xml.securities.SecuritiesXml;
+
 import java.util.*;
 
-public class Securities {
+public class SecuritiesEntity {
 
 	private Long id;
 	private String secId;
 	private String regNumber;
 	private String name;
 	private String emitentTitle;
-	private Set<History> historySet = new HashSet<>();
+	private Set<HistoryEntity> historySet = new HashSet<>();
 
-	public Securities() {
+	public SecuritiesEntity() {
 	}
 
-	public Securities(Long id, String secId, String regNumber, String name, String emitentTitle) {
-		this.id = id;
-		this.secId = secId;
-		this.regNumber = regNumber;
-		this.name = name;
-		this.emitentTitle = emitentTitle;
-	}
-
-	public Securities(Long id, String secId, String regNumber, String name, String emitentTitle, Set<History> historySet) {
-		this.id = id;
-		this.secId = secId;
-		this.regNumber = regNumber;
-		this.name = name;
-		this.emitentTitle = emitentTitle;
-		this.historySet = historySet;
-	}
-
-	public boolean addHistory(History history) {
+	public boolean addHistory(HistoryEntity history) {
 		if (history.getSecId().equals(secId)) {
 			historySet.add(history);
 			history.setSecurities(this);
@@ -45,7 +27,7 @@ public class Securities {
 
 	}
 
-	public void removeHistory(History history) {
+	public void removeHistory(HistoryEntity history) {
 		historySet.remove(history);
 		history.setSecurities(null);
 	}
@@ -90,17 +72,17 @@ public class Securities {
 		this.emitentTitle = emitentTitle;
 	}
 
-	public Set<History> getHistorySet() {
+	public Set<HistoryEntity> getHistorySet() {
 		return historySet;
 	}
 
-	public void setHistorySet(Set<History> historySet) {
+	public void setHistorySet(Set<HistoryEntity> historySet) {
 		this.historySet = historySet;
 	}
 
 	@Override
 	public String toString() {
-		return "Securities{" +
+		return "SecuritiesEntity{" +
 				"id=" + id +
 				", secId='" + secId + '\'' +
 				", regNumber='" + regNumber + '\'' +
@@ -113,13 +95,23 @@ public class Securities {
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
-		if (!(o instanceof Securities)) return false;
-		Securities that = (Securities) o;
+		if (!(o instanceof SecuritiesEntity)) return false;
+		SecuritiesEntity that = (SecuritiesEntity) o;
 		return Objects.equals(id, that.id) && Objects.equals(secId, that.secId) && Objects.equals(regNumber, that.regNumber) && Objects.equals(name, that.name) && Objects.equals(emitentTitle, that.emitentTitle) && Objects.equals(historySet, that.historySet);
 	}
 
 	@Override
 	public int hashCode() {
 		return Objects.hash(id, secId, regNumber, name, emitentTitle, historySet);
+	}
+
+	public static SecuritiesEntity xmlToEntity(SecuritiesXml xml) {
+		SecuritiesEntity securities = new SecuritiesEntity();
+		securities.setId(xml.getId());
+		securities.setSecId(xml.getSecId());
+		securities.setRegNumber(xml.getRegNumber());
+		securities.setName(xml.getName());
+		securities.setEmitentTitle(xml.getEmitentTitle());
+		return securities;
 	}
 }

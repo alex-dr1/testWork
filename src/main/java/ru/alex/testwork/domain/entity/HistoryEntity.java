@@ -1,42 +1,32 @@
-package ru.alex.testwork.domain;
+package ru.alex.testwork.domain.entity;
 
+
+import ru.alex.testwork.domain.xml.history.HistoryXml;
 
 import java.sql.Date;
 import java.util.Objects;
 
-public class History {
+public class HistoryEntity {
 
 	private Long id;
 	private Date tradeDate;
-	private String shortname;
 	private String secId;
 	private double numTrades;
 	private double open;
 	private double close;
-	private Securities securities;
+	private SecuritiesEntity securities;
 
-	public History() {
+	public HistoryEntity() {
 	}
 
-	public History(Long id, Date tradeDate, String shortname, String secId, double numTrades, double open, double close) {
-		this.id = id;
-		this.tradeDate = tradeDate;
-		this.shortname = shortname;
-		this.secId = secId;
-		this.numTrades = numTrades;
-		this.open = open;
-		this.close = close;
-	}
-
-	public History(Long id, Date tradeDate, String shortname, String secId, double numTrades, double open, double close, Securities securities) {
-		this.id = id;
-		this.tradeDate = tradeDate;
-		this.shortname = shortname;
-		this.secId = secId;
-		this.numTrades = numTrades;
-		this.open = open;
-		this.close = close;
-		this.securities = securities;
+	public static HistoryEntity xmlToEntity(HistoryXml historyXml){
+		HistoryEntity history = new HistoryEntity();
+		history.setSecId(historyXml.getSecId());
+		history.setTradeDate(Date.valueOf(historyXml.getTradeDate()));
+		history.setNumTrades(Double.parseDouble(historyXml.getNumTrades()));
+		history.setOpen(Double.parseDouble(historyXml.getOpen()));
+		history.setClose(Double.parseDouble(historyXml.getClose()));
+		return history;
 	}
 
 	public Long getId() {
@@ -53,14 +43,6 @@ public class History {
 
 	public void setTradeDate(Date tradeDate) {
 		this.tradeDate = tradeDate;
-	}
-
-	public String getShortname() {
-		return shortname;
-	}
-
-	public void setShortname(String shortname) {
-		this.shortname = shortname;
 	}
 
 	public String getSecId() {
@@ -95,20 +77,19 @@ public class History {
 		this.close = close;
 	}
 
-	public Securities getSecurities() {
+	public SecuritiesEntity getSecurities() {
 		return securities;
 	}
 
-	public void setSecurities(Securities securities) {
+	public void setSecurities(SecuritiesEntity securities) {
 		this.securities = securities;
 	}
 
 	@Override
 	public String toString() {
-		return "History{" +
+		return "HistoryEntity{" +
 				"id=" + id +
 				", tradeDate=" + tradeDate +
-				", shortname='" + shortname + '\'' +
 				", secId='" + secId + '\'' +
 				", numTrades=" + numTrades +
 				", open=" + open +
@@ -119,8 +100,8 @@ public class History {
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
-		if (!(o instanceof History)) return false;
-		History history = (History) o;
+		if (!(o instanceof HistoryEntity)) return false;
+		HistoryEntity history = (HistoryEntity) o;
 		return Objects.equals(tradeDate, history.tradeDate);
 	}
 
