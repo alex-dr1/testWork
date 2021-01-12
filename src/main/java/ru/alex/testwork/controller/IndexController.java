@@ -1,11 +1,11 @@
-package ru.alex.testwork.controllers;
+package ru.alex.testwork.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import ru.alex.testwork.service.ParseXmlService;
 
 @Controller
-public class WebContr {
+public class IndexController {
 
 	@GetMapping
 	public String hello(){

@@ -1,4 +1,4 @@
-package ru.alex.testwork.services;
+package ru.alex.testwork.service;
 
 
 import org.apache.camel.ProducerTemplate;
@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ParseServiceImpl implements ParseService {
+public class ParseServiceImpl implements ParseXmlService {
 
 	@Autowired
 	private final ProducerTemplate template;
@@ -17,7 +17,7 @@ public class ParseServiceImpl implements ParseService {
 
 
 	@Override
-	public String parse() {
+	public String run() {
 		return (String) template.requestBody("direct:parse", "");
 	}
 }

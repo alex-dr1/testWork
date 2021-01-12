@@ -14,39 +14,40 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ru.alex.testwork.services;
+package ru.alex.testwork.service;
 
+import org.springframework.stereotype.Service;
 import ru.alex.testwork.domain.UserD;
 
 import java.util.Collection;
+import java.util.Map;
+import java.util.TreeMap;
 
-/**
- * Service interface for managing users.
- */
-public interface UserService {
 
-    /**
-     * Find a user by the given ID
-     *
-     * @param id
-     *            the ID of the user
-     * @return the user, or <code>null</code> if user not found.
-     */
-    UserD findUser(Integer id);
+@Service("userService")
+public class UserServiceImpl implements UserService {
 
-    /**
-     * Find all users
-     *
-     * @return a collection of all users
-     */
-    Collection<UserD> findUsers();
+    private final Map<Integer, UserD> users = new TreeMap<>();
 
-    /**
-     * Update the given user
-     *
-     * @param user
-     *            the user
-     */
-    void updateUser(UserD user);
+    public UserServiceImpl() {
+        users.put(1, new UserD(1, "Юрий Никулин"));
+        users.put(2, new UserD(2, "Miles Davis"));
+        users.put(3, new UserD(3, "Sonny Rollins"));
+    }
+
+    @Override
+    public UserD findUser(Integer id) {
+        return users.get(id);
+    }
+
+    @Override
+    public Collection<UserD> findUsers() {
+        return users.values();
+    }
+
+    @Override
+    public void updateUser(UserD user) {
+        users.put(user.getId(), user);
+    }
 
 }

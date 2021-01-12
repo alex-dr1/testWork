@@ -1,4 +1,4 @@
-package ru.alex.testwork.camelroutes;
+package ru.alex.testwork.camelrouters;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.stereotype.Component;

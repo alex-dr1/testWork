@@ -1,4 +1,4 @@
-package ru.alex.testwork.services;
+package ru.alex.testwork.service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +14,6 @@ class ParseServiceImplTest {
 
 	@Test
 	void shouldParse(){
-		assertEquals("stop parseHistory", parseService.parse());
+		assertEquals("stop main", parseService.run());
 	}
 }

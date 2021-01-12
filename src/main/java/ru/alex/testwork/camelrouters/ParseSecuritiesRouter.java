@@ -1,4 +1,4 @@
-package ru.alex.testwork.camelroutes;
+package ru.alex.testwork.camelrouters;
 
 import org.apache.camel.LoggingLevel;
 import org.apache.camel.Processor;
@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import ru.alex.testwork.domain.entity.SecuritiesEntity;
 import ru.alex.testwork.domain.xml.securities.SecuritiesListXml;
 import ru.alex.testwork.domain.xml.securities.SecuritiesXml;
+import ru.alex.testwork.service.SecuritiesService;
 import ru.alex.testwork.utils.FileFinder;
 
 import java.util.ArrayList;
@@ -20,9 +21,11 @@ import java.util.stream.Collectors;
 public class ParseSecuritiesRouter extends RouteBuilder {
 
 	final JaxbDataFormat jaxbListSec;
+	final SecuritiesService securitiesService;
 
-	public ParseSecuritiesRouter(JaxbDataFormat jaxbListSec) {
+	public ParseSecuritiesRouter(JaxbDataFormat jaxbListSec, SecuritiesService securitiesService) {
 		this.jaxbListSec = jaxbListSec;
+		this.securitiesService = securitiesService;
 	}
 
 	Processor fileSecuritiesAmount = exchange -> {
@@ -40,7 +43,7 @@ public class ParseSecuritiesRouter extends RouteBuilder {
 	};
 
 	private Function<SecuritiesXml, SecuritiesEntity> convertSecXmlToSecurities() {
-		return SecuritiesEntity::xmlToEntity;
+		return SecuritiesEntity::toEntity;
 	}
 
 	@Override
@@ -79,9 +82,8 @@ public class ParseSecuritiesRouter extends RouteBuilder {
 				.unmarshal(jaxbListSec)
 				.process(covertListXmlToSecurities)
 				.process(exchange -> {
-					List<SecuritiesEntity> securitiesEntityList = exchange.getIn().getBody(ArrayList.class);
 					//TODO Insert to DB
-					securitiesEntityList.forEach(System.out::println);
+					securitiesService.saveAll(exchange.getIn().getBody(ArrayList.class));
 					})
 				.setBody().simple("stop parseSecurities")
 

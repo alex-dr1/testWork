@@ -3,23 +3,31 @@ package ru.alex.testwork.domain.entity;
 
 import ru.alex.testwork.domain.xml.history.HistoryXml;
 
+import javax.persistence.*;
 import java.sql.Date;
 import java.util.Objects;
 
+@Entity
+@Table(name = "history")
 public class HistoryEntity {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private Date tradeDate;
 	private String secId;
 	private double numTrades;
 	private double open;
 	private double close;
+
+	@ManyToOne
+	@JoinColumn(name = "securities_id")
 	private SecuritiesEntity securities;
 
 	public HistoryEntity() {
 	}
 
-	public static HistoryEntity xmlToEntity(HistoryXml historyXml){
+	public static HistoryEntity toEntity(HistoryXml historyXml){
 		HistoryEntity history = new HistoryEntity();
 		history.setSecId(historyXml.getSecId());
 		history.setTradeDate(Date.valueOf(historyXml.getTradeDate()));

@@ -1,4 +1,4 @@
-package ru.alex.testwork.services;
+package ru.alex.testwork.service;
 
 import org.apache.camel.ProducerTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

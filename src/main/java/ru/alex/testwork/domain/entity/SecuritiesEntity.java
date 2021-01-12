@@ -1,35 +1,28 @@
 package ru.alex.testwork.domain.entity;
 
+import ru.alex.testwork.domain.model.Securities;
 import ru.alex.testwork.domain.xml.history.HistoryXml;
 import ru.alex.testwork.domain.xml.securities.SecuritiesXml;
 
+import javax.persistence.*;
 import java.util.*;
 
+@Entity
+@Table(name = "securities")
 public class SecuritiesEntity {
 
+	@Id
 	private Long id;
+	@Column(unique = true)
 	private String secId;
 	private String regNumber;
 	private String name;
 	private String emitentTitle;
-	private Set<HistoryEntity> historySet = new HashSet<>();
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "securities")
+	private Set<HistoryEntity> historySet;
 
 	public SecuritiesEntity() {
-	}
-
-	public boolean addHistory(HistoryEntity history) {
-		if (history.getSecId().equals(secId)) {
-			historySet.add(history);
-			history.setSecurities(this);
-			return true;
-		} else
-			return false;
-
-	}
-
-	public void removeHistory(HistoryEntity history) {
-		historySet.remove(history);
-		history.setSecurities(null);
 	}
 
 	public Long getId() {
@@ -105,13 +98,23 @@ public class SecuritiesEntity {
 		return Objects.hash(id, secId, regNumber, name, emitentTitle, historySet);
 	}
 
-	public static SecuritiesEntity xmlToEntity(SecuritiesXml xml) {
+	public static SecuritiesEntity toEntity(SecuritiesXml xml) {
 		SecuritiesEntity securities = new SecuritiesEntity();
 		securities.setId(xml.getId());
 		securities.setSecId(xml.getSecId());
 		securities.setRegNumber(xml.getRegNumber());
 		securities.setName(xml.getName());
 		securities.setEmitentTitle(xml.getEmitentTitle());
+		return securities;
+	}
+
+	public static SecuritiesEntity toEntity(Securities model) {
+		SecuritiesEntity securities = new SecuritiesEntity();
+		securities.setId(model.getId());
+		securities.setSecId(model.getSecId());
+		securities.setRegNumber(model.getRegNumber());
+		securities.setName(model.getName());
+		securities.setEmitentTitle(model.getEmitentTitle());
 		return securities;
 	}
 }

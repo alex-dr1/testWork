@@ -1,4 +1,4 @@
-package ru.alex.testwork.services;
+package ru.alex.testwork.service;
 
 import ru.alex.testwork.domain.entity.SecuritiesEntity;
 

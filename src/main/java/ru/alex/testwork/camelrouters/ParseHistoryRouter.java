@@ -1,4 +1,4 @@
-package ru.alex.testwork.camelroutes;
+package ru.alex.testwork.camelrouters;
 
 import org.apache.camel.LoggingLevel;
 import org.apache.camel.Processor;
@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import ru.alex.testwork.domain.entity.HistoryEntity;
 import ru.alex.testwork.domain.xml.history.HistoryListXml;
 import ru.alex.testwork.domain.xml.history.HistoryXml;
+import ru.alex.testwork.service.HistoryService;
 import ru.alex.testwork.utils.FileFinder;
 
 import java.util.ArrayList;
@@ -20,9 +21,11 @@ import java.util.stream.Collectors;
 public class ParseHistoryRouter extends RouteBuilder {
 
 	final JaxbDataFormat jaxbListHis;
+	final HistoryService historyService;
 
-	public ParseHistoryRouter(JaxbDataFormat jaxbListHis) {
+	public ParseHistoryRouter(JaxbDataFormat jaxbListHis, HistoryService historyService) {
 		this.jaxbListHis = jaxbListHis;
+		this.historyService = historyService;
 	}
 
 	Processor fileHistoryAmount = exchange -> {
@@ -41,7 +44,7 @@ public class ParseHistoryRouter extends RouteBuilder {
 	};
 
 	private Function<HistoryXml, HistoryEntity> convertHistoryXmlToHistory() {
-		return HistoryEntity::xmlToEntity;
+		return HistoryEntity::toEntity;
 	}
 
 	@Override
@@ -54,7 +57,6 @@ public class ParseHistoryRouter extends RouteBuilder {
 				.otherwise().log("file history amount = 0").to("direct:faultHistory")
 				.end()
 				.log("Stop parseHistory ...")
-				.stop()
 		;
 		//File loop
 		from("direct:fileLoopHistory").routeId("Router fileLoopHistory")
@@ -82,8 +84,8 @@ public class ParseHistoryRouter extends RouteBuilder {
 				.process(exchange -> {
 					List<HistoryEntity> historyList = exchange.getIn().getBody(ArrayList.class);
 					//TODO Insert to DB
-					historyList.forEach(System.out::println);
-					})
+					historyList.forEach(historyService::save);
+				})
 				.setBody().simple("stop parseHistory")
 		;
 
