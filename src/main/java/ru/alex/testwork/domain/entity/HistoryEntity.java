@@ -15,13 +15,14 @@ public class HistoryEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private Date tradeDate;
+	@Column(name = "sec_id", insertable = false, updatable = false)
 	private String secId;
 	private double numTrades;
 	private double open;
 	private double close;
 
 	@ManyToOne
-	@JoinColumn(name = "securities_id")
+	@JoinColumn(name = "sec_id", referencedColumnName = "sec_id")
 	private SecuritiesEntity securities;
 
 	public HistoryEntity() {

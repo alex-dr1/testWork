@@ -1,19 +1,22 @@
 package ru.alex.testwork.domain.entity;
 
+import org.hibernate.annotations.NaturalId;
 import ru.alex.testwork.domain.model.Securities;
-import ru.alex.testwork.domain.xml.history.HistoryXml;
 import ru.alex.testwork.domain.xml.securities.SecuritiesXml;
 
 import javax.persistence.*;
-import java.util.*;
+import java.io.Serializable;
+import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "securities")
-public class SecuritiesEntity {
+public class SecuritiesEntity implements Serializable {
 
 	@Id
 	private Long id;
-	@Column(unique = true)
+	@NaturalId
+	@Column(name = "sec_id")
 	private String secId;
 	private String regNumber;
 	private String name;
