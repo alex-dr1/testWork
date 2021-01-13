@@ -14,15 +14,21 @@ import java.util.Set;
 public class SecuritiesEntity implements Serializable {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(nullable = false)
 	private Long id;
+
 	@NaturalId
-	@Column(name = "sec_id")
+	@Column(name = "sec_id", nullable = false, unique = true)
 	private String secId;
+
 	private String regNumber;
+
 	private String name;
+
 	private String emitentTitle;
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "securities")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "securities", fetch = FetchType.LAZY)
 	private Set<HistoryEntity> historySet;
 
 	public SecuritiesEntity() {

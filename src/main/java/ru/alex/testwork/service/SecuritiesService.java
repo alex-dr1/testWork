@@ -33,8 +33,12 @@ public class SecuritiesService {
 		return Securities.toModel(securitiesRepo.findById(id).orElseThrow(() -> new SecuritiesNotFoundException(id)));
 	}
 
-	public Securities save(Securities model) {
-		return Securities.toModel(securitiesRepo.findById(model.getId())
-				.orElseGet(() -> saveEntity(SecuritiesEntity.toEntity(model))));
+	public Securities saveOrUpade(Securities model) {
+		if (model.getId() == null){
+			System.err.println("SAVE");
+			return Securities.toModel(securitiesRepo.save(SecuritiesEntity.toEntity(model)));
+		}
+		System.err.println("UPDATE");
+		return Securities.toModel(securitiesRepo.save(SecuritiesEntity.toEntity(model)));
 	}
 }
