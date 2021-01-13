@@ -18,18 +18,12 @@ public class MoexFetchSecuritiesRouter extends RouteBuilder {
 		this.jaxbSec = jaxbSec;
 	}
 
-	private final Processor convertXmlToSecurities = exchange -> {
+	private final Processor convertXmlToSecuritiesEntity = exchange -> {
 		SecuritiesXml xml = exchange.getIn().getBody(SecuritiesXml.class);
 		if(xml == null){
 			exchange.getIn().setBody(null);
 		} else {
-			SecuritiesEntity securities = new SecuritiesEntity();
-			securities.setId(xml.getId());
-			securities.setSecId(xml.getSecId());
-			securities.setName(xml.getName());
-			securities.setRegNumber(xml.getRegNumber());
-			securities.setEmitentTitle(xml.getEmitentTitle());
-			exchange.getIn().setBody(securities);
+			exchange.getIn().setBody(SecuritiesEntity.toEntity(xml));
 		}
 	};
 
@@ -68,7 +62,7 @@ public class MoexFetchSecuritiesRouter extends RouteBuilder {
 				//.wireTap("direct:saveToFile")
 				// TODO DELETE ---------------------------------
 				.unmarshal(jaxbSec)
-				.process(convertXmlToSecurities)
+				.process(convertXmlToSecuritiesEntity)
 		;
 
 		// TODO DELETE ---------------------------------

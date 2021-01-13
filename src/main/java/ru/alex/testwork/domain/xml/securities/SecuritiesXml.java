@@ -9,15 +9,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class SecuritiesXml {
 	/*
-	 <column name="id" type="int32"/>
 	 <column name="secid" type="string" bytes="36" max_size="0"/>
 	 <column name="shortname" type="string" bytes="189" max_size="0"/>
 	 <column name="regnumber" type="string" bytes="189" max_size="0"/>
 	 <column name="name" type="string" bytes="765" max_size="0"/>
 	 <column name="emitent_title" type="string" bytes="765" max_size="0"/>
 	 */
-	@XmlAttribute(name = "id")
-	private Long id;
 	@XmlAttribute(name = "secid")
 	private String secId;
 	@XmlAttribute(name = "regnumber")
@@ -28,14 +25,6 @@ public class SecuritiesXml {
 	private String emitentTitle;
 
 	public SecuritiesXml() {
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getSecId() {
@@ -73,7 +62,6 @@ public class SecuritiesXml {
 	@Override
 	public String toString() {
 		return "SecuritiesXml{" +
-				"id=" + id +
 				", secId='" + secId + '\'' +
 				", regNumber='" + regNumber + '\'' +
 				", name='" + name + '\'' +

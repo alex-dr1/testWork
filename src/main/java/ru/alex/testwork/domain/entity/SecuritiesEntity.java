@@ -109,7 +109,7 @@ public class SecuritiesEntity implements Serializable {
 
 	public static SecuritiesEntity toEntity(SecuritiesXml xml) {
 		SecuritiesEntity securities = new SecuritiesEntity();
-		securities.setId(xml.getId());
+		securities.setId(null);
 		securities.setSecId(xml.getSecId());
 		securities.setRegNumber(xml.getRegNumber());
 		securities.setName(xml.getName());

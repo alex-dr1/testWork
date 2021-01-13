@@ -2,245 +2,245 @@
 <document>
 <data id="securities">
 <rows>
-<row emitent_title="Публичное акционерное общество &quot;Абрау – Дюрсо&quot;" id="12441" name="Абрау-Дюрсо ПАО ао" regnumber="1-02-12500-A" secid="ABRD"/>
-<row emitent_title="ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО &quot;АКЦИОНЕРНАЯ ФИНАНСОВАЯ КОРПОРАЦИЯ &quot;СИСТЕМА&quot;" id="2699" name="АФК &quot;Система&quot; ПАО ао" regnumber="1-05-01669-A" secid="AFKS"/>
-<row emitent_title="Публичное акционерное общество &quot;Аэрофлот – российские авиалинии&quot;" id="2700" name="Аэрофлот-росс.авиалин(ПАО)ао" regnumber="1-01-00010-A" secid="AFLT"/>
-<row emitent_title="Bank of New York Mellon Corporation (Глобальные депозитарные расписки на акции ROS AGRO PLC)" id="76079" name="ГДР ROS AGRO PLC ORD SHS" regnumber="" secid="AGRO"/>
-<row emitent_title="Публичное акционерное общество &quot;Акрон&quot;" id="2702" name="Акрон ПАО ао" regnumber="1-03-00207-A" secid="AKRN"/>
-<row emitent_title="Публичное акционерное общество &quot;Бест Эффортс Банк&quot;" id="13080" name="Бест Эффортс Банк ПАО ао" regnumber="10400435B" secid="ALBK"/>
-<row emitent_title="Публичное акционерное общество &quot;АЛРОСА-Нюрба&quot;" id="8112" name="АЛРОСА-Нюрба ПАО ао" regnumber="1-01-20179-F" secid="ALNU"/>
-<row emitent_title="Акционерная компания &quot;АЛРОСА&quot; (публичное акционерное общество)" id="8094" name="АЛРОСА ПАО ао" regnumber="1-03-40046-N" secid="ALRS"/>
-<row emitent_title="Публичное акционерное общество &quot;Ашинский металлургический завод&quot;" id="6442" name=" Ашинский метзавод ПАО ао" regnumber="1-03-45219-D" secid="AMEZ"/>
-<row emitent_title="Публичное акционерное общество &quot;Аптечная сеть 36,6&quot;" id="8052" name="ПАО &quot;Аптечная сеть 36,6&quot; ао" regnumber="1-01-07335-A" secid="APTK"/>
-<row emitent_title="Публичное  акционерное общество &quot;Русская Аквакультура&quot;" id="84864" name="Русская Аквакультура ПАО ао" regnumber="1-01-04461-D" secid="AQUA"/>
-<row emitent_title="ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО &quot;УПРАВЛЯЮЩАЯ КОМПАНИЯ &quot;АРСАГЕРА&quot;" id="6115" name="УК Арсагера ПАО-ао" regnumber="1-01-03163-D" secid="ARSA"/>
-<row emitent_title="Публичное акционерное общество &quot;Астраханская энергосбытовая компания&quot;" id="2710" name="&quot;Астраханская ЭСК&quot; ПАО" regnumber="1-01-55064-E" secid="ASSB"/>
-<row emitent_title="Акционерный Коммерческий банк &quot;АВАНГАРД&quot; - публичное акционерное общество" id="14429" name="АКБ &quot;АВАНГАРД&quot; ПАО ао" regnumber="10102879B" secid="AVAN"/>
-<row emitent_title="Публичное акционерное общество &quot;Акционерная нефтяная Компания &quot;Башнефть&quot;" id="8048" name="Башнефть АНК ао" regnumber="1-01-00013-A" secid="BANE"/>
-<row emitent_title="Публичное акционерное общество &quot;Акционерная нефтяная Компания &quot;Башнефть&quot;" id="8049" name="Башнефть АНК ап" regnumber="2-01-00013-A" secid="BANEP"/>
-<row emitent_title="Публичное акционерное общество &quot;Белуга Групп&quot;" id="132432" name="Белуга Групп ПАО ао" regnumber="1-01-55052-E" secid="BELU"/>
-<row emitent_title="Публичное акционерное общество &quot;Башинформсвязь&quot;" id="7184" name="Башинформсвязь(ПАО) ап" regnumber="2-01-00011-A" secid="BISVP"/>
-<row emitent_title="Открытое акционерное общество &quot;Белон&quot;" id="2711" name="Белон ОАО ао" regnumber="1-06-10167-F" secid="BLNG"/>
-<row emitent_title="Публичное акционерное общество &quot;Бурятзолото&quot;" id="8132" name="Бурятзолото ПАО ао" regnumber="1-06-20577-F" secid="BRZL"/>
-<row emitent_title="ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО &quot;БАНК &quot;САНКТ-ПЕТЕРБУРГ&quot;" id="6104" name="ПАО &quot;Банк &quot;Санкт-Петербург&quot; ао" regnumber="10300436B" secid="BSPB"/>
-<row emitent_title="&quot;МОСКОВСКИЙ КРЕДИТНЫЙ БАНК&quot; (публичное акционерное общество)" id="85628" name="&quot;МКБ&quot; ПАО ао" regnumber="10101978B" secid="CBOM"/>
-<row emitent_title="Публичное акционерное общество &quot;Челябинский трубопрокатный завод&quot;" id="6599" name="&quot;ЧТПЗ&quot; ПАО ао" regnumber="1-01-00182-A" secid="CHEP"/>
-<row emitent_title="Публичное акционерное общество &quot;РН-Западная Сибирь&quot;" id="8153" name="РН-Западная Сибирь ПАО ао" regnumber="1-01-00185-A" secid="CHGZ"/>
-<row emitent_title="Публичное акционерное общество &quot;Челябинский кузнечно-прессовый завод&quot;" id="6600" name="&quot;ЧКПЗ&quot; ПАО ао" regnumber="1-03-45058-D" secid="CHKZ"/>
-<row emitent_title="Публичное акционерное общество &quot;Северсталь&quot;" id="2721" name="Северсталь (ПАО)ао" regnumber="1-02-00143-A" secid="CHMF"/>
-<row emitent_title="Публичное акционерное общество &quot;Челябинский металлургический комбинат&quot;" id="6601" name="&quot;ЧМК&quot; ПАО ао" regnumber="1-01-00080-A" secid="CHMK"/>
-<row emitent_title="Публичное акционерное общество &quot;Центральный телеграф&quot;" id="6602" name="&quot;Центральный Телеграф&quot; ПАО ао" regnumber="1-03-00327-A" secid="CNTL"/>
-<row emitent_title="Публичное акционерное общество &quot;Центральный телеграф&quot;" id="8015" name="&quot;Центральный Телеграф&quot; ПАО ап" regnumber="2-03-00327-A" secid="CNTLP"/>
-<row emitent_title="Публичное акционерное общество &quot;Дагестанская энергосбытовая компания&quot;" id="2731" name="ао Дагестанская энергосб.комп." regnumber="1-01-55094-E" secid="DASB"/>
-<row emitent_title="Публичное акционерное общество Завод экологической техники и экопитания &quot;ДИОД&quot;" id="7239" name="Завод ДИОД ПАО ао" regnumber="1-03-06923-A" secid="DIOD"/>
-<row emitent_title="Публичное акционерное общество &quot;Детский мир&quot;" id="121824" name="ПАО Детский мир" regnumber="1-02-00844-A" secid="DSKY"/>
-<row emitent_title="Публичное акционерное общество &quot;Дальневосточная энергетическая компания&quot;" id="5935" name="&quot;ДЭК&quot; ПАО ао" regnumber="1-01-55275-E" secid="DVEC"/>
-<row emitent_title="Открытое акционерное общество &quot;Донской завод радиодеталей&quot;" id="7569" name="Донской завод радиодеталей ао" regnumber="1-01-02677-A" secid="DZRD"/>
-<row emitent_title="Открытое акционерное общество &quot;Донской завод радиодеталей&quot;" id="7570" name="Донской завод радиодеталей ап" regnumber="2-01-02677-A" secid="DZRDP"/>
-<row emitent_title="Публичное акционерное общество &quot;Европейская Электротехника&quot;" id="134030" name="&quot;ЕвропЭлектротехника&quot; ПАО ао" regnumber="1-01-83993-H" secid="EELT"/>
-<row emitent_title="Публичное акционерное общество &quot;Электроцинк&quot;" id="8154" name="Электроцинк ПАО ао" regnumber="1-02-30394-E" secid="ELTZ"/>
-<row emitent_title="Международная компания публичное акционерное общество &quot;ЭН+ ГРУП&quot;" id="271347881" name="МКПАО ЭН+ ГРУП ао" regnumber="1-01-16625-A" secid="ENPG"/>
-<row emitent_title="Публичное акционерное общество &quot;Энел Россия&quot;" id="76080" name="&quot;Энел Россия&quot; ПАО" regnumber="1-01-50077-A" secid="ENRU"/>
-<row emitent_title="Bank of New York Mellon Corporation (Глобальные депозитарные расписки на акции Etalon Group Ltd.)" id="257214025" name="ГДР ETALON GROUP PLC ORD SHS" regnumber="" secid="ETLN"/>
-<row emitent_title="Публичное акционерное общество &quot;Федеральная сетевая компания Единой энергетической системы&quot;" id="6370" name="&quot;ФСК ЕЭС&quot; ПАО ао" regnumber="1-01-65018-D" secid="FEES"/>
-<row emitent_title="Публичное акционерное общество &quot;Дальневосточное морское пароходство&quot;" id="6448" name="ДВ морское пароходство ПАО ао" regnumber="1-03-00032-A" secid="FESH"/>
-<row emitent_title="The Bank of New York Mellon (X5 Retail Group N.V.)" id="145856" name="ГДР X5 RetailGroup N.V.ORD SHS" regnumber="" secid="FIVE"/>
-<row emitent_title="Публичное акционерное общество &quot;ГАЗ&quot;" id="8189" name="ГАЗ ПАО ао" regnumber="1-01-00029-A" secid="GAZA"/>
-<row emitent_title="Публичное акционерное общество &quot;ГАЗ&quot;" id="8190" name="ГАЗ ПАО ап" regnumber="2-02-00029-A" secid="GAZAP"/>
-<row emitent_title="Публичное акционерное общество &quot;Газпром&quot;" id="2743" name="&quot;Газпром&quot; (ПАО) ао" regnumber="1-02-00028-A" secid="GAZP"/>
-<row emitent_title="Публичное акционерное общество &quot;Группа Черкизово&quot;" id="6131" name="Группа Черкизово ПАО-ао" regnumber="1-02-10797-A" secid="GCHE"/>
-<row emitent_title="Публичное акционерное общество &quot;Международный Медицинский Центр Обработки и Криохранения Биоматериалов&quot;" id="100980415" name="ПАО ММЦБ ао" regnumber="1-01-85932-H" secid="GEMA"/>
-<row emitent_title="Публичное акционерное общество &quot;Горно-металлургическая компания &quot;Норильский никель&quot;" id="2744" name="ГМК &quot;Нор.Никель&quot; ПАО ао" regnumber="1-01-40155-F" secid="GMKN"/>
-<row emitent_title="Публичное акционерное общество &quot;ГЛОБАЛТРАК МЕНЕДЖМЕНТ&quot;" id="138711" name="ПАО &quot;ГТМ&quot; ао" regnumber="1-01-84907-H" secid="GTRK"/>
-<row emitent_title="Публичное акционерное общество &quot;Галс-Девелопмент&quot;" id="2746" name="ПАО &quot;Галс-Девелопмент&quot;" regnumber="1-01-01017-H" secid="HALS"/>
-<row emitent_title="Публичное акционерное общество &quot;Химпром&quot;" id="8164" name="Химпром ПАО ап" regnumber="2-01-55076-D" secid="HIMCP"/>
-<row emitent_title="Публичное акционерное общество &quot;Федеральная гидрогенерирующая компания - РусГидро&quot;" id="6017" name="ПАО &quot;РусГидро&quot;" regnumber="1-01-55038-E" secid="HYDR"/>
-<row emitent_title="Публичное акционерное общество &quot;Ижсталь&quot;" id="8115" name="Ижсталь ПАО ао 2в." regnumber="1-02-30078-D" secid="IGST"/>
-<row emitent_title="Публичное акционерное общество &quot;Ижсталь&quot;" id="8117" name="Ижсталь ПАО ап" regnumber="2-02-30078-D" secid="IGSTP"/>
-<row emitent_title="Публичное акционерное общество &quot;ИНГРАД&quot;" id="317439317" name="ИНГРАД ПАО ао" regnumber="1-01-50020-A" secid="INGR"/>
-<row emitent_title="Публичное акционерное общество &quot;Интер РАО ЕЭС&quot;" id="6375" name="&quot;Интер РАО&quot; ПАО ао" regnumber="1-04-33498-E" secid="IRAO"/>
-<row emitent_title="Иркутское публичное акционерное общество энергетики и электрификации" id="2747" name="Иркутскэнерго(ПАО)-ао" regnumber="1-01-00041-A" secid="IRGZ"/>
-<row emitent_title="публичное акционерное общество &quot;Научно-производственная корпорация &quot;Иркут&quot;" id="2748" name="Корпорация&quot;ИРКУТ&quot; ПАО ак.об.-3" regnumber="1-03-00040-A" secid="IRKT"/>
-<row emitent_title="Публичное акционерное общество &quot;Институт Стволовых Клеток Человека&quot;" id="2749" name="ПАО &quot;ИСКЧ&quot;" regnumber="1-01-08902-A" secid="ISKJ"/>
-<row emitent_title="Публичное акционерное общество &quot;Славнефть-Ярославнефтеоргсинтез&quot;" id="5297" name="Славнефть-ЯНОС (ПАО) ао" regnumber="1-01-00199-A" secid="JNOS"/>
-<row emitent_title="Публичное акционерное общество &quot;Славнефть-Ярославнефтеоргсинтез&quot;" id="5298" name="Славнефть-ЯНОС (ПАО) ап" regnumber="2-01-00199-A" secid="JNOSP"/>
-<row emitent_title="Публичное акционерное общество &quot;КуйбышевАзот&quot;" id="8165" name="Куйбышевазот ПАО ао" regnumber="1-01-00067-A" secid="KAZT"/>
-<row emitent_title="Публичное акционерное общество &quot;КуйбышевАзот&quot;" id="8166" name="Куйбышевазот ПАО ап" regnumber="2-01-00067-A" secid="KAZTP"/>
-<row emitent_title="Публичное акционерное общество &quot;ТНС энерго Кубань&quot;" id="6015" name="ТНС энерго Кубань ПАО ао" regnumber="1-01-55218-E" secid="KBSB"/>
-<row emitent_title="Публичное акционерное общество &quot;Кузбасская Топливная Компания&quot;" id="7202" name="Кузбас.Топл.Комп. ПАО ао" regnumber="1-02-11330-F" secid="KBTK"/>
-<row emitent_title="Публичное акционерное общество энергетики и электрификации &quot;Камчатскэнерго&quot;" id="6089" name="Камчатскэнерго ПАО ао" regnumber="1-02-00235-A" secid="KCHE"/>
-<row emitent_title="Публичное акционерное общество &quot;Курганская генерирующая компания&quot;" id="16503" name="Курганская генер.комп.ПАО ао" regnumber="1-01-55226-E" secid="KGKC"/>
-<row emitent_title="Публичное акционерное общество &quot;Курганская генерирующая компания&quot;" id="16785" name="Курганская генер. комп. ПАО ап" regnumber="2-01-55226-E" secid="KGKCP"/>
-<row emitent_title="Публичное акционерное общество &quot;Калужская сбытовая компания&quot;" id="2760" name="ао&quot;Калужская сбыт.комп.&quot;ПАО" regnumber="1-01-65057-D" secid="KLSB"/>
-<row emitent_title="Публичное акционерное общество &quot;КАМАЗ&quot;" id="2761" name="КАМАЗ ПАО" regnumber="1-08-55010-D" secid="KMAZ"/>
-<row emitent_title="публичное акционерное общество &quot;Ковровский механический завод&quot;" id="6913" name="Ковровский механический завод" regnumber="1-02-05376-A" secid="KMEZ"/>
-<row emitent_title="Публичное акционерное общество &quot;Коршуновский горно-обогатительный комбинат&quot;" id="6450" name="Коршуновский ГОК ПАО ао" regnumber="1-01-20992-F" secid="KOGK"/>
-<row emitent_title="Публичное акционерное общество &quot;Саратовский нефтеперерабатывающий завод&quot;" id="8121" name="Саратовский НПЗ ПАО ао" regnumber="1-01-00248-A" secid="KRKN"/>
-<row emitent_title="Публичное акционерное общество &quot;Саратовский нефтеперерабатывающий завод&quot;" id="8122" name="Саратовский НПЗ ПАО ап" regnumber="2-01-00248-A" secid="KRKNP"/>
-<row emitent_title="Публичное акционерное общество &quot;Таганрогский котлостроительный завод &quot;Красный котельщик&quot;" id="8137" name="ТКЗ Красный котельщик ПАО ап" regnumber="2-01-30301-E" secid="KRKOP"/>
-<row emitent_title="Публичное акционерное общество &quot;Московская кондитерская фабрика &quot;Красный Октябрь&quot;" id="2769" name="&quot;КрасныйОктябрь&quot; ПАО - ао" regnumber="1-02-00060-A" secid="KROT"/>
-<row emitent_title="Публичное акционерное общество &quot;Московская кондитерская фабрика &quot;Красный Октябрь&quot;" id="8056" name="КрасныйОктябрь-1п" regnumber="2-01-00060-A" secid="KROTP"/>
-<row emitent_title="Публичное акционерное общество &quot;Красноярскэнергосбыт&quot;" id="6558" name="Красноярскэнергосбыт ао" regnumber="1-01-55147-E" secid="KRSB"/>
-<row emitent_title="Публичное акционерное общество &quot;Красноярскэнергосбыт&quot;" id="6559" name="Красноярскэнергосбыт ап" regnumber="2-01-55147-E" secid="KRSBP"/>
-<row emitent_title="Публичное акционерное общество &quot;Костромская сбытовая компания&quot;" id="2771" name="&quot;Костромск.сбыт.комп&quot; ПАО" regnumber="1-01-55051-E" secid="KTSB"/>
-<row emitent_title="Публичное акционерное общество &quot;Костромская сбытовая компания&quot;" id="2772" name="&quot;Костромск.сбыт.комп&quot; ПАО" regnumber="2-01-55051-E" secid="KTSBP"/>
-<row emitent_title="Публичное акционерное общество энергетики и электрификации Кубани" id="2773" name="&quot;Кубаньэнерго&quot; ПАО" regnumber="1-02-00063-A" secid="KUBE"/>
-<row emitent_title="Публичное акционерное общество Банк &quot;Кузнецкий&quot;" id="15184" name="Банк &quot;Кузнецкий&quot; ПАО ао" regnumber="10100609B" secid="KUZB"/>
-<row emitent_title="Казанское публичное акционерное общество &quot;Органический синтез&quot;" id="8105" name="ПАО &quot;Органический синтез&quot; ао" regnumber="1-02-55245-D" secid="KZOS"/>
-<row emitent_title="Казанское публичное акционерное общество &quot;Органический синтез&quot;" id="8106" name="ПАО &quot;Органический синтез&quot; ап" regnumber="2-02-55245-D" secid="KZOSP"/>
-<row emitent_title="Публичное акционерное общество &quot;Фармсинтез&quot;" id="7486" name="Фармсинтез ПАО ао" regnumber="1-02-09669-J" secid="LIFE"/>
-<row emitent_title="Публичное акционерное общество &quot;Нефтяная компания &quot;ЛУКОЙЛ&quot;" id="2783" name="НК ЛУКОЙЛ (ПАО) - ао" regnumber="1-01-00077-A" secid="LKOH"/>
-<row emitent_title="Deutsche Bank Trust Company Americas (Лента ПиЭлСи)" id="32695" name="Лента ПиЭлСи др" regnumber="" secid="LNTA"/>
-<row emitent_title="Ленское золотодобывающее публичное акционерное общество &quot;Лензолото&quot;" id="6604" name="&quot;Лензолото&quot; ПАО ао" regnumber="1-02-40433-N" secid="LNZL"/>
-<row emitent_title="Ленское золотодобывающее публичное акционерное общество &quot;Лензолото&quot;" id="6835" name="&quot;Лензолото&quot; ПАО ап" regnumber="2-02-40433-N" secid="LNZLP"/>
-<row emitent_title="Открытое акционерное общество &quot;Липецкая энергосбытовая компания&quot;" id="2784" name="Липецкая энергосбыт.ком.ОАО ао" regnumber="1-01-65097-D" secid="LPSB"/>
-<row emitent_title="Публичное акционерное общество &quot;Россети Ленэнерго&quot;" id="2785" name="Россети Ленэнерго ПАО-ао" regnumber="1-01-00073-A" secid="LSNG"/>
-<row emitent_title="Публичное акционерное общество &quot;Россети Ленэнерго&quot;" id="2786" name="Россети Ленэнерго ПАО-ап" regnumber="2-01-00073-A" secid="LSNGP"/>
-<row emitent_title="Публичное акционерное общество &quot;Группа ЛСР&quot;" id="5541" name="Группа ЛСР ПАО ао" regnumber="1-01-55234-E" secid="LSRG"/>
-<row emitent_title="Открытое акционерное общество &quot;Левенгук&quot;" id="17460" name="Левенгук ОАО ао" regnumber="1-01-04329-D" secid="LVHK"/>
-<row emitent_title="Публичное акционерное общество энергетики и электрификации &quot;Магаданэнерго&quot;" id="7468" name="&quot;Магаданэнерго&quot; ПАО ао" regnumber="1-01-00254-A" secid="MAGE"/>
-<row emitent_title="Публичное акционерное общество энергетики и электрификации &quot;Магаданэнерго&quot;" id="7469" name="&quot;Магаданэнерго&quot; ПАО ап" regnumber="2-01-00254-A" secid="MAGEP"/>
-<row emitent_title="Публичное акционерное общество &quot;Магнитогорский металлургический комбинат&quot;" id="2787" name="&quot;Магнитогорск.мет.комб&quot; ПАО ао" regnumber="1-03-00078-A" secid="MAGN"/>
-<row emitent_title="Citibank N.A.(Mail.ru Group Limited)" id="411467661" name="ГДР Mail.ru Gr Limited ORD SHS" regnumber="" secid="MAIL"/>
-<row emitent_title="Публичное акционерное общество &quot;Славнефть - Мегионнефтегаз&quot;" id="8057" name="ао &quot;Славнефть-Мегионнефтегаз&quot;" regnumber="1-03-00149-A" secid="MFGS"/>
-<row emitent_title="Публичное акционерное общество &quot;Славнефть - Мегионнефтегаз&quot;" id="8058" name="ап Мегионнефтегаз" regnumber="2-03-00149-A" secid="MFGSP"/>
-<row emitent_title="Публичное акционерное общество &quot;Магнит&quot;" id="2788" name="&quot;Магнит&quot; ПАО ао" regnumber="1-01-60525-P" secid="MGNT"/>
-<row emitent_title="Открытое акционерное общество &quot;Соликамский магниевый завод&quot;" id="6530" name="Соликамский магн.завод(ОАО)ао" regnumber="1-01-00283-A" secid="MGNZ"/>
-<row emitent_title="Публичное акционерное общество &quot;Московская городская телефонная сеть&quot;" id="8059" name="ПАО &quot;МГТС&quot; ао (5 в)" regnumber="1-05-00083-A" secid="MGTS"/>
-<row emitent_title="Публичное акционерное общество &quot;Московская городская телефонная сеть&quot;" id="8060" name="ПАО &quot;МГТС&quot; ап (4 в)" regnumber="2-04-00083-A" secid="MGTSP"/>
-<row emitent_title="Публичное акционерное общество &quot;ТНС энерго Марий Эл&quot;" id="2790" name="ТНС энерго Марий Эл ПАО ао" regnumber="1-01-50086-A" secid="MISB"/>
-<row emitent_title="Публичное акционерное общество &quot;ТНС энерго Марий Эл&quot;" id="2791" name="ТНС энерго Марий Эл ПАО ап" regnumber="2-01-50086-A" secid="MISBP"/>
-<row emitent_title="Публичное акционерное общество &quot;Московская Биржа ММВБ-РТС&quot;" id="19075" name="ПАО Московская Биржа" regnumber="1-05-08443-H" secid="MOEX"/>
-<row emitent_title="Публичное акционерное общество &quot;Межрегиональная распределительная сетевая компания Центра&quot;" id="6196" name="&quot;МРСК Центра&quot; ПАО ао" regnumber="1-01-10214-A" secid="MRKC"/>
-<row emitent_title="Публичное акционерное общество &quot;Россети Северный Кавказ&quot;" id="6308" name="Россети Сев. Кавказ ао" regnumber="1-01-34747-E" secid="MRKK"/>
-<row emitent_title="Публичное акционерное общество &quot;Межрегиональная распределительная сетевая компания Центра и Приволжья&quot;" id="6116" name="МРСК Центр. и Приволж. ао" regnumber="1-01-12665-E" secid="MRKP"/>
-<row emitent_title="Публичное акционерное общество &quot;Россети Сибирь&quot;" id="6268" name="Россети Сибирь ао" regnumber="1-01-12044-F" secid="MRKS"/>
-<row emitent_title="Открытое акционерное общество &quot;Межрегиональная распределительная сетевая компания Урала&quot;" id="6300" name="МРСК Урала (ОАО) ао" regnumber="1-01-32501-D" secid="MRKU"/>
-<row emitent_title="Публичное акционерное общество &quot;Россети Волга&quot;" id="6221" name="Россети Волга ао" regnumber="1-01-04247-E" secid="MRKV"/>
-<row emitent_title="Публичное акционерное общество &quot;Россети Юг&quot;" id="8061" name="Россети Юг  (ПАО) ао" regnumber="1-01-34956-E" secid="MRKY"/>
-<row emitent_title="Публичное акционерное общество &quot;Межрегиональная распределительная сетевая компания Северо-Запада&quot;" id="6239" name="МРСК Северо-Запада ао" regnumber="1-01-03347-D" secid="MRKZ"/>
-<row emitent_title="Публичное акционерное общество &quot;Мордовская энергосбытовая компания&quot;" id="2794" name="Мордовск.энергсбыт.комп.ПАО ао" regnumber="1-01-55055-E" secid="MRSB"/>
-<row emitent_title="Публичное акционерное общество энергетики и электрификации &quot;Мосэнерго&quot;" id="2795" name="МосЭнерго акции обыкн." regnumber="1-01-00085-A" secid="MSNG"/>
-<row emitent_title="Публичное акционерное общество &quot;Россети Московский регион&quot;" id="2796" name="ПАО Россети Моск.рег. ао" regnumber="1-01-65116-D" secid="MSRS"/>
-<row emitent_title="Публичное акционерное общество &quot;МОСТОТРЕСТ&quot;" id="7457" name="ПАО &quot;МОСТОТРЕСТ&quot; ао" regnumber="1-03-02472-A" secid="MSTT"/>
-<row emitent_title="Публичное акционерное общество &quot;Мечел&quot;" id="6626" name="Мечел ПАО ао" regnumber="1-01-55005-E" secid="MTLR"/>
-<row emitent_title="Публичное акционерное общество &quot;Мечел&quot;" id="7712" name="Мечел ПАО ап" regnumber="2-01-55005-E" secid="MTLRP"/>
-<row emitent_title="Публичное акционерное общество &quot;Мобильные ТелеСистемы&quot;" id="8062" name="Мобильные ТелеСистемы ПАО ао" regnumber="1-01-04715-A" secid="MTSS"/>
-<row emitent_title="Публичное акционерное общество &quot;М.видео&quot;" id="5542" name="&quot;М.видео&quot; ПАО ао" regnumber="1-02-11700-A" secid="MVID"/>
-<row emitent_title="Публичное акционерное общество Научно-производственное объединение &quot;Наука&quot;" id="8181" name="НПО Наука ао" regnumber="1-01-04440-A" secid="NAUK"/>
-<row emitent_title="Публичное акционерное общество &quot;Нефтекамский автозавод&quot;" id="7963" name="Нефтекамский автозавод ПАО ао" regnumber="1-01-30520-D" secid="NFAZ"/>
-<row emitent_title="Публичное акционерное общество &quot;Новороссийский комбинат хлебопродуктов&quot;" id="92983" name="НКХП ПАО ао" regnumber="1-03-35684-E" secid="NKHP"/>
-<row emitent_title="Публичное Акционерное Общество &quot;Нижнекамскнефтехим&quot;" id="6113" name="&quot;Нижнекамскнефтехим&quot; ПАО ао" regnumber="1-02-00096-A" secid="NKNC"/>
-<row emitent_title="Публичное Акционерное Общество &quot;Нижнекамскнефтехим&quot;" id="6114" name="&quot;Нижнекамскнефтехим&quot; ПАО ап" regnumber="2-02-00096-A" secid="NKNCP"/>
-<row emitent_title="Публичное акционерное общество &quot;Нижнекамскшина&quot;" id="8171" name="Нижнекамскшина ПАО ао" regnumber="1-02-55032-D" secid="NKSH"/>
-<row emitent_title="Публичное акционерное общество &quot;Новолипецкий металлургический комбинат&quot;" id="2805" name="ПАО &quot;НЛМК&quot; ао" regnumber="1-01-00102-A" secid="NLMK"/>
-<row emitent_title="Публичное акционерное общество &quot;Новороссийский морской торговый порт&quot;" id="5543" name="НМТП (ПАО) ао" regnumber="1-01-30251-E" secid="NMTP"/>
-<row emitent_title="Публичное акционерное общество &quot;ТНС энерго Нижний Новгород&quot;" id="2808" name="ТНС энерго Нижний Новг.ПАО ао" regnumber="1-01-55072-E" secid="NNSB"/>
-<row emitent_title="Публичное акционерное общество &quot;ТНС энерго Нижний Новгород&quot;" id="2809" name="ТНС энерго Нижний Новг.ПАО ап" regnumber="2-01-55072-E" secid="NNSBP"/>
-<row emitent_title="Публичное акционерное общество &quot;Наука-Связь&quot;" id="8155" name="Наука-Связь ПАО ао" regnumber="1-01-12689-A" secid="NSVZ"/>
-<row emitent_title="публичное акционерное общество &quot;НОВАТЭК&quot;" id="5390" name="ПАО &quot;НОВАТЭК&quot; ао" regnumber="1-02-00268-E" secid="NVTK"/>
-<row emitent_title="Публичное акционерное общество &quot;ОР&quot;" id="137176" name="ПАО &quot;ОР&quot; ао" regnumber="1-01-50161-A" secid="OBUV"/>
-<row emitent_title="Публичное акционерное общество &quot;Вторая генерирующая компания оптового рынка электроэнергии&quot;" id="5472" name="ОГК-2 ПАО ао" regnumber="1-02-65105-D" secid="OGKB"/>
-<row emitent_title="Публичное акционерное общество Объединенные машиностроительные заводы (Группа Уралмаш-Ижора)" id="2821" name="ап&quot;Объединён.  маш. заводы&quot;" regnumber="2-01-30174-D" secid="OMZZP"/>
-<row emitent_title="Публичное акционерное общество &quot;Павловский автобус&quot;" id="8126" name="Павловский автобус ПАО ао" regnumber="1-02-00261-A" secid="PAZA"/>
-<row emitent_title="Публичное акционерное общество &quot;ФосАгро&quot;" id="7914" name="ФосАгро ПАО ао" regnumber="1-02-06556-A" secid="PHOR"/>
-<row emitent_title="Публичное акционерное общество &quot;Группа Компаний ПИК&quot;" id="2827" name="Группа компания ПИК ПАО ао" regnumber="1-02-01556-A" secid="PIKK"/>
-<row emitent_title="Публичное акционерное общество &quot;Полюс&quot;" id="2830" name="Полюс ПАО ао" regnumber="1-01-55192-E" secid="PLZL"/>
-<row emitent_title="Публичное акционерное общество &quot;Пермская энергосбытовая компания&quot;" id="2833" name="&quot;Пермэнергосбыт&quot; ПАО ао" regnumber="1-01-55084-E" secid="PMSB"/>
-<row emitent_title="Публичное акционерное общество &quot;Пермская энергосбытовая компания&quot;" id="2834" name="&quot;Пермэнергосбыт&quot; ПАО ап" regnumber="2-01-55084-E" secid="PMSBP"/>
-<row emitent_title="Petropavlovsk PLC" id="411414681" name="Petropavlovsk PLC" regnumber="" secid="POGR"/>
-<row emitent_title="Полиметалл Интернэшнл плс (Polymetal International plc)" id="23795" name="Polymetal International plc" regnumber="" secid="POLY"/>
-<row emitent_title="акционерный коммерческий банк &quot;Приморье&quot;  (публичное акционерное общество)" id="7730" name="АКБ &quot;Приморье&quot; ао" regnumber="10103001B" secid="PRMB"/>
-<row emitent_title="КИВИ ПиЭлСи (QIWI PLC)" id="26738" name="QIWI PLC" regnumber="" secid="QIWI"/>
-<row emitent_title="Публичное акционерное общество &quot;Распадская&quot;" id="2843" name="ПАО Распадская ао" regnumber="1-04-21725-N" secid="RASP"/>
-<row emitent_title="Raven Property group Limited" id="165888" name="Raven Property Group Limited" regnumber="" secid="RAVN"/>
-<row emitent_title="Публичное акционерное общество &quot;РБК&quot;" id="7580" name="РБК ПАО ао" regnumber="1-02-56413-H" secid="RBCM"/>
-<row emitent_title="&quot;Российский акционерный коммерческий дорожный банк&quot; (публичное акционерное общество)" id="27586" name="РоссийскийДорож Банк ПАО ао" regnumber="10201573B" secid="RDRB"/>
-<row emitent_title="Публичное акционерное общество Страховая Компания &quot;Росгосстрах&quot;" id="29392" name="Росгосстрах СК ПАО ао" regnumber="1-03-10003-Z" secid="RGSS"/>
-<row emitent_title="Публичное акционерное общество &quot;Ракетно-космическая корпорация &quot;Энергия&quot; имени С.П. Королёва&quot;" id="6251" name="РКК Энергия им.С.П.Королева ао" regnumber="1-03-01091-A" secid="RKKE"/>
-<row emitent_title="Публичное акционерное общество &quot;Группа Компаний  &quot;Роллман&quot;" id="18532" name="Группа Компаний Роллман ПАО ао" regnumber="1-01-05257-D" secid="RLMN"/>
-<row emitent_title="Публичное акционерное общество &quot;Группа Компаний  &quot;Роллман&quot;" id="68842" name="Группа Компаний Роллман ПАО ап" regnumber="2-01-05257-D" secid="RLMNP"/>
-<row emitent_title="Публичное акционерное общество Нефтегазовая компания &quot;РуссНефть&quot;" id="115169" name="РуссНефть НК ПАО ао" regnumber="1-02-39134-H" secid="RNFT"/>
-<row emitent_title="Публичное акционерное общество &quot;Русолово&quot;" id="25142" name="&quot;Русолово&quot; ПАО ао" regnumber="1-01-15065-A" secid="ROLO"/>
-<row emitent_title="Публичное акционерное общество РОСБАНК" id="2847" name="РОСБАНК ПАО ао" regnumber="10102272B" secid="ROSB"/>
-<row emitent_title="публичное акционерное общество &quot;Нефтяная компания &quot;Роснефть&quot;" id="2848" name="ПАО НК Роснефть" regnumber="1-02-00122-A" secid="ROSN"/>
-<row emitent_title="Публичное акционерное общество &quot;РОСИНТЕР РЕСТОРАНТС ХОЛДИНГ&quot;" id="6417" name="РОСИНТЕР РЕСТОРАНТС (ПАО)" regnumber="1-02-55033-E" secid="ROST"/>
-<row emitent_title="Публичное акционерное общество &quot;Российские сети&quot;" id="30378" name="&quot;Российские сети&quot; ПАО ао" regnumber="1-01-55385-E" secid="RSTI"/>
-<row emitent_title="Публичное акционерное общество &quot;Российские сети&quot;" id="30379" name="&quot;Российские сети&quot; ПАО ап" regnumber="2-01-55385-E" secid="RSTIP"/>
-<row emitent_title="Публичное акционерное общество &quot;Газпром газораспределение Ростов-на-Дону&quot;" id="16970" name="Газпром газорасп Р-н-Д ПАО ао" regnumber="1-02-30742-E" secid="RTGZ"/>
-<row emitent_title="Публичное акционерное общество &quot;Ростелеком&quot;" id="2849" name="Ростелеком (ПАО) ао." regnumber="1-01-00124-A" secid="RTKM"/>
-<row emitent_title="Публичное акционерное общество &quot;Ростелеком&quot;" id="2850" name="Ростелеком (ПАО) ап." regnumber="2-01-00124-A" secid="RTKMP"/>
-<row emitent_title="Публичное акционерное общество &quot;ТНС энерго Ростов-на-Дону&quot;" id="2851" name="ТНС энерго Ростов. ПАО ао" regnumber="1-01-50095-A" secid="RTSB"/>
-<row emitent_title="Публичное акционерное общество &quot;ТНС энерго Ростов-на-Дону&quot;" id="2852" name="ТНС энерго Ростов. ПАО ап" regnumber="2-01-50095-A" secid="RTSBP"/>
-<row emitent_title="Международная компания публичное акционерное общество &quot;Объединённая Компания &quot;РУСАЛ&quot;" id="82770" name="РУСАЛ ОК МКПАО ао" regnumber="1-01-16677-A" secid="RUAL"/>
-<row emitent_title="Публичное акционерное общество &quot;Русгрэйн Холдинг&quot;" id="7319" name="Русгрэйн Холдинг ПАО ао" regnumber="1-02-50043-H" secid="RUGR"/>
-<row emitent_title="Публичное акционерное общество &quot;ИНВЕСТИЦИОННАЯ КОМПАНИЯ ИК РУСС-ИНВЕСТ&quot;" id="8086" name="РУСС-ИНВЕСТ ИК ПАО ао" regnumber="1-01-00409-A" secid="RUSI"/>
-<row emitent_title="Публичное акционерное общество &quot;Русполимет&quot;" id="6452" name="Русполимет ПАО ао" regnumber="1-01-55157-E" secid="RUSP"/>
-<row emitent_title="Публичное акционерное общество &quot;Рязанская энергетическая сбытовая компания&quot;" id="3766" name="&quot;Рязанская энергосб.комп&quot; ПАО" regnumber="1-01-50092-A" secid="RZSB"/>
-<row emitent_title="Публичное акционерное общество энергетики и электрификации &quot;Самараэнерго&quot;" id="5026" name="Самараэнерго (ПАО) - ао" regnumber="1-02-00127-A" secid="SAGO"/>
-<row emitent_title="Публичное акционерное общество энергетики и электрификации &quot;Самараэнерго&quot;" id="5044" name="Самараэнерго (ПАО) - ап" regnumber="2-02-00127-A" secid="SAGOP"/>
-<row emitent_title="Публичное акционерное общество &quot;Саратовэнерго&quot;" id="5018" name="Саратовэнерго(ПАО)-ао" regnumber="1-02-00132-A" secid="SARE"/>
-<row emitent_title="Публичное акционерное общество &quot;Саратовэнерго&quot;" id="5041" name="Саратовэнерго(ПАО)-ап" regnumber="2-02-00132-A" secid="SAREP"/>
-<row emitent_title="Публичное акционерное общество &quot;Сбербанк России&quot;" id="5443" name="Сбербанк России ПАО ао" regnumber="10301481B" secid="SBER"/>
-<row emitent_title="Публичное акционерное общество &quot;Сбербанк России&quot;" id="5444" name="Сбербанк России ПАО ап" regnumber="20301481B" secid="SBERP"/>
-<row emitent_title="Публичное акционерное общество &quot;Селигдар&quot;" id="7986" name="ПАО &quot;Селигдар&quot;  ао" regnumber="1-01-32694-F" secid="SELG"/>
-<row emitent_title="Публичное акционерное общество &quot;Селигдар&quot;" id="13051" name="ПАО &quot;Селигдар&quot; ап" regnumber="2-01-32694-F" secid="SELGP"/>
-<row emitent_title="Публичное акционерное общество &quot;САФМАР Финансовые инвестиции&quot;" id="143717" name="САФМАР Фин.Инвестиции ПАО ао" regnumber="1-02-56453-P" secid="SFIN"/>
-<row emitent_title="Публичное акционерное общество &quot;Газпром нефть&quot;" id="3771" name="Газпром нефть ПАО ао" regnumber="1-01-00146-A" secid="SIBN"/>
-<row emitent_title="Публичное акционерное общество энергетики и электрификации &quot;Сахалинэнерго&quot;" id="86465" name="ПАО &quot;Сахалинэнерго&quot; ао" regnumber="1-03-00272-A" secid="SLEN"/>
-<row emitent_title="Публичное акционерное общество &quot;Сургутнефтегаз&quot;" id="3776" name="Сургутнефтегаз ПАО акции об." regnumber="1-01-00155-A" secid="SNGS"/>
-<row emitent_title="Публичное акционерное общество &quot;Сургутнефтегаз&quot;" id="3777" name="Сургутнефтегаз ПАО ап" regnumber="2-01-00155-A" secid="SNGSP"/>
-<row emitent_title="Публичное акционерное общество &quot;Ставропольэнергосбыт&quot;" id="6142" name="Ставрополэнергосбыт ПАО ао" regnumber="1-01-50119-A" secid="STSB"/>
-<row emitent_title="Публичное акционерное общество &quot;Ставропольэнергосбыт&quot;" id="6143" name="Ставрополэнергосбыт ПАО ап" regnumber="2-01-50119-A" secid="STSBP"/>
-<row emitent_title="Публичное акционерное общество &quot;СОЛЛЕРС&quot;" id="3784" name="ОАО &quot;СОЛЛЕРС&quot; ао" regnumber="1-01-02461-D" secid="SVAV"/>
-<row emitent_title="Публичное акционерное общество &quot;Тамбовская энергосбытовая компания&quot;" id="3791" name="ао&quot;Тамбов.энергсбыт.комп.&quot;ПАО" regnumber="1-01-65100-D" secid="TASB"/>
-<row emitent_title="Публичное акционерное общество &quot;Тамбовская энергосбытовая компания&quot;" id="3792" name="ап&quot;Тамбов.энергсбыт.комп.&quot;ПАО" regnumber="2-01-65100-D" secid="TASBP"/>
-<row emitent_title="Публичное акционерное общество &quot;Татнефть&quot; имени В.Д. Шашина" id="8068" name="ПАО &quot;Татнефть&quot; ао" regnumber="1-03-00161-A" secid="TATN"/>
-<row emitent_title="Публичное акционерное общество &quot;Татнефть&quot; имени В.Д. Шашина" id="8069" name="ПАО &quot;Татнефть&quot; ап 3 вып." regnumber="2-03-00161-A" secid="TATNP"/>
-<row emitent_title="JPMorgan Chase Bank, N.A. (TCS Group Holding PLC)" id="179016621" name="ГДР TCS Group Holding ORD SHS" regnumber="" secid="TCSG"/>
-<row emitent_title="Публичное акционерное общество &quot;Территориальная генерирующая компания №1&quot;" id="3794" name="ао ПАО &quot;ТГК-1&quot;" regnumber="1-01-03388-D" secid="TGKA"/>
-<row emitent_title="Публичное акционерное общество &quot;Территориальная генерирующая компания №2&quot;" id="3795" name="ао ПАО &quot;ТГК-2&quot;" regnumber="1-01-10420-A" secid="TGKB"/>
-<row emitent_title="Публичное акционерное общество &quot;Территориальная генерирующая компания №2&quot;" id="3798" name="ап ПАО &quot;ТГК-2&quot;" regnumber="2-01-10420-A" secid="TGKBP"/>
-<row emitent_title="Публичное акционерное общество &quot;Квадра - Генерирующая компания&quot;" id="3800" name="Квадра ПАО ао" regnumber="1-01-43069-A" secid="TGKD"/>
-<row emitent_title="Публичное акционерное общество &quot;Квадра - Генерирующая компания&quot;" id="3801" name="Квадра ПАО ап" regnumber="2-01-43069-A" secid="TGKDP"/>
-<row emitent_title="Публичное акционерное общество &quot;Территориальная генерирующая компания № 14&quot;" id="3810" name="ао ПАО &quot;ТГК-14&quot;" regnumber="1-01-22451-F" secid="TGKN"/>
-<row emitent_title="Публичное акционерное общество Группа компаний &quot;ТНС энерго&quot;" id="85583" name="ПАО ГК &quot;ТНС энерго&quot; ао" regnumber="1-01-15521-A" secid="TNSE"/>
-<row emitent_title="Публичное акционерное общество &quot;Томская распределительная компания&quot;" id="3815" name="ао &quot;Томская распределит.комп.&quot;" regnumber="1-01-50128-A" secid="TORS"/>
-<row emitent_title="Публичное акционерное общество &quot;Трубная Металлургическая Компания&quot;" id="3820" name="ПАО ТМК" regnumber="1-01-29031-H" secid="TRMK"/>
-<row emitent_title="Публичное акционерное общество &quot;Транснефть&quot;" id="5991" name="Транснефть ПАО акц.пр." regnumber="2-01-00206-A" secid="TRNFP"/>
-<row emitent_title="Публичное акционерное общество &quot;Таттелеком&quot;" id="3821" name="&quot;Таттелеком&quot; ПАО ао" regnumber="1-02-50049-A" secid="TTLK"/>
-<row emitent_title="Публичное акционерное общество &quot;Туймазинский завод автобетоновозов&quot;" id="6456" name="Туймаз. завод автобетоновозов" regnumber="1-01-30455-D" secid="TUZA"/>
-<row emitent_title="Публичное акционерное общество &quot;Объединенные Кредитные Системы&quot;" id="22086" name="ПАО ОКС ао" regnumber="1-01-15296-A" secid="UCSS"/>
-<row emitent_title="Публичное акционерное общество &quot;Угольная компания &quot;Южный Кузбасс&quot;" id="6457" name="Южный Кузбасс ПАО ао" regnumber="1-02-10591-F" secid="UKUZ"/>
-<row emitent_title="Публичное акционерное общество &quot;Объединенная авиастроительная корпорация&quot;" id="7097" name="Об.авиастр.корп. ПАО ао" regnumber="1-02-55306-E" secid="UNAC"/>
-<row emitent_title="Публичное акционерное общество &quot;Южно-Уральский никелевый комбинат&quot;" id="12624" name="Южно-Уральский никел. комб. ао" regnumber="1-01-00197-A" secid="UNKL"/>
-<row emitent_title="Публичное акционерное общество &quot;Юнипро&quot;" id="108124" name="Юнипро ПАО ао" regnumber="1-02-65104-D" secid="UPRO"/>
-<row emitent_title="Публичное акционерное общество &quot;Уральская кузница&quot;" id="13052" name="ПАО &quot;Уральская кузница&quot; ао" regnumber="1-01-32341-D" secid="URKZ"/>
-<row emitent_title="Публичное акционерное общество &quot;БАНК УРАЛСИБ&quot;" id="8178" name="БАНК УРАЛСИБ ПАО ао" regnumber="10200030B" secid="USBN"/>
-<row emitent_title="Публичное акционерное общество &quot;Авиакомпания &quot;ЮТэйр&quot;" id="3839" name="Авиакомания &quot;ЮТэйр&quot; (ПАО) ао" regnumber="1-01-00077-F" secid="UTAR"/>
-<row emitent_title="Публичное акционерное общество &quot;Научно-производственная корпорация &quot;Объединенная Вагонная Компания&quot;" id="83894" name="ПАО НПК ОВК ао" regnumber="1-01-82031-H" secid="UWGN"/>
-<row emitent_title="Публичное акционерное общество &quot;Волгоградэнергосбыт&quot;" id="3848" name="&quot;Волгоград.энергосбыткомп&quot; ПАО" regnumber="1-01-65103-D" secid="VGSB"/>
-<row emitent_title="Публичное акционерное общество &quot;Волгоградэнергосбыт&quot;" id="3849" name="&quot;Волгоград.энергосбыткомп&quot; ПАО" regnumber="2-01-65103-D" secid="VGSBP"/>
-<row emitent_title="Публичное акционерное общество &quot;Варьеганнефтегаз&quot;" id="8179" name="Варьеганнефтегаз ПАО ао" regnumber="1-01-00017-A" secid="VJGZ"/>
-<row emitent_title="Публичное акционерное общество &quot;Варьеганнефтегаз&quot;" id="8180" name="Варьеганнефтегаз ПАО ап" regnumber="2-01-00017-A" secid="VJGZP"/>
-<row emitent_title="Публичное акционерное общество &quot;Владимирский химический завод&quot;" id="3851" name="Владимирский химич.з-д(ПАО) ао" regnumber="1-02-04847-A" secid="VLHZ"/>
-<row emitent_title="Публичное акционерное общество &quot;ТНС энерго Воронеж&quot;" id="3865" name="ТНС энерго Воронеж ПАО ао" regnumber="1-01-55029-E" secid="VRSB"/>
-<row emitent_title="Публичное акционерное общество &quot;ТНС энерго Воронеж&quot;" id="3866" name="ТНС энерго Воронеж ПАО ап" regnumber="2-01-55029-E" secid="VRSBP"/>
-<row emitent_title="публичное акционерное общество &quot;Корпорация ВСМПО-АВИСМА&quot;" id="3867" name="Корп. ВСМПО-АВИСМА (ПАО) ао" regnumber="1-01-30202-D" secid="VSMO"/>
-<row emitent_title="Публичное акционерное общество &quot;Выборгский судостроительный завод&quot;" id="16499" name="Выборгский Суд.Завод ПАО ао" regnumber="1-01-02203-D" secid="VSYD"/>
-<row emitent_title="Публичное акционерное общество &quot;Выборгский судостроительный завод&quot;" id="16500" name="Выборгский Суд.Завод ПАО ап" regnumber="2-01-02203-D" secid="VSYDP"/>
-<row emitent_title="Банк ВТБ (публичное акционерное общество)" id="3868" name="ао ПАО Банк ВТБ" regnumber="10401000B" secid="VTBR"/>
-<row emitent_title="Публичное акционерное общество Банк &quot;Возрождение&quot;" id="3882" name="Банк &quot;Возрождение&quot; - ап" regnumber="20201439B" secid="VZRZP"/>
-<row emitent_title="Публичное акционерное общество &quot;Центр международной торговли&quot;" id="3884" name="&quot;Центр междун. торговли&quot;ПАО ао" regnumber="1-01-01837-A" secid="WTCM"/>
-<row emitent_title="Публичное акционерное общество &quot;Центр международной торговли&quot;" id="3885" name="&quot;Центр междун. торговли&quot;ПАО ап" regnumber="2-01-01837-A" secid="WTCMP"/>
-<row emitent_title="Публичное акционерное общество &quot;Якутская топливно-энергетическая компания&quot;" id="8149" name="Якутская топл.-энерг. комп. ао" regnumber="1-01-20510-F" secid="YAKG"/>
-<row emitent_title="Публичное акционерное общество &quot;Якутскэнерго&quot;" id="3892" name="АК &quot;Якутскэнерго&quot; (ПАО) ао" regnumber="1-01-00304-A" secid="YKEN"/>
-<row emitent_title="Публичное акционерное общество &quot;Якутскэнерго&quot;" id="6384" name="АК &quot;Якутскэнерго&quot; (ПАО) ап" regnumber="2-01-00304-A" secid="YKENP"/>
-<row emitent_title="Публичная Компания с ограниченной ответственностью Яндекс Н.В. (Public Limited Liability Company Yandex N.V.)" id="69458" name="PLLC Yandex N.V. class A shs" regnumber="" secid="YNDX"/>
-<row emitent_title="Публичное акционерное общество &quot;ТНС энерго Ярославль&quot;" id="3893" name="ТНС энерго Ярославль ПАО ао" regnumber="1-01-50099-A" secid="YRSB"/>
-<row emitent_title="Публичное акционерное общество &quot;ТНС энерго Ярославль&quot;" id="3894" name="ТНС энерго Ярославль ПАО ап" regnumber="2-01-50099-A" secid="YRSBP"/>
-<row emitent_title="Публичное акционерное общество &quot;Завод имени И.А. Лихачева&quot;" id="8150" name="Завод им. И.А.Лихачева ПАО ао" regnumber="1-02-00036-A" secid="ZILL"/>
-<row emitent_title="Публичное акционерное общество &quot;ЗВЕЗДА&quot;" id="8199" name="ЗВЕЗДА ПАО ао" regnumber="1-01-00169-D" secid="ZVEZ"/>
+<row emitent_title="Публичное акционерное общество &quot;Абрау – Дюрсо&quot;" name="Абрау-Дюрсо ПАО ао" regnumber="1-02-12500-A" secid="ABRD"/>
+<row emitent_title="ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО &quot;АКЦИОНЕРНАЯ ФИНАНСОВАЯ КОРПОРАЦИЯ &quot;СИСТЕМА&quot;" name="АФК &quot;Система&quot; ПАО ао" regnumber="1-05-01669-A" secid="AFKS"/>
+<row emitent_title="Публичное акционерное общество &quot;Аэрофлот – российские авиалинии&quot;" name="Аэрофлот-росс.авиалин(ПАО)ао" regnumber="1-01-00010-A" secid="AFLT"/>
+<row emitent_title="Bank of New York Mellon Corporation (Глобальные депозитарные расписки на акции ROS AGRO PLC)" name="ГДР ROS AGRO PLC ORD SHS" regnumber="" secid="AGRO"/>
+<row emitent_title="Публичное акционерное общество &quot;Акрон&quot;"  name="Акрон ПАО ао" regnumber="1-03-00207-A" secid="AKRN"/>
+<row emitent_title="Публичное акционерное общество &quot;Бест Эффортс Банк&quot;"  name="Бест Эффортс Банк ПАО ао" regnumber="10400435B" secid="ALBK"/>
+<row emitent_title="Публичное акционерное общество &quot;АЛРОСА-Нюрба&quot;"  name="АЛРОСА-Нюрба ПАО ао" regnumber="1-01-20179-F" secid="ALNU"/>
+<row emitent_title="Акционерная компания &quot;АЛРОСА&quot; (публичное акционерное общество)"  name="АЛРОСА ПАО ао" regnumber="1-03-40046-N" secid="ALRS"/>
+<row emitent_title="Публичное акционерное общество &quot;Ашинский металлургический завод&quot;"  name=" Ашинский метзавод ПАО ао" regnumber="1-03-45219-D" secid="AMEZ"/>
+<row emitent_title="Публичное акционерное общество &quot;Аптечная сеть 36,6&quot;"  name="ПАО &quot;Аптечная сеть 36,6&quot; ао" regnumber="1-01-07335-A" secid="APTK"/>
+<row emitent_title="Публичное  акционерное общество &quot;Русская Аквакультура&quot;"  name="Русская Аквакультура ПАО ао" regnumber="1-01-04461-D" secid="AQUA"/>
+<row emitent_title="ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО &quot;УПРАВЛЯЮЩАЯ КОМПАНИЯ &quot;АРСАГЕРА&quot;"  name="УК Арсагера ПАО-ао" regnumber="1-01-03163-D" secid="ARSA"/>
+<row emitent_title="Публичное акционерное общество &quot;Астраханская энергосбытовая компания&quot;"  name="&quot;Астраханская ЭСК&quot; ПАО" regnumber="1-01-55064-E" secid="ASSB"/>
+<row emitent_title="Акционерный Коммерческий банк &quot;АВАНГАРД&quot; - публичное акционерное общество"  name="АКБ &quot;АВАНГАРД&quot; ПАО ао" regnumber="10102879B" secid="AVAN"/>
+<row emitent_title="Публичное акционерное общество &quot;Акционерная нефтяная Компания &quot;Башнефть&quot;"  name="Башнефть АНК ао" regnumber="1-01-00013-A" secid="BANE"/>
+<row emitent_title="Публичное акционерное общество &quot;Акционерная нефтяная Компания &quot;Башнефть&quot;"  name="Башнефть АНК ап" regnumber="2-01-00013-A" secid="BANEP"/>
+<row emitent_title="Публичное акционерное общество &quot;Белуга Групп&quot;"  name="Белуга Групп ПАО ао" regnumber="1-01-55052-E" secid="BELU"/>
+<row emitent_title="Публичное акционерное общество &quot;Башинформсвязь&quot;"  name="Башинформсвязь(ПАО) ап" regnumber="2-01-00011-A" secid="BISVP"/>
+<row emitent_title="Открытое акционерное общество &quot;Белон&quot;"  name="Белон ОАО ао" regnumber="1-06-10167-F" secid="BLNG"/>
+<row emitent_title="Публичное акционерное общество &quot;Бурятзолото&quot;"  name="Бурятзолото ПАО ао" regnumber="1-06-20577-F" secid="BRZL"/>
+<row emitent_title="ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО &quot;БАНК &quot;САНКТ-ПЕТЕРБУРГ&quot;"  name="ПАО &quot;Банк &quot;Санкт-Петербург&quot; ао" regnumber="10300436B" secid="BSPB"/>
+<row emitent_title="&quot;МОСКОВСКИЙ КРЕДИТНЫЙ БАНК&quot; (публичное акционерное общество)"  name="&quot;МКБ&quot; ПАО ао" regnumber="10101978B" secid="CBOM"/>
+<row emitent_title="Публичное акционерное общество &quot;Челябинский трубопрокатный завод&quot;"  name="&quot;ЧТПЗ&quot; ПАО ао" regnumber="1-01-00182-A" secid="CHEP"/>
+<row emitent_title="Публичное акционерное общество &quot;РН-Западная Сибирь&quot;"  name="РН-Западная Сибирь ПАО ао" regnumber="1-01-00185-A" secid="CHGZ"/>
+<row emitent_title="Публичное акционерное общество &quot;Челябинский кузнечно-прессовый завод&quot;"  name="&quot;ЧКПЗ&quot; ПАО ао" regnumber="1-03-45058-D" secid="CHKZ"/>
+<row emitent_title="Публичное акционерное общество &quot;Северсталь&quot;"  name="Северсталь (ПАО)ао" regnumber="1-02-00143-A" secid="CHMF"/>
+<row emitent_title="Публичное акционерное общество &quot;Челябинский металлургический комбинат&quot;"  name="&quot;ЧМК&quot; ПАО ао" regnumber="1-01-00080-A" secid="CHMK"/>
+<row emitent_title="Публичное акционерное общество &quot;Центральный телеграф&quot;"  name="&quot;Центральный Телеграф&quot; ПАО ао" regnumber="1-03-00327-A" secid="CNTL"/>
+<row emitent_title="Публичное акционерное общество &quot;Центральный телеграф&quot;"  name="&quot;Центральный Телеграф&quot; ПАО ап" regnumber="2-03-00327-A" secid="CNTLP"/>
+<row emitent_title="Публичное акционерное общество &quot;Дагестанская энергосбытовая компания&quot;"  name="ао Дагестанская энергосб.комп." regnumber="1-01-55094-E" secid="DASB"/>
+<row emitent_title="Публичное акционерное общество Завод экологической техники и экопитания &quot;ДИОД&quot;"  name="Завод ДИОД ПАО ао" regnumber="1-03-06923-A" secid="DIOD"/>
+<row emitent_title="Публичное акционерное общество &quot;Детский мир&quot;"  name="ПАО Детский мир" regnumber="1-02-00844-A" secid="DSKY"/>
+<row emitent_title="Публичное акционерное общество &quot;Дальневосточная энергетическая компания&quot;"  name="&quot;ДЭК&quot; ПАО ао" regnumber="1-01-55275-E" secid="DVEC"/>
+<row emitent_title="Открытое акционерное общество &quot;Донской завод радиодеталей&quot;"  name="Донской завод радиодеталей ао" regnumber="1-01-02677-A" secid="DZRD"/>
+<row emitent_title="Открытое акционерное общество &quot;Донской завод радиодеталей&quot;"  name="Донской завод радиодеталей ап" regnumber="2-01-02677-A" secid="DZRDP"/>
+<row emitent_title="Публичное акционерное общество &quot;Европейская Электротехника&quot;"  name="&quot;ЕвропЭлектротехника&quot; ПАО ао" regnumber="1-01-83993-H" secid="EELT"/>
+<row emitent_title="Публичное акционерное общество &quot;Электроцинк&quot;"  name="Электроцинк ПАО ао" regnumber="1-02-30394-E" secid="ELTZ"/>
+<row emitent_title="Международная компания публичное акционерное общество &quot;ЭН+ ГРУП&quot;"  name="МКПАО ЭН+ ГРУП ао" regnumber="1-01-16625-A" secid="ENPG"/>
+<row emitent_title="Публичное акционерное общество &quot;Энел Россия&quot;"  name="&quot;Энел Россия&quot; ПАО" regnumber="1-01-50077-A" secid="ENRU"/>
+<row emitent_title="Bank of New York Mellon Corporation (Глобальные депозитарные расписки на акции Etalon Group Ltd.)"  name="ГДР ETALON GROUP PLC ORD SHS" regnumber="" secid="ETLN"/>
+<row emitent_title="Публичное акционерное общество &quot;Федеральная сетевая компания Единой энергетической системы&quot;"  name="&quot;ФСК ЕЭС&quot; ПАО ао" regnumber="1-01-65018-D" secid="FEES"/>
+<row emitent_title="Публичное акционерное общество &quot;Дальневосточное морское пароходство&quot;"  name="ДВ морское пароходство ПАО ао" regnumber="1-03-00032-A" secid="FESH"/>
+<row emitent_title="The Bank of New York Mellon (X5 Retail Group N.V.)"  name="ГДР X5 RetailGroup N.V.ORD SHS" regnumber="" secid="FIVE"/>
+<row emitent_title="Публичное акционерное общество &quot;ГАЗ&quot;"  name="ГАЗ ПАО ао" regnumber="1-01-00029-A" secid="GAZA"/>
+<row emitent_title="Публичное акционерное общество &quot;ГАЗ&quot;"  name="ГАЗ ПАО ап" regnumber="2-02-00029-A" secid="GAZAP"/>
+<row emitent_title="Публичное акционерное общество &quot;Газпром&quot;"  name="&quot;Газпром&quot; (ПАО) ао" regnumber="1-02-00028-A" secid="GAZP"/>
+<row emitent_title="Публичное акционерное общество &quot;Группа Черкизово&quot;"  name="Группа Черкизово ПАО-ао" regnumber="1-02-10797-A" secid="GCHE"/>
+<row emitent_title="Публичное акционерное общество &quot;Международный Медицинский Центр Обработки и Криохранения Биоматериалов&quot;"  name="ПАО ММЦБ ао" regnumber="1-01-85932-H" secid="GEMA"/>
+<row emitent_title="Публичное акционерное общество &quot;Горно-металлургическая компания &quot;Норильский никель&quot;"  name="ГМК &quot;Нор.Никель&quot; ПАО ао" regnumber="1-01-40155-F" secid="GMKN"/>
+<row emitent_title="Публичное акционерное общество &quot;ГЛОБАЛТРАК МЕНЕДЖМЕНТ&quot;"  name="ПАО &quot;ГТМ&quot; ао" regnumber="1-01-84907-H" secid="GTRK"/>
+<row emitent_title="Публичное акционерное общество &quot;Галс-Девелопмент&quot;"  name="ПАО &quot;Галс-Девелопмент&quot;" regnumber="1-01-01017-H" secid="HALS"/>
+<row emitent_title="Публичное акционерное общество &quot;Химпром&quot;"  name="Химпром ПАО ап" regnumber="2-01-55076-D" secid="HIMCP"/>
+<row emitent_title="Публичное акционерное общество &quot;Федеральная гидрогенерирующая компания - РусГидро&quot;"  name="ПАО &quot;РусГидро&quot;" regnumber="1-01-55038-E" secid="HYDR"/>
+<row emitent_title="Публичное акционерное общество &quot;Ижсталь&quot;"  name="Ижсталь ПАО ао 2в." regnumber="1-02-30078-D" secid="IGST"/>
+<row emitent_title="Публичное акционерное общество &quot;Ижсталь&quot;"  name="Ижсталь ПАО ап" regnumber="2-02-30078-D" secid="IGSTP"/>
+<row emitent_title="Публичное акционерное общество &quot;ИНГРАД&quot;"  name="ИНГРАД ПАО ао" regnumber="1-01-50020-A" secid="INGR"/>
+<row emitent_title="Публичное акционерное общество &quot;Интер РАО ЕЭС&quot;"  name="&quot;Интер РАО&quot; ПАО ао" regnumber="1-04-33498-E" secid="IRAO"/>
+<row emitent_title="Иркутское публичное акционерное общество энергетики и электрификации"  name="Иркутскэнерго(ПАО)-ао" regnumber="1-01-00041-A" secid="IRGZ"/>
+<row emitent_title="публичное акционерное общество &quot;Научно-производственная корпорация &quot;Иркут&quot;"  name="Корпорация&quot;ИРКУТ&quot; ПАО ак.об.-3" regnumber="1-03-00040-A" secid="IRKT"/>
+<row emitent_title="Публичное акционерное общество &quot;Институт Стволовых Клеток Человека&quot;"  name="ПАО &quot;ИСКЧ&quot;" regnumber="1-01-08902-A" secid="ISKJ"/>
+<row emitent_title="Публичное акционерное общество &quot;Славнефть-Ярославнефтеоргсинтез&quot;"  name="Славнефть-ЯНОС (ПАО) ао" regnumber="1-01-00199-A" secid="JNOS"/>
+<row emitent_title="Публичное акционерное общество &quot;Славнефть-Ярославнефтеоргсинтез&quot;"  name="Славнефть-ЯНОС (ПАО) ап" regnumber="2-01-00199-A" secid="JNOSP"/>
+<row emitent_title="Публичное акционерное общество &quot;КуйбышевАзот&quot;"  name="Куйбышевазот ПАО ао" regnumber="1-01-00067-A" secid="KAZT"/>
+<row emitent_title="Публичное акционерное общество &quot;КуйбышевАзот&quot;"  name="Куйбышевазот ПАО ап" regnumber="2-01-00067-A" secid="KAZTP"/>
+<row emitent_title="Публичное акционерное общество &quot;ТНС энерго Кубань&quot;"  name="ТНС энерго Кубань ПАО ао" regnumber="1-01-55218-E" secid="KBSB"/>
+<row emitent_title="Публичное акционерное общество &quot;Кузбасская Топливная Компания&quot;"  name="Кузбас.Топл.Комп. ПАО ао" regnumber="1-02-11330-F" secid="KBTK"/>
+<row emitent_title="Публичное акционерное общество энергетики и электрификации &quot;Камчатскэнерго&quot;"  name="Камчатскэнерго ПАО ао" regnumber="1-02-00235-A" secid="KCHE"/>
+<row emitent_title="Публичное акционерное общество &quot;Курганская генерирующая компания&quot;"  name="Курганская генер.комп.ПАО ао" regnumber="1-01-55226-E" secid="KGKC"/>
+<row emitent_title="Публичное акционерное общество &quot;Курганская генерирующая компания&quot;"  name="Курганская генер. комп. ПАО ап" regnumber="2-01-55226-E" secid="KGKCP"/>
+<row emitent_title="Публичное акционерное общество &quot;Калужская сбытовая компания&quot;"  name="ао&quot;Калужская сбыт.комп.&quot;ПАО" regnumber="1-01-65057-D" secid="KLSB"/>
+<row emitent_title="Публичное акционерное общество &quot;КАМАЗ&quot;"  name="КАМАЗ ПАО" regnumber="1-08-55010-D" secid="KMAZ"/>
+<row emitent_title="публичное акционерное общество &quot;Ковровский механический завод&quot;"  name="Ковровский механический завод" regnumber="1-02-05376-A" secid="KMEZ"/>
+<row emitent_title="Публичное акционерное общество &quot;Коршуновский горно-обогатительный комбинат&quot;"  name="Коршуновский ГОК ПАО ао" regnumber="1-01-20992-F" secid="KOGK"/>
+<row emitent_title="Публичное акционерное общество &quot;Саратовский нефтеперерабатывающий завод&quot;"  name="Саратовский НПЗ ПАО ао" regnumber="1-01-00248-A" secid="KRKN"/>
+<row emitent_title="Публичное акционерное общество &quot;Саратовский нефтеперерабатывающий завод&quot;"  name="Саратовский НПЗ ПАО ап" regnumber="2-01-00248-A" secid="KRKNP"/>
+<row emitent_title="Публичное акционерное общество &quot;Таганрогский котлостроительный завод &quot;Красный котельщик&quot;"  name="ТКЗ Красный котельщик ПАО ап" regnumber="2-01-30301-E" secid="KRKOP"/>
+<row emitent_title="Публичное акционерное общество &quot;Московская кондитерская фабрика &quot;Красный Октябрь&quot;"  name="&quot;КрасныйОктябрь&quot; ПАО - ао" regnumber="1-02-00060-A" secid="KROT"/>
+<row emitent_title="Публичное акционерное общество &quot;Московская кондитерская фабрика &quot;Красный Октябрь&quot;"  name="КрасныйОктябрь-1п" regnumber="2-01-00060-A" secid="KROTP"/>
+<row emitent_title="Публичное акционерное общество &quot;Красноярскэнергосбыт&quot;"  name="Красноярскэнергосбыт ао" regnumber="1-01-55147-E" secid="KRSB"/>
+<row emitent_title="Публичное акционерное общество &quot;Красноярскэнергосбыт&quot;"  name="Красноярскэнергосбыт ап" regnumber="2-01-55147-E" secid="KRSBP"/>
+<row emitent_title="Публичное акционерное общество &quot;Костромская сбытовая компания&quot;"  name="&quot;Костромск.сбыт.комп&quot; ПАО" regnumber="1-01-55051-E" secid="KTSB"/>
+<row emitent_title="Публичное акционерное общество &quot;Костромская сбытовая компания&quot;"  name="&quot;Костромск.сбыт.комп&quot; ПАО" regnumber="2-01-55051-E" secid="KTSBP"/>
+<row emitent_title="Публичное акционерное общество энергетики и электрификации Кубани"  name="&quot;Кубаньэнерго&quot; ПАО" regnumber="1-02-00063-A" secid="KUBE"/>
+<row emitent_title="Публичное акционерное общество Банк &quot;Кузнецкий&quot;"  name="Банк &quot;Кузнецкий&quot; ПАО ао" regnumber="10100609B" secid="KUZB"/>
+<row emitent_title="Казанское публичное акционерное общество &quot;Органический синтез&quot;"  name="ПАО &quot;Органический синтез&quot; ао" regnumber="1-02-55245-D" secid="KZOS"/>
+<row emitent_title="Казанское публичное акционерное общество &quot;Органический синтез&quot;"  name="ПАО &quot;Органический синтез&quot; ап" regnumber="2-02-55245-D" secid="KZOSP"/>
+<row emitent_title="Публичное акционерное общество &quot;Фармсинтез&quot;"  name="Фармсинтез ПАО ао" regnumber="1-02-09669-J" secid="LIFE"/>
+<row emitent_title="Публичное акционерное общество &quot;Нефтяная компания &quot;ЛУКОЙЛ&quot;"  name="НК ЛУКОЙЛ (ПАО) - ао" regnumber="1-01-00077-A" secid="LKOH"/>
+<row emitent_title="Deutsche Bank Trust Company Americas (Лента ПиЭлСи)"  name="Лента ПиЭлСи др" regnumber="" secid="LNTA"/>
+<row emitent_title="Ленское золотодобывающее публичное акционерное общество &quot;Лензолото&quot;"  name="&quot;Лензолото&quot; ПАО ао" regnumber="1-02-40433-N" secid="LNZL"/>
+<row emitent_title="Ленское золотодобывающее публичное акционерное общество &quot;Лензолото&quot;"  name="&quot;Лензолото&quot; ПАО ап" regnumber="2-02-40433-N" secid="LNZLP"/>
+<row emitent_title="Открытое акционерное общество &quot;Липецкая энергосбытовая компания&quot;"  name="Липецкая энергосбыт.ком.ОАО ао" regnumber="1-01-65097-D" secid="LPSB"/>
+<row emitent_title="Публичное акционерное общество &quot;Россети Ленэнерго&quot;"  name="Россети Ленэнерго ПАО-ао" regnumber="1-01-00073-A" secid="LSNG"/>
+<row emitent_title="Публичное акционерное общество &quot;Россети Ленэнерго&quot;"  name="Россети Ленэнерго ПАО-ап" regnumber="2-01-00073-A" secid="LSNGP"/>
+<row emitent_title="Публичное акционерное общество &quot;Группа ЛСР&quot;"  name="Группа ЛСР ПАО ао" regnumber="1-01-55234-E" secid="LSRG"/>
+<row emitent_title="Открытое акционерное общество &quot;Левенгук&quot;"  name="Левенгук ОАО ао" regnumber="1-01-04329-D" secid="LVHK"/>
+<row emitent_title="Публичное акционерное общество энергетики и электрификации &quot;Магаданэнерго&quot;"  name="&quot;Магаданэнерго&quot; ПАО ао" regnumber="1-01-00254-A" secid="MAGE"/>
+<row emitent_title="Публичное акционерное общество энергетики и электрификации &quot;Магаданэнерго&quot;"  name="&quot;Магаданэнерго&quot; ПАО ап" regnumber="2-01-00254-A" secid="MAGEP"/>
+<row emitent_title="Публичное акционерное общество &quot;Магнитогорский металлургический комбинат&quot;"  name="&quot;Магнитогорск.мет.комб&quot; ПАО ао" regnumber="1-03-00078-A" secid="MAGN"/>
+<row emitent_title="Citibank N.A.(Mail.ru Group Limited)"  name="ГДР Mail.ru Gr Limited ORD SHS" regnumber="" secid="MAIL"/>
+<row emitent_title="Публичное акционерное общество &quot;Славнефть - Мегионнефтегаз&quot;"  name="ао &quot;Славнефть-Мегионнефтегаз&quot;" regnumber="1-03-00149-A" secid="MFGS"/>
+<row emitent_title="Публичное акционерное общество &quot;Славнефть - Мегионнефтегаз&quot;"  name="ап Мегионнефтегаз" regnumber="2-03-00149-A" secid="MFGSP"/>
+<row emitent_title="Публичное акционерное общество &quot;Магнит&quot;"  name="&quot;Магнит&quot; ПАО ао" regnumber="1-01-60525-P" secid="MGNT"/>
+<row emitent_title="Открытое акционерное общество &quot;Соликамский магниевый завод&quot;"  name="Соликамский магн.завод(ОАО)ао" regnumber="1-01-00283-A" secid="MGNZ"/>
+<row emitent_title="Публичное акционерное общество &quot;Московская городская телефонная сеть&quot;"  name="ПАО &quot;МГТС&quot; ао (5 в)" regnumber="1-05-00083-A" secid="MGTS"/>
+<row emitent_title="Публичное акционерное общество &quot;Московская городская телефонная сеть&quot;"  name="ПАО &quot;МГТС&quot; ап (4 в)" regnumber="2-04-00083-A" secid="MGTSP"/>
+<row emitent_title="Публичное акционерное общество &quot;ТНС энерго Марий Эл&quot;"  name="ТНС энерго Марий Эл ПАО ао" regnumber="1-01-50086-A" secid="MISB"/>
+<row emitent_title="Публичное акционерное общество &quot;ТНС энерго Марий Эл&quot;"  name="ТНС энерго Марий Эл ПАО ап" regnumber="2-01-50086-A" secid="MISBP"/>
+<row emitent_title="Публичное акционерное общество &quot;Московская Биржа ММВБ-РТС&quot;"  name="ПАО Московская Биржа" regnumber="1-05-08443-H" secid="MOEX"/>
+<row emitent_title="Публичное акционерное общество &quot;Межрегиональная распределительная сетевая компания Центра&quot;"  name="&quot;МРСК Центра&quot; ПАО ао" regnumber="1-01-10214-A" secid="MRKC"/>
+<row emitent_title="Публичное акционерное общество &quot;Россети Северный Кавказ&quot;"  name="Россети Сев. Кавказ ао" regnumber="1-01-34747-E" secid="MRKK"/>
+<row emitent_title="Публичное акционерное общество &quot;Межрегиональная распределительная сетевая компания Центра и Приволжья&quot;"  name="МРСК Центр. и Приволж. ао" regnumber="1-01-12665-E" secid="MRKP"/>
+<row emitent_title="Публичное акционерное общество &quot;Россети Сибирь&quot;"  name="Россети Сибирь ао" regnumber="1-01-12044-F" secid="MRKS"/>
+<row emitent_title="Открытое акционерное общество &quot;Межрегиональная распределительная сетевая компания Урала&quot;"  name="МРСК Урала (ОАО) ао" regnumber="1-01-32501-D" secid="MRKU"/>
+<row emitent_title="Публичное акционерное общество &quot;Россети Волга&quot;"  name="Россети Волга ао" regnumber="1-01-04247-E" secid="MRKV"/>
+<row emitent_title="Публичное акционерное общество &quot;Россети Юг&quot;"  name="Россети Юг  (ПАО) ао" regnumber="1-01-34956-E" secid="MRKY"/>
+<row emitent_title="Публичное акционерное общество &quot;Межрегиональная распределительная сетевая компания Северо-Запада&quot;"  name="МРСК Северо-Запада ао" regnumber="1-01-03347-D" secid="MRKZ"/>
+<row emitent_title="Публичное акционерное общество &quot;Мордовская энергосбытовая компания&quot;"  name="Мордовск.энергсбыт.комп.ПАО ао" regnumber="1-01-55055-E" secid="MRSB"/>
+<row emitent_title="Публичное акционерное общество энергетики и электрификации &quot;Мосэнерго&quot;"  name="МосЭнерго акции обыкн." regnumber="1-01-00085-A" secid="MSNG"/>
+<row emitent_title="Публичное акционерное общество &quot;Россети Московский регион&quot;"  name="ПАО Россети Моск.рег. ао" regnumber="1-01-65116-D" secid="MSRS"/>
+<row emitent_title="Публичное акционерное общество &quot;МОСТОТРЕСТ&quot;"  name="ПАО &quot;МОСТОТРЕСТ&quot; ао" regnumber="1-03-02472-A" secid="MSTT"/>
+<row emitent_title="Публичное акционерное общество &quot;Мечел&quot;"  name="Мечел ПАО ао" regnumber="1-01-55005-E" secid="MTLR"/>
+<row emitent_title="Публичное акционерное общество &quot;Мечел&quot;"  name="Мечел ПАО ап" regnumber="2-01-55005-E" secid="MTLRP"/>
+<row emitent_title="Публичное акционерное общество &quot;Мобильные ТелеСистемы&quot;"  name="Мобильные ТелеСистемы ПАО ао" regnumber="1-01-04715-A" secid="MTSS"/>
+<row emitent_title="Публичное акционерное общество &quot;М.видео&quot;"  name="&quot;М.видео&quot; ПАО ао" regnumber="1-02-11700-A" secid="MVID"/>
+<row emitent_title="Публичное акционерное общество Научно-производственное объединение &quot;Наука&quot;"  name="НПО Наука ао" regnumber="1-01-04440-A" secid="NAUK"/>
+<row emitent_title="Публичное акционерное общество &quot;Нефтекамский автозавод&quot;"  name="Нефтекамский автозавод ПАО ао" regnumber="1-01-30520-D" secid="NFAZ"/>
+<row emitent_title="Публичное акционерное общество &quot;Новороссийский комбинат хлебопродуктов&quot;"  name="НКХП ПАО ао" regnumber="1-03-35684-E" secid="NKHP"/>
+<row emitent_title="Публичное Акционерное Общество &quot;Нижнекамскнефтехим&quot;"  name="&quot;Нижнекамскнефтехим&quot; ПАО ао" regnumber="1-02-00096-A" secid="NKNC"/>
+<row emitent_title="Публичное Акционерное Общество &quot;Нижнекамскнефтехим&quot;"  name="&quot;Нижнекамскнефтехим&quot; ПАО ап" regnumber="2-02-00096-A" secid="NKNCP"/>
+<row emitent_title="Публичное акционерное общество &quot;Нижнекамскшина&quot;"  name="Нижнекамскшина ПАО ао" regnumber="1-02-55032-D" secid="NKSH"/>
+<row emitent_title="Публичное акционерное общество &quot;Новолипецкий металлургический комбинат&quot;"  name="ПАО &quot;НЛМК&quot; ао" regnumber="1-01-00102-A" secid="NLMK"/>
+<row emitent_title="Публичное акционерное общество &quot;Новороссийский морской торговый порт&quot;"  name="НМТП (ПАО) ао" regnumber="1-01-30251-E" secid="NMTP"/>
+<row emitent_title="Публичное акционерное общество &quot;ТНС энерго Нижний Новгород&quot;"  name="ТНС энерго Нижний Новг.ПАО ао" regnumber="1-01-55072-E" secid="NNSB"/>
+<row emitent_title="Публичное акционерное общество &quot;ТНС энерго Нижний Новгород&quot;"  name="ТНС энерго Нижний Новг.ПАО ап" regnumber="2-01-55072-E" secid="NNSBP"/>
+<row emitent_title="Публичное акционерное общество &quot;Наука-Связь&quot;"  name="Наука-Связь ПАО ао" regnumber="1-01-12689-A" secid="NSVZ"/>
+<row emitent_title="публичное акционерное общество &quot;НОВАТЭК&quot;"  name="ПАО &quot;НОВАТЭК&quot; ао" regnumber="1-02-00268-E" secid="NVTK"/>
+<row emitent_title="Публичное акционерное общество &quot;ОР&quot;"  name="ПАО &quot;ОР&quot; ао" regnumber="1-01-50161-A" secid="OBUV"/>
+<row emitent_title="Публичное акционерное общество &quot;Вторая генерирующая компания оптового рынка электроэнергии&quot;"  name="ОГК-2 ПАО ао" regnumber="1-02-65105-D" secid="OGKB"/>
+<row emitent_title="Публичное акционерное общество Объединенные машиностроительные заводы (Группа Уралмаш-Ижора)"  name="ап&quot;Объединён.  маш. заводы&quot;" regnumber="2-01-30174-D" secid="OMZZP"/>
+<row emitent_title="Публичное акционерное общество &quot;Павловский автобус&quot;"  name="Павловский автобус ПАО ао" regnumber="1-02-00261-A" secid="PAZA"/>
+<row emitent_title="Публичное акционерное общество &quot;ФосАгро&quot;"  name="ФосАгро ПАО ао" regnumber="1-02-06556-A" secid="PHOR"/>
+<row emitent_title="Публичное акционерное общество &quot;Группа Компаний ПИК&quot;"  name="Группа компания ПИК ПАО ао" regnumber="1-02-01556-A" secid="PIKK"/>
+<row emitent_title="Публичное акционерное общество &quot;Полюс&quot;"  name="Полюс ПАО ао" regnumber="1-01-55192-E" secid="PLZL"/>
+<row emitent_title="Публичное акционерное общество &quot;Пермская энергосбытовая компания&quot;"  name="&quot;Пермэнергосбыт&quot; ПАО ао" regnumber="1-01-55084-E" secid="PMSB"/>
+<row emitent_title="Публичное акционерное общество &quot;Пермская энергосбытовая компания&quot;"  name="&quot;Пермэнергосбыт&quot; ПАО ап" regnumber="2-01-55084-E" secid="PMSBP"/>
+<row emitent_title="Petropavlovsk PLC"  name="Petropavlovsk PLC" regnumber="" secid="POGR"/>
+<row emitent_title="Полиметалл Интернэшнл плс (Polymetal International plc)"  name="Polymetal International plc" regnumber="" secid="POLY"/>
+<row emitent_title="акционерный коммерческий банк &quot;Приморье&quot;  (публичное акционерное общество)"  name="АКБ &quot;Приморье&quot; ао" regnumber="10103001B" secid="PRMB"/>
+<row emitent_title="КИВИ ПиЭлСи (QIWI PLC)"  name="QIWI PLC" regnumber="" secid="QIWI"/>
+<row emitent_title="Публичное акционерное общество &quot;Распадская&quot;"  name="ПАО Распадская ао" regnumber="1-04-21725-N" secid="RASP"/>
+<row emitent_title="Raven Property group Limited"  name="Raven Property Group Limited" regnumber="" secid="RAVN"/>
+<row emitent_title="Публичное акционерное общество &quot;РБК&quot;"  name="РБК ПАО ао" regnumber="1-02-56413-H" secid="RBCM"/>
+<row emitent_title="&quot;Российский акционерный коммерческий дорожный банк&quot; (публичное акционерное общество)"  name="РоссийскийДорож Банк ПАО ао" regnumber="10201573B" secid="RDRB"/>
+<row emitent_title="Публичное акционерное общество Страховая Компания &quot;Росгосстрах&quot;"  name="Росгосстрах СК ПАО ао" regnumber="1-03-10003-Z" secid="RGSS"/>
+<row emitent_title="Публичное акционерное общество &quot;Ракетно-космическая корпорация &quot;Энергия&quot; имени С.П. Королёва&quot;"  name="РКК Энергия им.С.П.Королева ао" regnumber="1-03-01091-A" secid="RKKE"/>
+<row emitent_title="Публичное акционерное общество &quot;Группа Компаний  &quot;Роллман&quot;"  name="Группа Компаний Роллман ПАО ао" regnumber="1-01-05257-D" secid="RLMN"/>
+<row emitent_title="Публичное акционерное общество &quot;Группа Компаний  &quot;Роллман&quot;"  name="Группа Компаний Роллман ПАО ап" regnumber="2-01-05257-D" secid="RLMNP"/>
+<row emitent_title="Публичное акционерное общество Нефтегазовая компания &quot;РуссНефть&quot;"  name="РуссНефть НК ПАО ао" regnumber="1-02-39134-H" secid="RNFT"/>
+<row emitent_title="Публичное акционерное общество &quot;Русолово&quot;"  name="&quot;Русолово&quot; ПАО ао" regnumber="1-01-15065-A" secid="ROLO"/>
+<row emitent_title="Публичное акционерное общество РОСБАНК"  name="РОСБАНК ПАО ао" regnumber="10102272B" secid="ROSB"/>
+<row emitent_title="публичное акционерное общество &quot;Нефтяная компания &quot;Роснефть&quot;"  name="ПАО НК Роснефть" regnumber="1-02-00122-A" secid="ROSN"/>
+<row emitent_title="Публичное акционерное общество &quot;РОСИНТЕР РЕСТОРАНТС ХОЛДИНГ&quot;"  name="РОСИНТЕР РЕСТОРАНТС (ПАО)" regnumber="1-02-55033-E" secid="ROST"/>
+<row emitent_title="Публичное акционерное общество &quot;Российские сети&quot;"  name="&quot;Российские сети&quot; ПАО ао" regnumber="1-01-55385-E" secid="RSTI"/>
+<row emitent_title="Публичное акционерное общество &quot;Российские сети&quot;"  name="&quot;Российские сети&quot; ПАО ап" regnumber="2-01-55385-E" secid="RSTIP"/>
+<row emitent_title="Публичное акционерное общество &quot;Газпром газораспределение Ростов-на-Дону&quot;"  name="Газпром газорасп Р-н-Д ПАО ао" regnumber="1-02-30742-E" secid="RTGZ"/>
+<row emitent_title="Публичное акционерное общество &quot;Ростелеком&quot;"  name="Ростелеком (ПАО) ао." regnumber="1-01-00124-A" secid="RTKM"/>
+<row emitent_title="Публичное акционерное общество &quot;Ростелеком&quot;"  name="Ростелеком (ПАО) ап." regnumber="2-01-00124-A" secid="RTKMP"/>
+<row emitent_title="Публичное акционерное общество &quot;ТНС энерго Ростов-на-Дону&quot;"  name="ТНС энерго Ростов. ПАО ао" regnumber="1-01-50095-A" secid="RTSB"/>
+<row emitent_title="Публичное акционерное общество &quot;ТНС энерго Ростов-на-Дону&quot;"  name="ТНС энерго Ростов. ПАО ап" regnumber="2-01-50095-A" secid="RTSBP"/>
+<row emitent_title="Международная компания публичное акционерное общество &quot;Объединённая Компания &quot;РУСАЛ&quot;"  name="РУСАЛ ОК МКПАО ао" regnumber="1-01-16677-A" secid="RUAL"/>
+<row emitent_title="Публичное акционерное общество &quot;Русгрэйн Холдинг&quot;"  name="Русгрэйн Холдинг ПАО ао" regnumber="1-02-50043-H" secid="RUGR"/>
+<row emitent_title="Публичное акционерное общество &quot;ИНВЕСТИЦИОННАЯ КОМПАНИЯ ИК РУСС-ИНВЕСТ&quot;"  name="РУСС-ИНВЕСТ ИК ПАО ао" regnumber="1-01-00409-A" secid="RUSI"/>
+<row emitent_title="Публичное акционерное общество &quot;Русполимет&quot;"  name="Русполимет ПАО ао" regnumber="1-01-55157-E" secid="RUSP"/>
+<row emitent_title="Публичное акционерное общество &quot;Рязанская энергетическая сбытовая компания&quot;"  name="&quot;Рязанская энергосб.комп&quot; ПАО" regnumber="1-01-50092-A" secid="RZSB"/>
+<row emitent_title="Публичное акционерное общество энергетики и электрификации &quot;Самараэнерго&quot;"  name="Самараэнерго (ПАО) - ао" regnumber="1-02-00127-A" secid="SAGO"/>
+<row emitent_title="Публичное акционерное общество энергетики и электрификации &quot;Самараэнерго&quot;"  name="Самараэнерго (ПАО) - ап" regnumber="2-02-00127-A" secid="SAGOP"/>
+<row emitent_title="Публичное акционерное общество &quot;Саратовэнерго&quot;"  name="Саратовэнерго(ПАО)-ао" regnumber="1-02-00132-A" secid="SARE"/>
+<row emitent_title="Публичное акционерное общество &quot;Саратовэнерго&quot;"  name="Саратовэнерго(ПАО)-ап" regnumber="2-02-00132-A" secid="SAREP"/>
+<row emitent_title="Публичное акционерное общество &quot;Сбербанк России&quot;"  name="Сбербанк России ПАО ао" regnumber="10301481B" secid="SBER"/>
+<row emitent_title="Публичное акционерное общество &quot;Сбербанк России&quot;"  name="Сбербанк России ПАО ап" regnumber="20301481B" secid="SBERP"/>
+<row emitent_title="Публичное акционерное общество &quot;Селигдар&quot;"  name="ПАО &quot;Селигдар&quot;  ао" regnumber="1-01-32694-F" secid="SELG"/>
+<row emitent_title="Публичное акционерное общество &quot;Селигдар&quot;"  name="ПАО &quot;Селигдар&quot; ап" regnumber="2-01-32694-F" secid="SELGP"/>
+<row emitent_title="Публичное акционерное общество &quot;САФМАР Финансовые инвестиции&quot;"  name="САФМАР Фин.Инвестиции ПАО ао" regnumber="1-02-56453-P" secid="SFIN"/>
+<row emitent_title="Публичное акционерное общество &quot;Газпром нефть&quot;"  name="Газпром нефть ПАО ао" regnumber="1-01-00146-A" secid="SIBN"/>
+<row emitent_title="Публичное акционерное общество энергетики и электрификации &quot;Сахалинэнерго&quot;"  name="ПАО &quot;Сахалинэнерго&quot; ао" regnumber="1-03-00272-A" secid="SLEN"/>
+<row emitent_title="Публичное акционерное общество &quot;Сургутнефтегаз&quot;"  name="Сургутнефтегаз ПАО акции об." regnumber="1-01-00155-A" secid="SNGS"/>
+<row emitent_title="Публичное акционерное общество &quot;Сургутнефтегаз&quot;"  name="Сургутнефтегаз ПАО ап" regnumber="2-01-00155-A" secid="SNGSP"/>
+<row emitent_title="Публичное акционерное общество &quot;Ставропольэнергосбыт&quot;"  name="Ставрополэнергосбыт ПАО ао" regnumber="1-01-50119-A" secid="STSB"/>
+<row emitent_title="Публичное акционерное общество &quot;Ставропольэнергосбыт&quot;"  name="Ставрополэнергосбыт ПАО ап" regnumber="2-01-50119-A" secid="STSBP"/>
+<row emitent_title="Публичное акционерное общество &quot;СОЛЛЕРС&quot;"  name="ОАО &quot;СОЛЛЕРС&quot; ао" regnumber="1-01-02461-D" secid="SVAV"/>
+<row emitent_title="Публичное акционерное общество &quot;Тамбовская энергосбытовая компания&quot;"  name="ао&quot;Тамбов.энергсбыт.комп.&quot;ПАО" regnumber="1-01-65100-D" secid="TASB"/>
+<row emitent_title="Публичное акционерное общество &quot;Тамбовская энергосбытовая компания&quot;"  name="ап&quot;Тамбов.энергсбыт.комп.&quot;ПАО" regnumber="2-01-65100-D" secid="TASBP"/>
+<row emitent_title="Публичное акционерное общество &quot;Татнефть&quot; имени В.Д. Шашина"  name="ПАО &quot;Татнефть&quot; ао" regnumber="1-03-00161-A" secid="TATN"/>
+<row emitent_title="Публичное акционерное общество &quot;Татнефть&quot; имени В.Д. Шашина"  name="ПАО &quot;Татнефть&quot; ап 3 вып." regnumber="2-03-00161-A" secid="TATNP"/>
+<row emitent_title="JPMorgan Chase Bank, N.A. (TCS Group Holding PLC)"  name="ГДР TCS Group Holding ORD SHS" regnumber="" secid="TCSG"/>
+<row emitent_title="Публичное акционерное общество &quot;Территориальная генерирующая компания №1&quot;"  name="ао ПАО &quot;ТГК-1&quot;" regnumber="1-01-03388-D" secid="TGKA"/>
+<row emitent_title="Публичное акционерное общество &quot;Территориальная генерирующая компания №2&quot;"  name="ао ПАО &quot;ТГК-2&quot;" regnumber="1-01-10420-A" secid="TGKB"/>
+<row emitent_title="Публичное акционерное общество &quot;Территориальная генерирующая компания №2&quot;"  name="ап ПАО &quot;ТГК-2&quot;" regnumber="2-01-10420-A" secid="TGKBP"/>
+<row emitent_title="Публичное акционерное общество &quot;Квадра - Генерирующая компания&quot;"  name="Квадра ПАО ао" regnumber="1-01-43069-A" secid="TGKD"/>
+<row emitent_title="Публичное акционерное общество &quot;Квадра - Генерирующая компания&quot;"  name="Квадра ПАО ап" regnumber="2-01-43069-A" secid="TGKDP"/>
+<row emitent_title="Публичное акционерное общество &quot;Территориальная генерирующая компания № 14&quot;"  name="ао ПАО &quot;ТГК-14&quot;" regnumber="1-01-22451-F" secid="TGKN"/>
+<row emitent_title="Публичное акционерное общество Группа компаний &quot;ТНС энерго&quot;"  name="ПАО ГК &quot;ТНС энерго&quot; ао" regnumber="1-01-15521-A" secid="TNSE"/>
+<row emitent_title="Публичное акционерное общество &quot;Томская распределительная компания&quot;"  name="ао &quot;Томская распределит.комп.&quot;" regnumber="1-01-50128-A" secid="TORS"/>
+<row emitent_title="Публичное акционерное общество &quot;Трубная Металлургическая Компания&quot;"  name="ПАО ТМК" regnumber="1-01-29031-H" secid="TRMK"/>
+<row emitent_title="Публичное акционерное общество &quot;Транснефть&quot;"  name="Транснефть ПАО акц.пр." regnumber="2-01-00206-A" secid="TRNFP"/>
+<row emitent_title="Публичное акционерное общество &quot;Таттелеком&quot;"  name="&quot;Таттелеком&quot; ПАО ао" regnumber="1-02-50049-A" secid="TTLK"/>
+<row emitent_title="Публичное акционерное общество &quot;Туймазинский завод автобетоновозов&quot;"  name="Туймаз. завод автобетоновозов" regnumber="1-01-30455-D" secid="TUZA"/>
+<row emitent_title="Публичное акционерное общество &quot;Объединенные Кредитные Системы&quot;"  name="ПАО ОКС ао" regnumber="1-01-15296-A" secid="UCSS"/>
+<row emitent_title="Публичное акционерное общество &quot;Угольная компания &quot;Южный Кузбасс&quot;"  name="Южный Кузбасс ПАО ао" regnumber="1-02-10591-F" secid="UKUZ"/>
+<row emitent_title="Публичное акционерное общество &quot;Объединенная авиастроительная корпорация&quot;"  name="Об.авиастр.корп. ПАО ао" regnumber="1-02-55306-E" secid="UNAC"/>
+<row emitent_title="Публичное акционерное общество &quot;Южно-Уральский никелевый комбинат&quot;"  name="Южно-Уральский никел. комб. ао" regnumber="1-01-00197-A" secid="UNKL"/>
+<row emitent_title="Публичное акционерное общество &quot;Юнипро&quot;"  name="Юнипро ПАО ао" regnumber="1-02-65104-D" secid="UPRO"/>
+<row emitent_title="Публичное акционерное общество &quot;Уральская кузница&quot;"  name="ПАО &quot;Уральская кузница&quot; ао" regnumber="1-01-32341-D" secid="URKZ"/>
+<row emitent_title="Публичное акционерное общество &quot;БАНК УРАЛСИБ&quot;"  name="БАНК УРАЛСИБ ПАО ао" regnumber="10200030B" secid="USBN"/>
+<row emitent_title="Публичное акционерное общество &quot;Авиакомпания &quot;ЮТэйр&quot;"  name="Авиакомания &quot;ЮТэйр&quot; (ПАО) ао" regnumber="1-01-00077-F" secid="UTAR"/>
+<row emitent_title="Публичное акционерное общество &quot;Научно-производственная корпорация &quot;Объединенная Вагонная Компания&quot;"  name="ПАО НПК ОВК ао" regnumber="1-01-82031-H" secid="UWGN"/>
+<row emitent_title="Публичное акционерное общество &quot;Волгоградэнергосбыт&quot;"  name="&quot;Волгоград.энергосбыткомп&quot; ПАО" regnumber="1-01-65103-D" secid="VGSB"/>
+<row emitent_title="Публичное акционерное общество &quot;Волгоградэнергосбыт&quot;"  name="&quot;Волгоград.энергосбыткомп&quot; ПАО" regnumber="2-01-65103-D" secid="VGSBP"/>
+<row emitent_title="Публичное акционерное общество &quot;Варьеганнефтегаз&quot;"  name="Варьеганнефтегаз ПАО ао" regnumber="1-01-00017-A" secid="VJGZ"/>
+<row emitent_title="Публичное акционерное общество &quot;Варьеганнефтегаз&quot;"  name="Варьеганнефтегаз ПАО ап" regnumber="2-01-00017-A" secid="VJGZP"/>
+<row emitent_title="Публичное акционерное общество &quot;Владимирский химический завод&quot;"  name="Владимирский химич.з-д(ПАО) ао" regnumber="1-02-04847-A" secid="VLHZ"/>
+<row emitent_title="Публичное акционерное общество &quot;ТНС энерго Воронеж&quot;"  name="ТНС энерго Воронеж ПАО ао" regnumber="1-01-55029-E" secid="VRSB"/>
+<row emitent_title="Публичное акционерное общество &quot;ТНС энерго Воронеж&quot;"  name="ТНС энерго Воронеж ПАО ап" regnumber="2-01-55029-E" secid="VRSBP"/>
+<row emitent_title="публичное акционерное общество &quot;Корпорация ВСМПО-АВИСМА&quot;"  name="Корп. ВСМПО-АВИСМА (ПАО) ао" regnumber="1-01-30202-D" secid="VSMO"/>
+<row emitent_title="Публичное акционерное общество &quot;Выборгский судостроительный завод&quot;"  name="Выборгский Суд.Завод ПАО ао" regnumber="1-01-02203-D" secid="VSYD"/>
+<row emitent_title="Публичное акционерное общество &quot;Выборгский судостроительный завод&quot;"  name="Выборгский Суд.Завод ПАО ап" regnumber="2-01-02203-D" secid="VSYDP"/>
+<row emitent_title="Банк ВТБ (публичное акционерное общество)"  name="ао ПАО Банк ВТБ" regnumber="10401000B" secid="VTBR"/>
+<row emitent_title="Публичное акционерное общество Банк &quot;Возрождение&quot;"  name="Банк &quot;Возрождение&quot; - ап" regnumber="20201439B" secid="VZRZP"/>
+<row emitent_title="Публичное акционерное общество &quot;Центр международной торговли&quot;"  name="&quot;Центр междун. торговли&quot;ПАО ао" regnumber="1-01-01837-A" secid="WTCM"/>
+<row emitent_title="Публичное акционерное общество &quot;Центр международной торговли&quot;"  name="&quot;Центр междун. торговли&quot;ПАО ап" regnumber="2-01-01837-A" secid="WTCMP"/>
+<row emitent_title="Публичное акционерное общество &quot;Якутская топливно-энергетическая компания&quot;"  name="Якутская топл.-энерг. комп. ао" regnumber="1-01-20510-F" secid="YAKG"/>
+<row emitent_title="Публичное акционерное общество &quot;Якутскэнерго&quot;"  name="АК &quot;Якутскэнерго&quot; (ПАО) ао" regnumber="1-01-00304-A" secid="YKEN"/>
+<row emitent_title="Публичное акционерное общество &quot;Якутскэнерго&quot;"  name="АК &quot;Якутскэнерго&quot; (ПАО) ап" regnumber="2-01-00304-A" secid="YKENP"/>
+<row emitent_title="Публичная Компания с ограниченной ответственностью Яндекс Н.В. (Public Limited Liability Company Yandex N.V.)"  name="PLLC Yandex N.V. class A shs" regnumber="" secid="YNDX"/>
+<row emitent_title="Публичное акционерное общество &quot;ТНС энерго Ярославль&quot;"  name="ТНС энерго Ярославль ПАО ао" regnumber="1-01-50099-A" secid="YRSB"/>
+<row emitent_title="Публичное акционерное общество &quot;ТНС энерго Ярославль&quot;"  name="ТНС энерго Ярославль ПАО ап" regnumber="2-01-50099-A" secid="YRSBP"/>
+<row emitent_title="Публичное акционерное общество &quot;Завод имени И.А. Лихачева&quot;"  name="Завод им. И.А.Лихачева ПАО ао" regnumber="1-02-00036-A" secid="ZILL"/>
+<row emitent_title="Публичное акционерное общество &quot;ЗВЕЗДА&quot;"  name="ЗВЕЗДА ПАО ао" regnumber="1-01-00169-D" secid="ZVEZ"/>
 </rows>
 </data>
 </document>
