@@ -2,7 +2,7 @@ package ru.alex.testwork.domain.model;
 
 import ru.alex.testwork.domain.entity.SecuritiesEntity;
 
-import javax.persistence.Column;
+import java.util.Objects;
 
 public class Securities {
 	private final Long id;
@@ -56,5 +56,18 @@ public class Securities {
 				entity.getRegNumber(),
 				entity.getName(),
 				entity.getEmitentTitle());
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof Securities)) return false;
+		Securities that = (Securities) o;
+		return Objects.equals(id, that.id) && Objects.equals(secId, that.secId) && Objects.equals(regNumber, that.regNumber) && Objects.equals(name, that.name) && Objects.equals(emitentTitle, that.emitentTitle);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, secId, regNumber, name, emitentTitle);
 	}
 }

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import ru.alex.testwork.domain.entity.HistoryEntity;
 import ru.alex.testwork.domain.xml.history.HistoryListXml;
 import ru.alex.testwork.domain.xml.history.HistoryXml;
-import ru.alex.testwork.service.HistoryService;
+import ru.alex.testwork.service.impl.HistoryServiceImpl;
 import ru.alex.testwork.utils.FileFinder;
 
 import java.util.ArrayList;
@@ -21,9 +21,9 @@ import java.util.stream.Collectors;
 public class ParseHistoryRouter extends RouteBuilder {
 
 	final JaxbDataFormat jaxbListHis;
-	final HistoryService historyService;
+	final HistoryServiceImpl historyService;
 
-	public ParseHistoryRouter(JaxbDataFormat jaxbListHis, HistoryService historyService) {
+	public ParseHistoryRouter(JaxbDataFormat jaxbListHis, HistoryServiceImpl historyService) {
 		this.jaxbListHis = jaxbListHis;
 		this.historyService = historyService;
 	}

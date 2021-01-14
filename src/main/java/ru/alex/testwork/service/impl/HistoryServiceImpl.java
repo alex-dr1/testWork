@@ -1,18 +1,19 @@
-package ru.alex.testwork.service;
+package ru.alex.testwork.service.impl;
 
 import org.springframework.stereotype.Service;
 import ru.alex.testwork.domain.entity.HistoryEntity;
 import ru.alex.testwork.domain.entity.SecuritiesEntity;
 import ru.alex.testwork.repository.HistoryRepo;
 import ru.alex.testwork.repository.SecuritiesRepo;
+import ru.alex.testwork.service.MoexService;
 
 @Service
-public class HistoryService {
+public class HistoryServiceImpl {
 	final HistoryRepo historyRepo;
 	final SecuritiesRepo securitiesRepo;
 	final MoexService moexService;
 
-	public HistoryService(HistoryRepo historyRepo, SecuritiesRepo securitiesRepo, MoexService moexService) {
+	public HistoryServiceImpl(HistoryRepo historyRepo, SecuritiesRepo securitiesRepo, MoexService moexService) {
 		this.historyRepo = historyRepo;
 		this.securitiesRepo = securitiesRepo;
 		this.moexService = moexService;

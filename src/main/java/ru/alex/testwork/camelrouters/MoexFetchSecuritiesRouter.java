@@ -33,8 +33,8 @@ public class MoexFetchSecuritiesRouter extends RouteBuilder {
 		from("direct:fetchSecuritiesMoexService").routeId("Route fetchSecuritiesMoexService")
 				.setProperty("secId", simple("${body}"))
 				.setHeader("secId", exchangeProperty("secId"))
-				.setHeader(Exchange.HTTP_QUERY, simple("iss.meta=off&securities.columns=id,secid,name,regnumber,emitent_title&q=${headers.secId}"))
-				//https://iss.moex.com/iss/securities.xml?iss.meta=off&securities.columns=id,secid,name,regnumber,emitent_title&q=AFKS
+				.setHeader(Exchange.HTTP_QUERY, simple("iss.meta=off&securities.columns=secid,name,regnumber,emitent_title&q=${headers.secId}"))
+				//https://iss.moex.com/iss/securities.xml?iss.meta=off&securities.columns=secid,name,regnumber,emitent_title&q=AFKS
 				.doTry()
 				.to("https://iss.moex.com/iss/securities.xml?httpMethod=GET")
 				.doCatch(CamelException.class)

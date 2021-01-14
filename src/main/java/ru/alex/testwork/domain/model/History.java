@@ -3,6 +3,7 @@ package ru.alex.testwork.domain.model;
 import ru.alex.testwork.domain.entity.HistoryEntity;
 
 import java.text.SimpleDateFormat;
+import java.util.Objects;
 
 public class History {
 
@@ -71,5 +72,16 @@ public class History {
 				String.valueOf(entity.getClose()));
 	}
 
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof History)) return false;
+		History history = (History) o;
+		return Objects.equals(id, history.id) && Objects.equals(tradeDate, history.tradeDate) && Objects.equals(secId, history.secId) && Objects.equals(numTrades, history.numTrades) && Objects.equals(open, history.open) && Objects.equals(close, history.close);
+	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, tradeDate, secId, numTrades, open, close);
+	}
 }

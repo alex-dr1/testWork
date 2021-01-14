@@ -1,6 +1,7 @@
 package ru.alex.testwork.domain.entity;
 
 
+import ru.alex.testwork.domain.model.History;
 import ru.alex.testwork.domain.xml.history.HistoryXml;
 
 import javax.persistence.*;
@@ -35,6 +36,16 @@ public class HistoryEntity {
 		history.setNumTrades(Double.parseDouble(historyXml.getNumTrades()));
 		history.setOpen(Double.parseDouble(historyXml.getOpen()));
 		history.setClose(Double.parseDouble(historyXml.getClose()));
+		return history;
+	}
+
+	public static HistoryEntity toEntity(History model){
+		HistoryEntity history = new HistoryEntity();
+		history.setSecId(model.getSecId());
+		history.setTradeDate(Date.valueOf(model.getTradeDate()));
+		history.setNumTrades(Double.parseDouble(model.getNumTrades()));
+		history.setOpen(Double.parseDouble(model.getOpen()));
+		history.setClose(Double.parseDouble(model.getClose()));
 		return history;
 	}
 

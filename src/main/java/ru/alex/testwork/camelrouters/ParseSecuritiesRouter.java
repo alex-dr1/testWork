@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import ru.alex.testwork.domain.entity.SecuritiesEntity;
 import ru.alex.testwork.domain.xml.securities.SecuritiesListXml;
 import ru.alex.testwork.domain.xml.securities.SecuritiesXml;
-import ru.alex.testwork.service.SecuritiesService;
+import ru.alex.testwork.service.impl.SecuritiesServiceImpl;
 import ru.alex.testwork.utils.FileFinder;
 
 import java.util.ArrayList;
@@ -21,9 +21,9 @@ import java.util.stream.Collectors;
 public class ParseSecuritiesRouter extends RouteBuilder {
 
 	final JaxbDataFormat jaxbListSec;
-	final SecuritiesService securitiesService;
+	final SecuritiesServiceImpl securitiesService;
 
-	public ParseSecuritiesRouter(JaxbDataFormat jaxbListSec, SecuritiesService securitiesService) {
+	public ParseSecuritiesRouter(JaxbDataFormat jaxbListSec, SecuritiesServiceImpl securitiesService) {
 		this.jaxbListSec = jaxbListSec;
 		this.securitiesService = securitiesService;
 	}

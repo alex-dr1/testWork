@@ -1,9 +1,10 @@
-package ru.alex.testwork.service;
+package ru.alex.testwork.service.impl;
 
 
 import org.apache.camel.ProducerTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.alex.testwork.service.ParseXmlService;
 
 @Service
 public class ParseServiceImpl implements ParseXmlService {

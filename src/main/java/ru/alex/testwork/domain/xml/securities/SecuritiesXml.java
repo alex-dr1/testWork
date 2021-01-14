@@ -62,7 +62,7 @@ public class SecuritiesXml {
 	@Override
 	public String toString() {
 		return "SecuritiesXml{" +
-				", secId='" + secId + '\'' +
+				"secId='" + secId + '\'' +
 				", regNumber='" + regNumber + '\'' +
 				", name='" + name + '\'' +
 				", emitentTitle='" + emitentTitle + '\'' +

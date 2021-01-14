@@ -14,10 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ru.alex.testwork.service;
+package ru.alex.testwork.service.impl;
 
 import org.springframework.stereotype.Service;
 import ru.alex.testwork.domain.UserD;
+import ru.alex.testwork.service.UserService;
 
 import java.util.Collection;
 import java.util.Map;

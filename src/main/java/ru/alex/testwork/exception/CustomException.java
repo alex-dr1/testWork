@@ -5,12 +5,12 @@ import org.springframework.http.HttpStatus;
 
 public class CustomException {
 	final int status;
-	final HttpStatus httpStatus;
+	final HttpStatus http_status;
 	final String message;
 
-	public CustomException(int status, HttpStatus httpStatus, String message) {
+	public CustomException(int status, HttpStatus http_status, String message) {
 		this.status = status;
-		this.httpStatus = httpStatus;
+		this.http_status = http_status;
 		this.message = message;
 	}
 
@@ -19,7 +19,7 @@ public class CustomException {
 	}
 
 	public HttpStatus getHttpStatus() {
-		return httpStatus;
+		return http_status;
 	}
 
 	public String getMessage() {

@@ -30,14 +30,6 @@ public class HistoryXml {
 
 	public HistoryXml() {}
 
-	public HistoryXml(String tradeDate, String secId, String numTrades, String open, String close) {
-		this.tradeDate = tradeDate;
-		this.secId = secId;
-		this.numTrades = numTrades;
-		this.open = open;
-		this.close = close;
-	}
-
 	public String getTradeDate() {
 		return tradeDate;
 	}

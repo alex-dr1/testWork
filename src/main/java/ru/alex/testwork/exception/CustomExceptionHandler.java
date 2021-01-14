@@ -8,6 +8,12 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class CustomExceptionHandler {
 
+	// 400 Bad request
+	@ExceptionHandler(value = {BadRestRequestException.class})
+	public ResponseEntity<CustomException> handler400RuntimeException(RuntimeException exception){
+		return getCustomExceptionResponseEntity(exception, HttpStatus.BAD_REQUEST);
+	}
+
 	// 404 Not found
 	@ExceptionHandler(value = {SecuritiesNotFoundException.class})
 	public ResponseEntity<CustomException> handler404RuntimeException(RuntimeException exception){

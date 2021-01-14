@@ -5,6 +5,9 @@ import ru.alex.testwork.domain.model.Securities;
 import ru.alex.testwork.domain.xml.securities.SecuritiesXml;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.Set;
@@ -20,12 +23,16 @@ public class SecuritiesEntity implements Serializable {
 
 	@NaturalId
 	@Column(name = "sec_id", nullable = false, unique = true)
+	@Size(min = 4, message = "sec_id must be more than 3")
 	private String secId;
 
+	@NotNull
 	private String regNumber;
 
+	@NotBlank(message = "name not blank")
 	private String name;
 
+	@NotBlank(message = "emitent title not blank")
 	private String emitentTitle;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "securities", fetch = FetchType.LAZY)

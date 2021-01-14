@@ -1,5 +1,7 @@
 package ru.alex.testwork.domain.xml.history;
 
+import ru.alex.testwork.domain.xml.history.HistoryXml;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
