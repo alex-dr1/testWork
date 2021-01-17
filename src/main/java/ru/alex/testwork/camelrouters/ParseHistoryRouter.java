@@ -6,9 +6,10 @@ import org.apache.camel.ValidationException;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.converter.jaxb.JaxbDataFormat;
 import org.springframework.stereotype.Component;
-import ru.alex.testwork.domain.entity.HistoryEntity;
-import ru.alex.testwork.domain.xml.history.HistoryListXml;
-import ru.alex.testwork.domain.xml.history.HistoryXml;
+import ru.alex.testwork.entity.HistoryEntity;
+import ru.alex.testwork.mapper.HistoryMapper;
+import ru.alex.testwork.xml.history.HistoryListXml;
+import ru.alex.testwork.xml.history.HistoryXml;
 import ru.alex.testwork.service.impl.HistoryServiceImpl;
 import ru.alex.testwork.utils.FileFinder;
 
@@ -44,7 +45,7 @@ public class ParseHistoryRouter extends RouteBuilder {
 	};
 
 	private Function<HistoryXml, HistoryEntity> convertHistoryXmlToHistory() {
-		return HistoryEntity::toEntity;
+		return HistoryMapper::xmlToEntity;
 	}
 
 	@Override
@@ -59,6 +60,7 @@ public class ParseHistoryRouter extends RouteBuilder {
 				.log("Stop parseHistory ...")
 		;
 		//File loop
+		//TODO если файл не валид следующий не берет
 		from("direct:fileLoopHistory").routeId("Router fileLoopHistory")
 				.loop(simple("${body}"))
 				.pollEnrich("file://inbox/history?include=history_[0-9]*.xml&noop=true")
@@ -84,7 +86,7 @@ public class ParseHistoryRouter extends RouteBuilder {
 				.process(exchange -> {
 					List<HistoryEntity> historyList = exchange.getIn().getBody(ArrayList.class);
 					//TODO Insert to DB
-					historyList.forEach(historyService::save);
+					historyList.forEach(historyService::saveImport);
 				})
 				.setBody().simple("stop parseHistory")
 		;

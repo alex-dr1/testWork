@@ -14,41 +14,47 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ru.alex.testwork.service.impl;
+package ru.alex.testwork.entity;
 
-import org.springframework.stereotype.Service;
-import ru.alex.testwork.entity.UserD;
-import ru.alex.testwork.service.UserService;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import java.util.Collection;
-import java.util.Map;
-import java.util.TreeMap;
+/**
+ * User entity
+ *
+ */
+public class UserD {
 
+    private Integer id;
 
-@Service("userService")
-public class UserServiceImpl implements UserService {
+    private String name;
 
-    private final Map<Integer, UserD> users = new TreeMap<>();
+    public UserD() {
+    }
 
-    public UserServiceImpl() {
-        users.put(1, new UserD(1, "Юрий Никулин"));
-        users.put(2, new UserD(2, "Miles Davis"));
-        users.put(3, new UserD(3, "Sonny Rollins"));
+    public UserD(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
-    public UserD findUser(Integer id) {
-        return users.get(id);
-    }
-
-    @Override
-    public Collection<UserD> findUsers() {
-        return users.values();
-    }
-
-    @Override
-    public void updateUser(UserD user) {
-        users.put(user.getId(), user);
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this);
     }
 
 }

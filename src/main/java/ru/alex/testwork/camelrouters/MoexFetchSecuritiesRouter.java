@@ -5,8 +5,9 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.converter.jaxb.JaxbDataFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import ru.alex.testwork.domain.entity.SecuritiesEntity;
-import ru.alex.testwork.domain.xml.securities.SecuritiesXml;
+import ru.alex.testwork.entity.SecuritiesEntity;
+import ru.alex.testwork.mapper.SecuritiesMapper;
+import ru.alex.testwork.xml.securities.SecuritiesXml;
 
 @Component
 public class MoexFetchSecuritiesRouter extends RouteBuilder {
@@ -23,7 +24,7 @@ public class MoexFetchSecuritiesRouter extends RouteBuilder {
 		if(xml == null){
 			exchange.getIn().setBody(null);
 		} else {
-			exchange.getIn().setBody(SecuritiesEntity.toEntity(xml));
+			exchange.getIn().setBody(SecuritiesMapper.xmlToEntity(xml));
 		}
 	};
 

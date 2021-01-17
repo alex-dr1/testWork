@@ -1,13 +1,19 @@
 package ru.alex.testwork.service;
 
-import ru.alex.testwork.domain.model.Securities;
+import ru.alex.testwork.dto.SecuritiesDto;
+
+import java.util.List;
 
 public interface SecuritiesService {
-	public Securities findOneById(Long id);
+	SecuritiesDto findOneById(Long id);
 
-	public Securities save(Securities model);
+	SecuritiesDto save(SecuritiesDto model);
 
-	public Securities update(Securities model);
+	SecuritiesDto update(SecuritiesDto model);
 
-	public Long delete(Long id);
+	Long delete(Long id);
+
+	List<SecuritiesDto> getAllSecurities();
+
+	SecuritiesDto findOneBySecId(String secId);
 }

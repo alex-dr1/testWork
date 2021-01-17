@@ -5,25 +5,30 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import javax.validation.ValidationException;
+
 @ControllerAdvice
 public class CustomExceptionHandler {
 
 	// 400 Bad request
-	@ExceptionHandler(value = {BadRestRequestException.class})
-	public ResponseEntity<CustomException> handler400RuntimeException(RuntimeException exception){
+	@ExceptionHandler(value = {BadRestRequestException.class,ValidationException.class})
+	public ResponseEntity<CustomException> handler400RuntimeException(RuntimeException exception) {
 		return getCustomExceptionResponseEntity(exception, HttpStatus.BAD_REQUEST);
 	}
 
 	// 404 Not found
-	@ExceptionHandler(value = {SecuritiesNotFoundException.class})
-	public ResponseEntity<CustomException> handler404RuntimeException(RuntimeException exception){
+	@ExceptionHandler(value = {SecuritiesNotFoundException.class, SecuritiesBySecIdNotFoundException.class})
+	public ResponseEntity<CustomException> handler404RuntimeException(RuntimeException exception) {
 		return getCustomExceptionResponseEntity(exception, HttpStatus.NOT_FOUND);
 	}
 
-	// 500 Server Internal Error
+	// Other exception
 	@ExceptionHandler(value = {Exception.class})
-	public ResponseEntity<CustomException> handler500RuntimeException(RuntimeException exception){
-		return getCustomExceptionResponseEntity(exception, HttpStatus.INTERNAL_SERVER_ERROR);
+	public ResponseEntity<CustomExceptionOther> handlerOtherRuntimeException(RuntimeException exception) {
+		CustomExceptionOther ceo =
+//				new CustomExceptionOther(exception.getMessage());
+				new CustomExceptionOther("ERROR");
+		return new ResponseEntity<>(ceo, HttpStatus.BAD_REQUEST);
 	}
 
 	private ResponseEntity<CustomException> getCustomExceptionResponseEntity(RuntimeException exception, HttpStatus httpStatus) {

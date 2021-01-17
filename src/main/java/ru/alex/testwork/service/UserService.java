@@ -16,7 +16,7 @@
  */
 package ru.alex.testwork.service;
 
-import ru.alex.testwork.domain.UserD;
+import ru.alex.testwork.entity.UserD;
 
 import java.util.Collection;
 

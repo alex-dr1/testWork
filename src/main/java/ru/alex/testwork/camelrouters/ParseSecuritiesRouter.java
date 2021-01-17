@@ -6,9 +6,10 @@ import org.apache.camel.ValidationException;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.converter.jaxb.JaxbDataFormat;
 import org.springframework.stereotype.Component;
-import ru.alex.testwork.domain.entity.SecuritiesEntity;
-import ru.alex.testwork.domain.xml.securities.SecuritiesListXml;
-import ru.alex.testwork.domain.xml.securities.SecuritiesXml;
+import ru.alex.testwork.entity.SecuritiesEntity;
+import ru.alex.testwork.mapper.SecuritiesMapper;
+import ru.alex.testwork.xml.securities.SecuritiesListXml;
+import ru.alex.testwork.xml.securities.SecuritiesXml;
 import ru.alex.testwork.service.impl.SecuritiesServiceImpl;
 import ru.alex.testwork.utils.FileFinder;
 
@@ -43,7 +44,7 @@ public class ParseSecuritiesRouter extends RouteBuilder {
 	};
 
 	private Function<SecuritiesXml, SecuritiesEntity> convertSecXmlToSecurities() {
-		return SecuritiesEntity::toEntity;
+		return SecuritiesMapper::xmlToEntity;
 	}
 
 	@Override
@@ -59,6 +60,7 @@ public class ParseSecuritiesRouter extends RouteBuilder {
 
 		;
 		//File loop
+		//TODO если файл не валид следующий не берет
 		from("direct:fileLoopSecurities").routeId("Router fileLoopSecurities")
 				.loop(simple("${body}"))
 				.pollEnrich("file://inbox/securities?include=securities_[0-9]*.xml&noop=true")

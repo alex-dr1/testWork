@@ -1,8 +1,8 @@
 package ru.alex.testwork.service.impl;
 
 import org.springframework.stereotype.Service;
-import ru.alex.testwork.domain.entity.HistoryEntity;
-import ru.alex.testwork.domain.entity.SecuritiesEntity;
+import ru.alex.testwork.entity.HistoryEntity;
+import ru.alex.testwork.entity.SecuritiesEntity;
 import ru.alex.testwork.repository.HistoryRepo;
 import ru.alex.testwork.repository.SecuritiesRepo;
 import ru.alex.testwork.service.MoexService;
@@ -19,10 +19,10 @@ public class HistoryServiceImpl {
 		this.moexService = moexService;
 	}
 
-	public void save(HistoryEntity history) {
+	public void saveImport(HistoryEntity history) {
 		SecuritiesEntity securities;
 		String secId = history.getSecId();
-		securities = securitiesRepo.findSecuritiesBySecId(secId);
+		securities = securitiesRepo.findSecuritiesBySecId(secId).orElse(null);
 		if(securities == null) {
 			SecuritiesEntity securitiesMoex = moexService.fetchSecuritiesBySecId(secId);
 			//TODO if null thrown exception

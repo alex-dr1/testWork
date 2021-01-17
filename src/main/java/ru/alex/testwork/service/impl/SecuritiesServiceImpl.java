@@ -1,12 +1,17 @@
 package ru.alex.testwork.service.impl;
 
 import org.springframework.stereotype.Service;
-import ru.alex.testwork.domain.entity.SecuritiesEntity;
-import ru.alex.testwork.domain.model.Securities;
+import ru.alex.testwork.entity.SecuritiesEntity;
+import ru.alex.testwork.dto.SecuritiesDto;
 import ru.alex.testwork.exception.BadRestRequestException;
+import ru.alex.testwork.exception.SecuritiesBySecIdNotFoundException;
 import ru.alex.testwork.exception.SecuritiesNotFoundException;
+import ru.alex.testwork.mapper.SecuritiesMapper;
 import ru.alex.testwork.repository.SecuritiesRepo;
 import ru.alex.testwork.service.SecuritiesService;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class SecuritiesServiceImpl implements SecuritiesService {
@@ -22,25 +27,28 @@ public class SecuritiesServiceImpl implements SecuritiesService {
 	}
 
 	@Override
-	public Securities findOneById(Long id) {
-		return Securities.toModel(securitiesRepo.findById(id).orElseThrow(() -> new SecuritiesNotFoundException(id)));
+	public SecuritiesDto findOneById(Long id) {
+		return SecuritiesMapper.entityToDto(securitiesRepo.findById(id).orElseThrow(() -> new SecuritiesNotFoundException(id)));
 	}
 
 	@Override
-	public Securities save(Securities model) {
-		Long modelId = model.getId();
-		if (model.getId() != null && securitiesRepo.existsById(modelId))
+	public SecuritiesDto save(SecuritiesDto dto) {
+		Long dtoId = dto.getId();
+		if (dto.getId() != null && securitiesRepo.existsById(dtoId))
 			throw new BadRestRequestException("Create error: Bad request");
-		return Securities.toModel(securitiesRepo.save(SecuritiesEntity.toEntity(model)));
+		return SecuritiesMapper.entityToDto(securitiesRepo.save(SecuritiesMapper.dtoToEntity(dto)));
 	}
 
 	@Override
-	public Securities update(Securities model) {
-		Long modelId = model.getId();
-		if (model.getId() == null) throw new BadRestRequestException("Update error: Bad request");
-		if (model.getId() != null && !securitiesRepo.existsById(modelId))
-			throw new SecuritiesNotFoundException(modelId);
-		return Securities.toModel(securitiesRepo.save(SecuritiesEntity.toEntity(model)));
+	public SecuritiesDto update(SecuritiesDto dto) {
+		Long dtoId = dto.getId();
+		String dtoSecId = dto.getSecId();
+
+		if (dtoId == null) throw new BadRestRequestException("Update error: id = null");
+		if (dtoSecId == null) throw new BadRestRequestException("Update error: secId = null");
+		securitiesRepo.findSecuritiesBySecId(dtoSecId).orElseThrow(()-> new SecuritiesBySecIdNotFoundException(dtoSecId));
+
+		return SecuritiesMapper.entityToDto(securitiesRepo.save(SecuritiesMapper.dtoToEntity(dto)));
 	}
 
 	@Override
@@ -48,5 +56,19 @@ public class SecuritiesServiceImpl implements SecuritiesService {
 		if (!securitiesRepo.existsById(id)) throw new SecuritiesNotFoundException(id);
 		securitiesRepo.deleteById(id);
 		return id;
+	}
+
+	@Override
+	public List<SecuritiesDto> getAllSecurities() {
+		return securitiesRepo.findAll()
+				.stream()
+				.map(SecuritiesMapper::entityToDto)
+				.collect(Collectors.toList());
+	}
+
+	@Override
+	public SecuritiesDto findOneBySecId(String secId) {
+		SecuritiesEntity entity = securitiesRepo.findSecuritiesBySecId(secId).orElseThrow(()->new SecuritiesBySecIdNotFoundException(secId));
+		return SecuritiesMapper.entityToDto(entity);
 	}
 }
