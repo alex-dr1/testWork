@@ -53,7 +53,7 @@ class HistoryRepoTest {
 				.usingRecursiveComparison()
 				.isEqualTo(historyEntity);
 
-		HistoryEntity findHistory = historyRepo.findHistoryBySecId(SEC_ID).get();
+		HistoryEntity findHistory = historyRepo.findBySecId(SEC_ID).get();
 
 		assertThat(findHistory)
 				.usingRecursiveComparison()

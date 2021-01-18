@@ -6,5 +6,5 @@ import ru.alex.testwork.entity.HistoryEntity;
 import java.util.Optional;
 
 public interface HistoryRepo extends JpaRepository<HistoryEntity, Long> {
-	Optional<HistoryEntity> findHistoryBySecId(String secId);
+	Optional<HistoryEntity> findBySecId(String secId);
 }
