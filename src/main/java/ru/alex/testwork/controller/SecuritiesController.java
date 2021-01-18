@@ -12,7 +12,7 @@ import java.util.List;
 import static org.springframework.http.ResponseEntity.status;
 
 @RestController
-@RequestMapping("/api/securities")
+@RequestMapping(value = "/api/securities")
 public class SecuritiesController {
 
 	final SecuritiesServiceImpl securitiesService;

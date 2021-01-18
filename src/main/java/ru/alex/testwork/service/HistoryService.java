@@ -8,5 +8,9 @@ public interface HistoryService {
 
 	HistoryDto findHistoryBySecId(String secId);
 
-	HistoryDto save(HistoryDto dto);
+	HistoryDto create(HistoryDto dto);
+
+	HistoryDto update(HistoryDto dto);
+
+	Long delete(Long id);
 }

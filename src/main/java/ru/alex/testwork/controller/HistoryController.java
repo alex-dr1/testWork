@@ -28,10 +28,18 @@ public class HistoryController {
 		return status(HttpStatus.OK).body(historyService.findHistoryBySecId(secId));
 	}
 
-	@PostMapping("/{secId}")
-	public ResponseEntity<HistoryDto> createHistory(@PathVariable String secId,
-													@RequestBody HistoryDto dto) {
+	@PostMapping
+	public ResponseEntity<HistoryDto> createHistory(@RequestBody HistoryDto dto) {
+		return status(HttpStatus.CREATED).body(historyService.create(dto));
+	}
 
-		return status(HttpStatus.CREATED).body(historyService.save(dto));
+	@PutMapping
+	public ResponseEntity<HistoryDto> updateHistory(@RequestBody HistoryDto dto) {
+		return status(HttpStatus.OK).body(historyService.update(dto));
+	}
+
+	@DeleteMapping(value = "/{id}")
+	public ResponseEntity<Object> deleteHistory(@PathVariable Long id) {
+		return status(HttpStatus.OK).body("Successful delete history id: " + historyService.delete(id));
 	}
 }

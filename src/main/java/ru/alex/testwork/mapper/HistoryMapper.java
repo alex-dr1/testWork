@@ -23,6 +23,7 @@ public class HistoryMapper {
 
 	public static HistoryEntity dtoToEntity(HistoryDto dto){
 		HistoryEntity history = new HistoryEntity();
+		history.setId(dto.getId());
 		history.setSecId(dto.getSecId());
 		history.setTradeDate(Date.valueOf(dto.getTradeDate()));
 		history.setNumTrades(Double.parseDouble(dto.getNumTrades()));

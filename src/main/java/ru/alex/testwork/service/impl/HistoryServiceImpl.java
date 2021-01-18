@@ -7,6 +7,7 @@ import ru.alex.testwork.entity.SecuritiesEntity;
 import ru.alex.testwork.exception.BadRestRequestException;
 import ru.alex.testwork.exception.HistoryBySecIdNotFoundException;
 import ru.alex.testwork.exception.HistoryNotFoundException;
+import ru.alex.testwork.exception.SecuritiesBySecIdNotFoundException;
 import ru.alex.testwork.mapper.HistoryMapper;
 import ru.alex.testwork.repository.HistoryRepo;
 import ru.alex.testwork.repository.SecuritiesRepo;
@@ -52,13 +53,39 @@ public class HistoryServiceImpl implements HistoryService {
 	}
 
 	@Override
-	public HistoryDto save(HistoryDto dto) {
+	public HistoryDto create(HistoryDto dto) {
 		HistoryEntity entity = HistoryMapper.dtoToEntity(dto);
+		Long id = entity.getId();
 		String secId = entity.getSecId();
 
-		if(secId == null) throw new BadRestRequestException("secId == null");
+		if (id != null) throw new BadRestRequestException("id != null");
+		if (secId == null) throw new BadRestRequestException("secId == null");
+		SecuritiesEntity securities = securitiesRepo.findSecuritiesBySecId(secId).orElseThrow(() -> new SecuritiesBySecIdNotFoundException(secId));
 
-		SecuritiesEntity securities = securitiesRepo.findSecuritiesBySecId(secId).orElse(null);
-		return null;
+		entity.setSecurities(securities);
+		return HistoryMapper.entityToDto(historyRepo.save(entity));
 	}
+
+	@Override
+	public HistoryDto update(HistoryDto dto) {
+		HistoryEntity entityNew = HistoryMapper.dtoToEntity(dto);
+		Long id = entityNew.getId();
+		String secId = entityNew.getSecId();
+
+		if (id == null) throw new BadRestRequestException("id == null");
+		if (secId == null) throw new BadRestRequestException("secId == null");
+		SecuritiesEntity securities = securitiesRepo.findSecuritiesBySecId(secId).orElseThrow(() -> new SecuritiesBySecIdNotFoundException(secId));
+		entityNew.setSecurities(securities);
+
+		return HistoryMapper.entityToDto(historyRepo.save(entityNew));
+	}
+
+	@Override
+	public Long delete(Long id) {
+		if (!historyRepo.existsById(id)) throw new HistoryNotFoundException(id);
+		historyRepo.deleteById(id);
+		return id;
+	}
+
+
 }

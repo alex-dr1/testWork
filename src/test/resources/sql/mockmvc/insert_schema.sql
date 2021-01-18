@@ -21,3 +21,6 @@ values (null, 220.0, 968.0, 221.5, 'AQUA', to_date('2020-08-25', 'YYYY-MM-DD'));
 
 insert into history (id, close, num_trades, open, sec_id, trade_date)
 values (null, 73.3, 2523.0, 73.65, 'MTLRP', to_date('2020-08-25', 'YYYY-MM-DD'));
+
+insert into history (id, close, num_trades, open, sec_id, trade_date)
+values (null, 73.3, 2523.0, 73.65, 'MTLRP', to_date('2021-01-18', 'YYYY-MM-DD'));
