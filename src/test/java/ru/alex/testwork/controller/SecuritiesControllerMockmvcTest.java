@@ -87,7 +87,7 @@ class SecuritiesControllerMockmvcTest {
 		final String newSecurities = "{\n" +
 				"    \"secId\": \"TEST1\",\n" +
 				"    \"regNumber\": \"2-test-1\",\n" +
-				"    \"name\": \"test1\",\n" +
+				"    \"name\": \"Русский 1\",\n" +
 				"    \"emitentTitle\": \"test1test1test1test1test1\"\n" +
 				"}";
 
@@ -98,39 +98,63 @@ class SecuritiesControllerMockmvcTest {
 	}
 
 	@Test
-		// id is exists
+		// id is exist
 	void createSecurities_isBadRequest0() throws Exception {
 		final String newSecurities = "{\n" +
 				"	 \"id\": 1,\n" +
 				"    \"secId\": \"TEST1\",\n" +
 				"    \"regNumber\": \"2-test-1\",\n" +
-				"    \"name\": \"test1\",\n" +
+				"    \"name\": \"Русский 1\",\n" +
 				"    \"emitentTitle\": \"test1test1test1test1test1\"\n" +
 				"}";
 
+		final String expected = "{\"status\":400,\"message\":\"Create error: id is exist\",\"httpStatus\":\"BAD_REQUEST\"}";
+
 		mockMvc.perform(post("/api/securities").contentType(MediaType.APPLICATION_JSON).content(newSecurities))
 				.andExpect(status().isBadRequest())
+				.andExpect(content().json(expected))
 		;
 	}
 
+
 	@Test
-		// secId is exists
+		// secId is exist
 	void createSecurities_isBadRequest1() throws Exception {
 		final String newSecurities = "{\n" +
 				"    \"secId\": \"AQUA\",\n" +
 				"    \"regNumber\": \"2-test-1\",\n" +
-				"    \"name\": \"test1\",\n" +
+				"    \"name\": \"Русский 1\",\n" +
 				"    \"emitentTitle\": \"test1test1test1test1test1\"\n" +
 				"}";
 
+		final String expected = "{\"status\":400,\"message\":\"Create error: secId is exist\",\"httpStatus\":\"BAD_REQUEST\"}";
+
 		mockMvc.perform(post("/api/securities").contentType(MediaType.APPLICATION_JSON).content(newSecurities))
 				.andExpect(status().isBadRequest())
+				.andExpect(content().json(expected))
+		;
+	}
+
+	@Test
+		// secId == null
+	void createSecurities_isBadRequest2() throws Exception {
+		final String newSecurities = "{\n" +
+				"    \"regNumber\": \"2-test-1\",\n" +
+				"    \"name\": \"Русский 1\",\n" +
+				"    \"emitentTitle\": \"test1test1test1test1test1\"\n" +
+				"}";
+
+		final String expected = "{\"status\":400,\"message\":\"Create error: secId == null\",\"httpStatus\":\"BAD_REQUEST\"}";
+
+		mockMvc.perform(post("/api/securities").contentType(MediaType.APPLICATION_JSON).content(newSecurities))
+				.andExpect(status().isBadRequest())
+				.andExpect(content().json(expected))
 		;
 	}
 
 	@Test
 		// name = blank
-	void createSecurities_isBadRequest2() throws Exception {
+	void createSecurities_isBadRequest3() throws Exception {
 		final String newSecurities = "{\n" +
 				"    \"secId\": \"TEST2\",\n" +
 				"    \"regNumber\": \"2-test-2\",\n" +
@@ -138,8 +162,29 @@ class SecuritiesControllerMockmvcTest {
 				"    \"emitentTitle\": \"test2\"\n" +
 				"}";
 
+		final String expected = "{\"status\":400,\"message\":\"name not blank\",\"httpStatus\":\"BAD_REQUEST\"}";
+
 		mockMvc.perform(post("/api/securities").contentType(MediaType.APPLICATION_JSON).content(newSecurities))
 				.andExpect(status().isBadRequest())
+				.andExpect(content().json(expected))
+		;
+	}
+
+	@Test
+		// name is not valid ru_RU
+	void createSecurities_isBadRequest4() throws Exception {
+		final String newSecurities = "{\n" +
+				"    \"secId\": \"TEST1\",\n" +
+				"    \"regNumber\": \"2-test-1\",\n" +
+				"    \"name\": \"russian 1\",\n" +
+				"    \"emitentTitle\": \"test1test1test1test1test1\"\n" +
+				"}";
+
+		final String expected = "{\"status\":400,\"message\":\"Not valid field NAME = russian 1\",\"httpStatus\":\"BAD_REQUEST\"}";
+
+		mockMvc.perform(post("/api/securities").contentType(MediaType.APPLICATION_JSON).content(newSecurities))
+				.andExpect(status().isBadRequest())
+				.andExpect(content().json(expected))
 		;
 	}
 
@@ -149,9 +194,10 @@ class SecuritiesControllerMockmvcTest {
 				"	 \"id\": 3,\n" +
 				"    \"secId\": \"MTLRP\",\n" +
 				"    \"regNumber\": \"test2-01-55005-E\",\n" +
-				"    \"name\": \"testМечел ПАО ап\",\n" +
+				"    \"name\": \"Мечел ПАО ап\",\n" +
 				"    \"emitentTitle\": \"---Публичное акционерное общество \\\"Мечел\\\"\"\n" +
 				"}";
+
 
 		mockMvc.perform(put("/api/securities").contentType(MediaType.APPLICATION_JSON).content(updateSecurities))
 				.andExpect(status().isOk())
@@ -165,12 +211,15 @@ class SecuritiesControllerMockmvcTest {
 		final String updateSecurities = "{\n" +
 				"    \"secId\": \"MTLRP\",\n" +
 				"    \"regNumber\": \"test2-01-55005-E\",\n" +
-				"    \"name\": \"testМечел ПАО ап\",\n" +
+				"    \"name\": \"Мечел ПАО ап\",\n" +
 				"    \"emitentTitle\": \"---Публичное акционерное общество \\\"Мечел\\\"\"\n" +
 				"}";
 
+		final String expected = "{\"status\":400,\"message\":\"Update error: id = null\",\"httpStatus\":\"BAD_REQUEST\"}";
+
 		mockMvc.perform(put("/api/securities").contentType(MediaType.APPLICATION_JSON).content(updateSecurities))
 				.andExpect(status().isBadRequest())
+				.andExpect(content().json(expected))
 		;
 	}
 
@@ -180,17 +229,20 @@ class SecuritiesControllerMockmvcTest {
 		final String updateSecurities = "{\n" +
 				"	 \"id\": 3,\n" +
 				"    \"regNumber\": \"test2-01-55005-E\",\n" +
-				"    \"name\": \"testМечел ПАО ап\",\n" +
+				"    \"name\": \"Мечел ПАО ап\",\n" +
 				"    \"emitentTitle\": \"---Публичное акционерное общество \\\"Мечел\\\"\"\n" +
 				"}";
 
+		final String expected = "{\"status\":400,\"message\":\"Update error: secId = null\",\"httpStatus\":\"BAD_REQUEST\"}";
+
 		mockMvc.perform(put("/api/securities").contentType(MediaType.APPLICATION_JSON).content(updateSecurities))
 				.andExpect(status().isBadRequest())
+				.andExpect(content().json(expected))
 		;
 	}
 
 	@Test
-		// name or emitentTitle is blank
+		// name or emitentTitle = blank
 	void updateSecurities_isBadRequest2() throws Exception {
 		final String updateSecurities = "{\n" +
 				"	 \"id\": 3,\n" +
@@ -200,9 +252,13 @@ class SecuritiesControllerMockmvcTest {
 				"    \"emitentTitle\": \"---Публичное акционерное общество \\\"Мечел\\\"\"\n" +
 				"}";
 
+		final String expected = "{\"status\":400,\"message\":\"Validation failed\",\"httpStatus\":\"BAD_REQUEST\"}";
+
 		mockMvc.perform(put("/api/securities").contentType(MediaType.APPLICATION_JSON).content(updateSecurities))
 				.andExpect(status().isBadRequest())
+				.andExpect(content().json(expected))
 		;
+
 	}
 
 	@Test
@@ -211,12 +267,15 @@ class SecuritiesControllerMockmvcTest {
 				"	 \"id\": 3,\n" +
 				"    \"secId\": \"QWER\",\n" +
 				"    \"regNumber\": \"test2-01-55005-E\",\n" +
-				"    \"name\": \"testМечел ПАО ап\",\n" +
+				"    \"name\": \"Мечел ПАО ап\",\n" +
 				"    \"emitentTitle\": \"---Публичное акционерное общество \\\"Мечел\\\"\"\n" +
 				"}";
 
+		final String expected = "{\"status\":404,\"message\":\"Securities not found: SECID=QWER\",\"httpStatus\":\"NOT_FOUND\"}";
+
 		mockMvc.perform(put("/api/securities").contentType(MediaType.APPLICATION_JSON).content(updateSecurities))
 				.andExpect(status().is(404))
+				.andExpect(content().json(expected))
 		;
 	}
 

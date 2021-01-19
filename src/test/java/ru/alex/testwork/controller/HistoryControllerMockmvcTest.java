@@ -120,7 +120,7 @@ class HistoryControllerMockmvcTest {
 				"    \"close\": \"220.0\"\n" +
 				"}";
 
-		final String expected = "{\"status\":400,\"message\":\"secId == null\",\"httpStatus\":\"BAD_REQUEST\"}";
+		final String expected = "{\"status\":400,\"message\":\"Create error: secId == null\",\"httpStatus\":\"BAD_REQUEST\"}";
 
 		mockMvc.perform(post("/api/history").contentType(MediaType.APPLICATION_JSON).content(newHistory))
 				.andExpect(status().isBadRequest())
@@ -139,7 +139,7 @@ class HistoryControllerMockmvcTest {
 				"    \"close\": \"220.0\"\n" +
 				"}";
 
-		final String expected = " {\"status\":400,\"message\":\"id != null\",\"httpStatus\":\"BAD_REQUEST\"}";
+		final String expected = "{\"status\":400,\"message\":\"Create error: id != null\",\"httpStatus\":\"BAD_REQUEST\"}";
 
 		mockMvc.perform(post("/api/history").contentType(MediaType.APPLICATION_JSON).content(newHistory))
 				.andExpect(status().isBadRequest())
@@ -192,7 +192,7 @@ class HistoryControllerMockmvcTest {
 				"\"close\": \"73.4\"\n" +
 				"}";
 
-		final String expected = "{\"status\":400,\"message\":\"id == null\",\"httpStatus\":\"BAD_REQUEST\"}";
+		final String expected = "{\"status\":400,\"message\":\"Update error: id == null\",\"httpStatus\":\"BAD_REQUEST\"}";
 
 		mockMvc.perform(put("/api/history").contentType(MediaType.APPLICATION_JSON).content(newHistory))
 				.andExpect(status().isBadRequest())
@@ -210,7 +210,7 @@ class HistoryControllerMockmvcTest {
 				"\"close\": \"73.4\"\n" +
 				"}";
 
-		final String expected = "{\"status\":400,\"message\":\"secId == null\",\"httpStatus\":\"BAD_REQUEST\"}";
+		final String expected = "{\"status\":400,\"message\":\"Update error: secId == null\",\"httpStatus\":\"BAD_REQUEST\"}";
 
 		mockMvc.perform(put("/api/history").contentType(MediaType.APPLICATION_JSON).content(newHistory))
 				.andExpect(status().isBadRequest())

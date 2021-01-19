@@ -8,4 +8,7 @@ import java.util.Optional;
 public interface SecuritiesRepo extends JpaRepository<SecuritiesEntity, Long> {
 
 	Optional<SecuritiesEntity> findSecuritiesBySecId(String secId);
+
+	boolean existsBySecId(String secId);
 }
+

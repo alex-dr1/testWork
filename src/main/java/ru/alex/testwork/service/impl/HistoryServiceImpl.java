@@ -14,6 +14,8 @@ import ru.alex.testwork.repository.SecuritiesRepo;
 import ru.alex.testwork.service.HistoryService;
 import ru.alex.testwork.service.MoexService;
 
+import java.util.Optional;
+
 @Service
 public class HistoryServiceImpl implements HistoryService {
 	final HistoryRepo historyRepo;
@@ -54,13 +56,16 @@ public class HistoryServiceImpl implements HistoryService {
 
 	@Override
 	public HistoryDto create(HistoryDto dto) {
+		Optional<Long> id = Optional.ofNullable(dto.getId());
+		Optional<String> secId = Optional.ofNullable(dto.getSecId());
 		HistoryEntity entity = HistoryMapper.dtoToEntity(dto);
-		Long id = entity.getId();
-		String secId = entity.getSecId();
 
-		if (id != null) throw new BadRestRequestException("id != null");
-		if (secId == null) throw new BadRestRequestException("secId == null");
-		SecuritiesEntity securities = securitiesRepo.findSecuritiesBySecId(secId).orElseThrow(() -> new SecuritiesBySecIdNotFoundException(secId));
+		id.ifPresent(aLong -> {
+			throw new BadRestRequestException("Create error: id != null");
+		});
+		secId.orElseThrow(() -> new BadRestRequestException("Create error: secId == null"));
+
+		SecuritiesEntity securities = securitiesRepo.findSecuritiesBySecId(secId.get()).orElseThrow(() -> new SecuritiesBySecIdNotFoundException(secId.get()));
 
 		entity.setSecurities(securities);
 		return HistoryMapper.entityToDto(historyRepo.save(entity));
@@ -68,16 +73,17 @@ public class HistoryServiceImpl implements HistoryService {
 
 	@Override
 	public HistoryDto update(HistoryDto dto) {
-		HistoryEntity entityNew = HistoryMapper.dtoToEntity(dto);
-		Long id = entityNew.getId();
-		String secId = entityNew.getSecId();
+		Optional<Long> id = Optional.ofNullable(dto.getId());
+		Optional<String> secId = Optional.ofNullable(dto.getSecId());
+		HistoryEntity entity = HistoryMapper.dtoToEntity(dto);
 
-		if (id == null) throw new BadRestRequestException("id == null");
-		if (secId == null) throw new BadRestRequestException("secId == null");
-		SecuritiesEntity securities = securitiesRepo.findSecuritiesBySecId(secId).orElseThrow(() -> new SecuritiesBySecIdNotFoundException(secId));
-		entityNew.setSecurities(securities);
+		id.orElseThrow(()->new BadRestRequestException("Update error: id == null"));
+		secId.orElseThrow(()->new BadRestRequestException("Update error: secId == null"));
 
-		return HistoryMapper.entityToDto(historyRepo.save(entityNew));
+		SecuritiesEntity securities = securitiesRepo.findSecuritiesBySecId(secId.get()).orElseThrow(() -> new SecuritiesBySecIdNotFoundException(secId.get()));
+		entity.setSecurities(securities);
+
+		return HistoryMapper.entityToDto(historyRepo.save(entity));
 	}
 
 	@Override

@@ -24,7 +24,6 @@ class SecuritiesRepoTest {
 	public static final String REG_NUMBER = "reg number";
 	public static final String NAME = "name";
 	public static final String EMITENT_TITLE = "emitent title";
-	public static final Set<HistoryEntity> HISTORY_SET = Set.of(new HistoryEntity());
 	SecuritiesEntity entity;
 
 	@BeforeEach
@@ -35,7 +34,7 @@ class SecuritiesRepoTest {
 		entity.setRegNumber(REG_NUMBER);
 		entity.setSecId(SEC_ID);
 		entity.setId(null);
-		entity.setHistorySet(HISTORY_SET);
+		entity.setHistorySet(null);
 	}
 	@Test
 	void shouldSaveSecurities() {

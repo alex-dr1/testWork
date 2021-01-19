@@ -39,12 +39,12 @@ public class SecuritiesController {
 
 	@PostMapping
 	public ResponseEntity<SecuritiesDto> createSecurities(@RequestBody SecuritiesDto dto) {
-		return status(HttpStatus.CREATED).body(securitiesService.save(dto));
+		return status(HttpStatus.CREATED).body(securitiesService.saveHand(dto));
 	}
 
 	@PutMapping
 	public ResponseEntity<SecuritiesDto> updateSecurities(@RequestBody SecuritiesDto dto) {
-		return status(HttpStatus.OK).body(securitiesService.update(dto));
+		return status(HttpStatus.OK).body(securitiesService.updateHand(dto));
 	}
 
 	@DeleteMapping(value = "/{id}")
