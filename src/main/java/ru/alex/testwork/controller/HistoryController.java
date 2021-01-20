@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import ru.alex.testwork.dto.HistoryDto;
 import ru.alex.testwork.service.impl.HistoryServiceImpl;
 
+import java.util.List;
+
 import static org.springframework.http.ResponseEntity.status;
 
 @RestController
@@ -24,8 +26,8 @@ public class HistoryController {
 	}
 
 	@GetMapping("/sec-id/{secId}")
-	public ResponseEntity<HistoryDto> findHistoryBySecId(@PathVariable String secId) {
-		return status(HttpStatus.OK).body(historyService.findHistoryBySecId(secId));
+	public ResponseEntity<List<HistoryDto>> findHistoryBySecId(@PathVariable String secId) {
+		return status(HttpStatus.OK).body(historyService.findAllHistoryBySecId(secId));
 	}
 
 	@PostMapping

@@ -2,7 +2,7 @@ package ru.alex.testwork.service.impl;
 
 import org.springframework.stereotype.Service;
 import ru.alex.testwork.dto.SecuritiesDto;
-import ru.alex.testwork.entity.SecuritiesEntity;
+import ru.alex.testwork.entity.Securities;
 import ru.alex.testwork.exception.BadRestRequestException;
 import ru.alex.testwork.exception.NameRuLangNotValidException;
 import ru.alex.testwork.exception.SecuritiesBySecIdNotFoundException;
@@ -12,7 +12,6 @@ import ru.alex.testwork.repository.SecuritiesRepo;
 import ru.alex.testwork.service.SecuritiesService;
 import ru.alex.testwork.utils.HandValidator;
 
-import javax.validation.ValidationException;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -28,7 +27,7 @@ public class SecuritiesServiceImpl implements SecuritiesService {
 		this.validatorRuLang = validatorRuLang;
 	}
 
-	public void saveAll(Iterable<SecuritiesEntity> entities) {
+	public void saveAll(Iterable<Securities> entities) {
 		securitiesRepo.saveAll(entities);
 	}
 
@@ -86,7 +85,7 @@ public class SecuritiesServiceImpl implements SecuritiesService {
 
 	@Override
 	public SecuritiesDto findOneBySecId(String secId) {
-		SecuritiesEntity entity = securitiesRepo.findSecuritiesBySecId(secId).orElseThrow(() -> new SecuritiesBySecIdNotFoundException(secId));
+		Securities entity = securitiesRepo.findSecuritiesBySecId(secId).orElseThrow(() -> new SecuritiesBySecIdNotFoundException(secId));
 		return SecuritiesMapper.entityToDto(entity);
 	}
 

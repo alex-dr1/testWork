@@ -3,7 +3,7 @@ package ru.alex.testwork.service.impl;
 import org.apache.camel.ProducerTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.alex.testwork.entity.SecuritiesEntity;
+import ru.alex.testwork.entity.Securities;
 import ru.alex.testwork.service.MoexService;
 
 @Service("moexService")
@@ -17,10 +17,10 @@ public class MoexServiceImpl implements MoexService {
 	}
 
 	@Override
-	public SecuritiesEntity fetchSecuritiesBySecId(String secId) {
+	public Securities fetchSecuritiesBySecId(String secId) {
 		Object obj = producerTemplate.requestBody("direct:fetchSecuritiesMoexService", secId);
-		if(obj instanceof SecuritiesEntity){
-			return (SecuritiesEntity) obj;
+		if(obj instanceof Securities){
+			return (Securities) obj;
 		}
 		return null;
 	}

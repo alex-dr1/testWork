@@ -2,11 +2,13 @@ package ru.alex.testwork.service;
 
 import ru.alex.testwork.dto.HistoryDto;
 
+import java.util.List;
+
 public interface HistoryService {
 
 	HistoryDto findHistoryById(Long id);
 
-	HistoryDto findHistoryBySecId(String secId);
+	List<HistoryDto> findAllHistoryBySecId(String secId);
 
 	HistoryDto create(HistoryDto dto);
 

@@ -1,11 +1,11 @@
 package ru.alex.testwork.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ru.alex.testwork.entity.HistoryEntity;
+import ru.alex.testwork.entity.History;
 
-import java.util.Optional;
+import java.util.List;
 
-public interface HistoryRepo extends JpaRepository<HistoryEntity, Long> {
-	Optional<HistoryEntity> findBySecId(String secId);
+public interface HistoryRepo extends JpaRepository<History, Long> {
+	List<History> findAllBySecId(String secId);
 	boolean existsBySecId(String secId);
 }

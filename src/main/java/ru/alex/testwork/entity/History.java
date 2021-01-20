@@ -1,16 +1,13 @@
 package ru.alex.testwork.entity;
 
 
-import ru.alex.testwork.dto.HistoryDto;
-import ru.alex.testwork.xml.history.HistoryXml;
-
 import javax.persistence.*;
 import java.sql.Date;
 import java.util.Objects;
 
 @Entity
 @Table(name = "history")
-public class HistoryEntity {
+public class History {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,9 +21,9 @@ public class HistoryEntity {
 
 	@ManyToOne
 	@JoinColumn(name = "sec_id", referencedColumnName = "sec_id")
-	private SecuritiesEntity securities;
+	private Securities securities;
 
-	public HistoryEntity() {
+	public History() {
 	}
 
 	public Long getId() {
@@ -77,11 +74,11 @@ public class HistoryEntity {
 		this.close = close;
 	}
 
-	public SecuritiesEntity getSecurities() {
+	public Securities getSecurities() {
 		return securities;
 	}
 
-	public void setSecurities(SecuritiesEntity securities) {
+	public void setSecurities(Securities securities) {
 		this.securities = securities;
 	}
 
@@ -100,8 +97,8 @@ public class HistoryEntity {
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
-		if (!(o instanceof HistoryEntity)) return false;
-		HistoryEntity history = (HistoryEntity) o;
+		if (!(o instanceof History)) return false;
+		History history = (History) o;
 		return Objects.equals(tradeDate, history.tradeDate);
 	}
 

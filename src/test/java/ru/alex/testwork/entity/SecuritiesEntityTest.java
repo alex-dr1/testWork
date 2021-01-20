@@ -15,12 +15,12 @@ class SecuritiesEntityTest {
 	public static final String NAME = "name";
 	public static final String EMITENT_TITLE = "emitent title";
 	public static final int AMOUNT_FIELDS = 6;
-	public static final Set<HistoryEntity> HISTORY_SET = Set.of(new HistoryEntity());
-	SecuritiesEntity entity;
+	public static final Set<History> HISTORY_SET = Set.of(new History());
+	Securities entity;
 
 	@BeforeEach
 	void setEntity() {
-		entity = new SecuritiesEntity();
+		entity = new Securities();
 		entity.setEmitentTitle(EMITENT_TITLE);
 		entity.setName(NAME);
 		entity.setRegNumber(REG_NUMBER);

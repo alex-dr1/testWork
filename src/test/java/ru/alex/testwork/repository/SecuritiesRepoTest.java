@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
-import ru.alex.testwork.entity.HistoryEntity;
-import ru.alex.testwork.entity.SecuritiesEntity;
-
-import java.util.Set;
+import ru.alex.testwork.entity.Securities;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -24,11 +21,11 @@ class SecuritiesRepoTest {
 	public static final String REG_NUMBER = "reg number";
 	public static final String NAME = "name";
 	public static final String EMITENT_TITLE = "emitent title";
-	SecuritiesEntity entity;
+	Securities entity;
 
 	@BeforeEach
 	void setEntity() {
-		entity = new SecuritiesEntity();
+		entity = new Securities();
 		entity.setEmitentTitle(EMITENT_TITLE);
 		entity.setName(NAME);
 		entity.setRegNumber(REG_NUMBER);
@@ -38,7 +35,7 @@ class SecuritiesRepoTest {
 	}
 	@Test
 	void shouldSaveSecurities() {
-		SecuritiesEntity savedSecurities = securitiesRepo.save(entity);
+		Securities savedSecurities = securitiesRepo.save(entity);
 
 		assertThat(savedSecurities)
 				.usingRecursiveComparison()
@@ -49,7 +46,7 @@ class SecuritiesRepoTest {
 	@Sql("classpath:sql/securities.sql")
 	void shouldFindSecuritiesBySecId() {
 		String secId = "AQUA";
-		SecuritiesEntity findSecurities = securitiesRepo.findSecuritiesBySecId(secId).get();
+		Securities findSecurities = securitiesRepo.findSecuritiesBySecId(secId).get();
 		assertThat(findSecurities.getSecId()).isEqualTo(secId);
 	}
 

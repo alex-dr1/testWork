@@ -1,8 +1,5 @@
 package ru.alex.testwork.dto;
 
-import ru.alex.testwork.entity.HistoryEntity;
-
-import java.text.SimpleDateFormat;
 import java.util.Objects;
 
 public class HistoryDto {

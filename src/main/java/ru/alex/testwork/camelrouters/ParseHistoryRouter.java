@@ -6,7 +6,7 @@ import org.apache.camel.ValidationException;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.converter.jaxb.JaxbDataFormat;
 import org.springframework.stereotype.Component;
-import ru.alex.testwork.entity.HistoryEntity;
+import ru.alex.testwork.entity.History;
 import ru.alex.testwork.mapper.HistoryMapper;
 import ru.alex.testwork.xml.history.HistoryListXml;
 import ru.alex.testwork.xml.history.HistoryXml;
@@ -37,14 +37,14 @@ public class ParseHistoryRouter extends RouteBuilder {
 
 	Processor covertListXmlToHistory = exchange -> {
 		List<HistoryXml> historyXmlList = exchange.getIn().getBody(HistoryListXml.class).getHistoryXmlList();
-		List<HistoryEntity> historyList = historyXmlList.stream()
+		List<History> historyList = historyXmlList.stream()
 				.filter(historyXml -> !historyXml.getNumTrades().equals("0"))
 				.map(convertHistoryXmlToHistory())
 				.collect(Collectors.toList());
 		exchange.getIn().setBody(historyList);
 	};
 
-	private Function<HistoryXml, HistoryEntity> convertHistoryXmlToHistory() {
+	private Function<HistoryXml, History> convertHistoryXmlToHistory() {
 		return HistoryMapper::xmlToEntity;
 	}
 
@@ -84,7 +84,7 @@ public class ParseHistoryRouter extends RouteBuilder {
 				.unmarshal(jaxbListHis)
 				.process(covertListXmlToHistory)
 				.process(exchange -> {
-					List<HistoryEntity> historyList = exchange.getIn().getBody(ArrayList.class);
+					List<History> historyList = exchange.getIn().getBody(ArrayList.class);
 					//TODO Insert to DB
 					historyList.forEach(historyService::saveImport);
 				})

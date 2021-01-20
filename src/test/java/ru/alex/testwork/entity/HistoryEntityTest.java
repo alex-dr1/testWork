@@ -15,13 +15,13 @@ class HistoryEntityTest {
 	public static final double NUM_TRADES = 2345.8;
 	public static final double OPEN = 10.5;
 	public static final double CLOSE = 9.3;
-	public static final SecuritiesEntity SECURITIES_ENTITY = new SecuritiesEntity();
+	public static final Securities SECURITIES_ENTITY = new Securities();
 	public static final int AMOUNT_FIELDS = 7;
-	HistoryEntity entity;
+	History entity;
 
 	@BeforeEach
 	void setEntity() {
-		entity = new HistoryEntity();
+		entity = new History();
 		entity.setId(ID);
 		entity.setSecId(SEC_ID);
 		entity.setTradeDate(TRADE_DATE);

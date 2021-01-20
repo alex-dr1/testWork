@@ -2,9 +2,6 @@ package ru.alex.testwork.dto;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ru.alex.testwork.entity.HistoryEntity;
-
-import java.sql.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 

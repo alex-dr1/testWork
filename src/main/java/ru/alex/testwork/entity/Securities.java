@@ -12,7 +12,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "securities")
-public class SecuritiesEntity implements Serializable {
+public class Securities implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,9 +34,9 @@ public class SecuritiesEntity implements Serializable {
 	private String emitentTitle;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "securities", fetch = FetchType.LAZY)
-	private Set<HistoryEntity> historySet;
+	private Set<History> historySet;
 
-	public SecuritiesEntity() {
+	public Securities() {
 	}
 
 	public Long getId() {
@@ -79,11 +79,11 @@ public class SecuritiesEntity implements Serializable {
 		this.emitentTitle = emitentTitle;
 	}
 
-	public Set<HistoryEntity> getHistorySet() {
+	public Set<History> getHistorySet() {
 		return historySet;
 	}
 
-	public void setHistorySet(Set<HistoryEntity> historySet) {
+	public void setHistorySet(Set<History> historySet) {
 		this.historySet = historySet;
 	}
 
@@ -102,8 +102,8 @@ public class SecuritiesEntity implements Serializable {
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
-		if (!(o instanceof SecuritiesEntity)) return false;
-		SecuritiesEntity that = (SecuritiesEntity) o;
+		if (!(o instanceof Securities)) return false;
+		Securities that = (Securities) o;
 		return Objects.equals(id, that.id) && Objects.equals(secId, that.secId) && Objects.equals(regNumber, that.regNumber) && Objects.equals(name, that.name) && Objects.equals(emitentTitle, that.emitentTitle) && Objects.equals(historySet, that.historySet);
 	}
 

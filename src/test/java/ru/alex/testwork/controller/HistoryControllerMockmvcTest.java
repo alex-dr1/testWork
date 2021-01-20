@@ -77,17 +77,18 @@ class HistoryControllerMockmvcTest {
 
 	@Test
 	void findHistoryBySecId_isOk() throws Exception {
+		String expected = "["+EXPECTED1+"]";
 		mockMvc.perform(get("/api/history/sec-id/" + SECID1))
 				.andExpect(status().isOk())
-				.andExpect(content().json(EXPECTED1));
+				.andExpect(content().json(expected));
 	}
 
 	@Test
 	void findHistoryBySecId_isNotFound() throws Exception {
 		String secId = "TEST";
-		String expected = "{\"status\":404,\"message\":\"History not found: SECID=" + secId + "\",\"httpStatus\":\"NOT_FOUND\"}";
+		String expected = "[]";
 		mockMvc.perform(get("/api/history/sec-id/" + secId))
-				.andExpect(status().is(404))
+				.andExpect(status().isOk())
 				.andExpect(content().json(expected));
 	}
 
@@ -95,7 +96,6 @@ class HistoryControllerMockmvcTest {
 	@Test
 	void createHistory_isCreated() throws Exception {
 		final String newHistory = "{\n" +
-//				"	 \"id\": 2,\n" +
 				"    \"secId\": \"AQUA\",\n" +
 				"    \"tradeDate\": \"2020-08-26\",\n" +
 				"    \"numTrades\": \"969.0\",\n" +
@@ -112,8 +112,6 @@ class HistoryControllerMockmvcTest {
 		// secId == null
 	void createHistory_isBadRequest0() throws Exception {
 		final String newHistory = "{\n" +
-//				"	 \"id\": 2,\n" +
-//				"    \"secId\": \"AQUA\",\n" +
 				"    \"tradeDate\": \"2020-08-25\",\n" +
 				"    \"numTrades\": \"968.0\",\n" +
 				"    \"open\": \"221.5\",\n" +

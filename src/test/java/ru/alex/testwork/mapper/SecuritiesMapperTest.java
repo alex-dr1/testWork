@@ -3,8 +3,8 @@ package ru.alex.testwork.mapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.alex.testwork.dto.SecuritiesDto;
-import ru.alex.testwork.entity.HistoryEntity;
-import ru.alex.testwork.entity.SecuritiesEntity;
+import ru.alex.testwork.entity.History;
+import ru.alex.testwork.entity.Securities;
 import ru.alex.testwork.xml.securities.SecuritiesXml;
 
 import java.util.Set;
@@ -18,13 +18,13 @@ class SecuritiesMapperTest {
 	public static final String REG_NUMBER = "reg number";
 	public static final String NAME = "name";
 	public static final String EMITENT_TITLE = "emitent title";
-	public static final Set<HistoryEntity> HISTORY_SET = Set.of(new HistoryEntity());
-	SecuritiesEntity entity;
+	public static final Set<History> HISTORY_SET = Set.of(new History());
+	Securities entity;
 	SecuritiesDto dto;
 
 	@BeforeEach
 	void setEntityAndDto() {
-		entity = new SecuritiesEntity();
+		entity = new Securities();
 		entity.setEmitentTitle(EMITENT_TITLE);
 		entity.setName(NAME);
 		entity.setRegNumber(REG_NUMBER);

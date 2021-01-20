@@ -5,7 +5,6 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.converter.jaxb.JaxbDataFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import ru.alex.testwork.entity.SecuritiesEntity;
 import ru.alex.testwork.mapper.SecuritiesMapper;
 import ru.alex.testwork.xml.securities.SecuritiesXml;
 

@@ -6,7 +6,7 @@ import org.apache.camel.ValidationException;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.converter.jaxb.JaxbDataFormat;
 import org.springframework.stereotype.Component;
-import ru.alex.testwork.entity.SecuritiesEntity;
+import ru.alex.testwork.entity.Securities;
 import ru.alex.testwork.mapper.SecuritiesMapper;
 import ru.alex.testwork.xml.securities.SecuritiesListXml;
 import ru.alex.testwork.xml.securities.SecuritiesXml;
@@ -37,13 +37,13 @@ public class ParseSecuritiesRouter extends RouteBuilder {
 
 	Processor covertListXmlToSecurities = exchange -> {
 		List<SecuritiesXml> securitiesXmlList = exchange.getIn().getBody(SecuritiesListXml.class).getSecuritiesXmlList();
-		List<SecuritiesEntity> securitiesList = securitiesXmlList.stream()
+		List<Securities> securitiesList = securitiesXmlList.stream()
 				.map(convertSecXmlToSecurities())
 				.collect(Collectors.toList());
 		exchange.getIn().setBody(securitiesList);
 	};
 
-	private Function<SecuritiesXml, SecuritiesEntity> convertSecXmlToSecurities() {
+	private Function<SecuritiesXml, Securities> convertSecXmlToSecurities() {
 		return SecuritiesMapper::xmlToEntity;
 	}
 

@@ -1,7 +1,7 @@
 package ru.alex.testwork.mapper;
 
 import ru.alex.testwork.dto.HistoryDto;
-import ru.alex.testwork.entity.HistoryEntity;
+import ru.alex.testwork.entity.History;
 import ru.alex.testwork.xml.history.HistoryXml;
 
 import java.sql.Date;
@@ -9,10 +9,12 @@ import java.text.SimpleDateFormat;
 
 public class HistoryMapper {
 
+	//TODO Mapper to bean
+
 	private static final String DATA_PATTERN = "yyyy-MM-dd";
 
-	public static HistoryEntity xmlToEntity(HistoryXml xml){
-		HistoryEntity history = new HistoryEntity();
+	public static History xmlToEntity(HistoryXml xml) {
+		History history = new History();
 		history.setSecId(xml.getSecId());
 		history.setTradeDate(Date.valueOf(xml.getTradeDate()));
 		history.setNumTrades(Double.parseDouble(xml.getNumTrades()));
@@ -21,8 +23,8 @@ public class HistoryMapper {
 		return history;
 	}
 
-	public static HistoryEntity dtoToEntity(HistoryDto dto){
-		HistoryEntity history = new HistoryEntity();
+	public static History dtoToEntity(HistoryDto dto) {
+		History history = new History();
 		history.setId(dto.getId());
 		history.setSecId(dto.getSecId());
 		history.setTradeDate(Date.valueOf(dto.getTradeDate()));
@@ -32,7 +34,8 @@ public class HistoryMapper {
 		return history;
 	}
 
-	public static HistoryDto entityToDto(HistoryEntity entity) {
+	public static HistoryDto entityToDto(History entity) {
+		// TODO to bean
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(DATA_PATTERN);
 
 		return new HistoryDto(entity.getId(),

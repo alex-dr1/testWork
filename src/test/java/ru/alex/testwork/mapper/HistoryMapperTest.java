@@ -3,8 +3,8 @@ package ru.alex.testwork.mapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.alex.testwork.dto.HistoryDto;
-import ru.alex.testwork.entity.HistoryEntity;
-import ru.alex.testwork.entity.SecuritiesEntity;
+import ru.alex.testwork.entity.History;
+import ru.alex.testwork.entity.Securities;
 import ru.alex.testwork.xml.history.HistoryXml;
 
 import java.sql.Date;
@@ -21,9 +21,9 @@ class HistoryMapperTest {
 	public static final double NUM_TRADES = 2345.8;
 	public static final double OPEN = 10.5;
 	public static final double CLOSE = 9.3;
-	public static final SecuritiesEntity SECURITIES_ENTITY = new SecuritiesEntity();
+	public static final Securities SECURITIES_ENTITY = new Securities();
 	private static final String DATA_PATTERN = "yyyy-MM-dd";
-	HistoryEntity entity;
+	History entity;
 	HistoryDto dto;
 	SimpleDateFormat simpleDateFormat;
 
@@ -31,7 +31,7 @@ class HistoryMapperTest {
 	void setEntity() {
 		simpleDateFormat = new SimpleDateFormat(DATA_PATTERN);
 
-		entity = new HistoryEntity();
+		entity = new History();
 		entity.setId(ID);
 		entity.setSecId(SEC_ID);
 		entity.setTradeDate(TRADE_DATE);
@@ -59,7 +59,7 @@ class HistoryMapperTest {
 		xml.setOpen(String.valueOf(OPEN));
 		xml.setClose(String.valueOf(CLOSE));
 
-		HistoryEntity actualEntity = HistoryMapper.xmlToEntity(xml);
+		History actualEntity = HistoryMapper.xmlToEntity(xml);
 
 		assertThat(actualEntity)
 				.usingRecursiveComparison()
@@ -71,7 +71,7 @@ class HistoryMapperTest {
 
 	@Test
 	void dtoToEntity() {
-		HistoryEntity actualEntity = HistoryMapper.dtoToEntity(dto);
+		History actualEntity = HistoryMapper.dtoToEntity(dto);
 
 		assertThat(actualEntity)
 				.usingRecursiveComparison()

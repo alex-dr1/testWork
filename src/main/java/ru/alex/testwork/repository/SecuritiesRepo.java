@@ -1,13 +1,13 @@
 package ru.alex.testwork.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ru.alex.testwork.entity.SecuritiesEntity;
+import ru.alex.testwork.entity.Securities;
 
 import java.util.Optional;
 
-public interface SecuritiesRepo extends JpaRepository<SecuritiesEntity, Long> {
+public interface SecuritiesRepo extends JpaRepository<Securities, Long> {
 
-	Optional<SecuritiesEntity> findSecuritiesBySecId(String secId);
+	Optional<Securities> findSecuritiesBySecId(String secId);
 
 	boolean existsBySecId(String secId);
 }

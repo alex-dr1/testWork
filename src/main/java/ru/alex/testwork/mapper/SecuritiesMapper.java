@@ -1,12 +1,12 @@
 package ru.alex.testwork.mapper;
 
-import ru.alex.testwork.entity.SecuritiesEntity;
+import ru.alex.testwork.entity.Securities;
 import ru.alex.testwork.dto.SecuritiesDto;
 import ru.alex.testwork.xml.securities.SecuritiesXml;
 
 public class SecuritiesMapper {
-	public static SecuritiesEntity xmlToEntity(SecuritiesXml xml) {
-		SecuritiesEntity securities = new SecuritiesEntity();
+	public static Securities xmlToEntity(SecuritiesXml xml) {
+		Securities securities = new Securities();
 		securities.setId(null);
 		securities.setSecId(xml.getSecId());
 		securities.setRegNumber(xml.getRegNumber());
@@ -15,8 +15,8 @@ public class SecuritiesMapper {
 		return securities;
 	}
 
-	public static SecuritiesEntity dtoToEntity(SecuritiesDto dto) {
-		SecuritiesEntity securities = new SecuritiesEntity();
+	public static Securities dtoToEntity(SecuritiesDto dto) {
+		Securities securities = new Securities();
 		securities.setId(dto.getId());
 		securities.setSecId(dto.getSecId());
 		securities.setRegNumber(dto.getRegNumber());
@@ -25,7 +25,7 @@ public class SecuritiesMapper {
 		return securities;
 	}
 
-	public static SecuritiesDto entityToDto(SecuritiesEntity entity){
+	public static SecuritiesDto entityToDto(Securities entity){
 		return new SecuritiesDto(entity.getId(),
 				entity.getSecId(),
 				entity.getRegNumber(),
