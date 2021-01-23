@@ -89,14 +89,13 @@ public class Securities implements Serializable {
 
 	@Override
 	public String toString() {
-		return "SecuritiesEntity{" +
-				"id=" + id +
-				", secId='" + secId + '\'' +
-				", regNumber='" + regNumber + '\'' +
-				", name='" + name + '\'' +
-				", emitentTitle='" + emitentTitle + '\'' +
-				", historySet=" + historySet +
-				'}';
+		return "\nSecurities{id=" + id +
+				",\n           secId='" + secId + '\'' +
+				",\n           regNumber='" + regNumber + '\'' +
+				",\n           name='" + name + '\'' +
+				",\n           emitentTitle='" + emitentTitle + '\'' +
+				",\n           historySet=" + historySet +
+				"\n          }\n";
 	}
 
 	@Override

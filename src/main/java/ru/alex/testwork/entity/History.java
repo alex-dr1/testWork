@@ -84,7 +84,7 @@ public class History {
 
 	@Override
 	public String toString() {
-		return "HistoryEntity{" +
+		return "\nHistory{" +
 				"id=" + id +
 				", tradeDate=" + tradeDate +
 				", secId='" + secId + '\'' +
