@@ -34,7 +34,7 @@ class HistoryControllerMockmvcTest {
 			"    \"tradeDate\": \"2020-08-25\",\n" +
 			"    \"numTrades\": \"81.0\",\n" +
 			"    \"open\": \"0.8\",\n" +
-			"    \"close\": \"0.785\"\n" +
+			"    \"close\": \"1.1\"\n" +
 			"}";
 
 	static final String EXPECTED2 = "{\n" +

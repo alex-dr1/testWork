@@ -7,7 +7,7 @@ import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class SecuritiesEntityTest {
+class SecuritiesTest {
 
 	public static final long ID = 1L;
 	public static final String SEC_ID = "SSSS";
@@ -47,14 +47,13 @@ class SecuritiesEntityTest {
 
 	@Test
 	void shouldValidToString() {
-		String expected = "SecuritiesEntity{" +
-				"id=" + ID +
-				", secId='" + SEC_ID + '\'' +
-				", regNumber='" + REG_NUMBER + '\'' +
-				", name='" + NAME + '\'' +
-				", emitentTitle='" + EMITENT_TITLE + '\'' +
-				", historySet=" + HISTORY_SET +
-				'}';
+		String expected = "\nSecurities{id=" + ID +
+				",\n           secId='" + SEC_ID + '\'' +
+				",\n           regNumber='" + REG_NUMBER + '\'' +
+				",\n           name='" + NAME + '\'' +
+				",\n           emitentTitle='" + EMITENT_TITLE + '\'' +
+				",\n           historySet=" + HISTORY_SET +
+				"\n          }\n";
 		assertEquals(expected, entity.toString());
 	}
 

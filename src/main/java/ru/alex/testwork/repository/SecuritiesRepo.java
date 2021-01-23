@@ -6,8 +6,7 @@ import ru.alex.testwork.entity.Securities;
 
 import java.util.Optional;
 
-public interface SecuritiesRepo
-		extends JpaRepository<Securities, Long>, QuerydslPredicateExecutor<Securities> {
+public interface SecuritiesRepo	extends JpaRepository<Securities, Long> {
 
 	Optional<Securities> findSecuritiesBySecId(String secId);
 

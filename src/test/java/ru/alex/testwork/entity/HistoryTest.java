@@ -7,7 +7,7 @@ import java.sql.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class HistoryEntityTest {
+class HistoryTest {
 
 	public static final long ID = 1L;
 	public static final String SEC_ID = "DDDD";
@@ -51,7 +51,7 @@ class HistoryEntityTest {
 
 	@Test
 	void shouldValidToString() {
-		String expected = "HistoryEntity{" +
+		String expected = "\nHistory{" +
 				"id=" + ID +
 				", tradeDate=" + TRADE_DATE +
 				", secId='" + SEC_ID + '\'' +
