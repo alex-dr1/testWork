@@ -3,8 +3,8 @@ package ru.alex.testwork.configuration;
 import org.apache.camel.converter.jaxb.JaxbDataFormat;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import ru.alex.testwork.xml.history.HistoryListXml;
-import ru.alex.testwork.xml.securities.SecuritiesXml;
+import ru.alex.testwork.camelrouters.xml.history.HistoryListXml;
+import ru.alex.testwork.camelrouters.xml.securities.SecuritiesXml;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -16,7 +16,7 @@ public class UnmarshalConfig {
 	public JaxbDataFormat getJaxbListSecurities() throws JAXBException {
 
 		JaxbDataFormat jaxbListSec = new JaxbDataFormat();
-		JAXBContext con = JAXBContext.newInstance(ru.alex.testwork.xml.securities.SecuritiesListXml.class);
+		JAXBContext con = JAXBContext.newInstance(ru.alex.testwork.camelrouters.xml.securities.SecuritiesListXml.class);
 		jaxbListSec.setContext(con);
 
 		return jaxbListSec;

@@ -1,4 +1,4 @@
-package ru.alex.testwork.dto;
+package ru.alex.testwork.controller.dto;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

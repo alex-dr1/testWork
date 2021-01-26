@@ -1,6 +1,6 @@
 package ru.alex.testwork.service;
 
-import ru.alex.testwork.dto.SecuritiesDto;
+import ru.alex.testwork.controller.dto.SecuritiesDto;
 
 import java.util.List;
 

@@ -8,8 +8,8 @@ import org.apache.camel.converter.jaxb.JaxbDataFormat;
 import org.springframework.stereotype.Component;
 import ru.alex.testwork.entity.Securities;
 import ru.alex.testwork.mapper.SecuritiesMapper;
-import ru.alex.testwork.xml.securities.SecuritiesListXml;
-import ru.alex.testwork.xml.securities.SecuritiesXml;
+import ru.alex.testwork.camelrouters.xml.securities.SecuritiesListXml;
+import ru.alex.testwork.camelrouters.xml.securities.SecuritiesXml;
 import ru.alex.testwork.service.impl.SecuritiesServiceImpl;
 import ru.alex.testwork.utils.FileFinder;
 

@@ -1,4 +1,4 @@
-package ru.alex.testwork.dto;
+package ru.alex.testwork.controller.dto;
 
 import java.util.Date;
 import java.text.SimpleDateFormat;

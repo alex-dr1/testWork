@@ -2,10 +2,10 @@ package ru.alex.testwork.mapper;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ru.alex.testwork.dto.HistoryDto;
+import ru.alex.testwork.controller.dto.HistoryDto;
 import ru.alex.testwork.entity.History;
 import ru.alex.testwork.entity.Securities;
-import ru.alex.testwork.xml.history.HistoryXml;
+import ru.alex.testwork.camelrouters.xml.history.HistoryXml;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;

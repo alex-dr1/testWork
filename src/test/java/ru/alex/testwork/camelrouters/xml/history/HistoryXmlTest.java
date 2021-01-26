@@ -1,4 +1,4 @@
-package ru.alex.testwork.xml.history;
+package ru.alex.testwork.camelrouters.xml.history;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

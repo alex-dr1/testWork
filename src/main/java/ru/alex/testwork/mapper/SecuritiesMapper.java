@@ -1,8 +1,8 @@
 package ru.alex.testwork.mapper;
 
 import ru.alex.testwork.entity.Securities;
-import ru.alex.testwork.dto.SecuritiesDto;
-import ru.alex.testwork.xml.securities.SecuritiesXml;
+import ru.alex.testwork.controller.dto.SecuritiesDto;
+import ru.alex.testwork.camelrouters.xml.securities.SecuritiesXml;
 
 public class SecuritiesMapper {
 	public static Securities xmlToEntity(SecuritiesXml xml) {

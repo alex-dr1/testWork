@@ -1,4 +1,4 @@
-package ru.alex.testwork.dto;
+package ru.alex.testwork.controller.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import java.util.Map;
 @Data
 @Builder
 @AllArgsConstructor
-public class ConsRequest {
+public class ConsolidatedRequest {
 
 	String filterEmitentTitle;
 	String filterTradeDate;

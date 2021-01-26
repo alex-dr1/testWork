@@ -1,82 +1,92 @@
 package ru.alex.testwork.repository.impl;
 
+import com.querydsl.core.types.OrderSpecifier;
+import com.querydsl.core.types.Predicate;
+import com.querydsl.core.types.Projections;
+import com.querydsl.jpa.impl.JPAQuery;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
-import ru.alex.testwork.dto.ConsRequest;
-import ru.alex.testwork.dto.ConsolidatedDto;
-import ru.alex.testwork.entity.History;
-import ru.alex.testwork.entity.History_;
-import ru.alex.testwork.entity.Securities;
-import ru.alex.testwork.entity.Securities_;
+import org.springframework.stereotype.Repository;
+import ru.alex.testwork.controller.dto.ConsolidatedDto;
+import ru.alex.testwork.entity.QHistory;
+import ru.alex.testwork.entity.QSecurities;
+import ru.alex.testwork.repository.ConsolidatedRepo;
+import ru.alex.testwork.repository.QPredicate;
 import ru.alex.testwork.service.DirSort;
 
 import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
-import javax.persistence.criteria.*;
 import java.sql.Date;
-import java.text.ParseException;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
-@Component
+@Repository
 @AllArgsConstructor
 @Slf4j
-public class ConsolidatedRepoImpl {
-	private static final String DATA_PATTERN = "yyyy-MM-dd";
+public class ConsolidatedRepoImpl implements ConsolidatedRepo {
 
-	final EntityManager em;
+	final EntityManager entityManager;
+	final QSecurities securities = QSecurities.securities;
+	final QHistory history = QHistory.history;
+	final Map<String, OrderSpecifier<?>> ORDER_SPECIFIER_MAP = initOrderSpecifierMap();
 
-	public void getConsolidatedTable(ConsRequest consRequest) throws ParseException {
+	@Override
+	public List<ConsolidatedDto> findAllConsolidated(Optional<String> emitentTitle,
+													 Optional<Date> tradeDate,
+													 List<DirSort> dirSortList) {
+		final JPAQuery<Void> query = new JPAQuery<>(entityManager);
+		final Predicate predicates = generatedPredicate(emitentTitle, tradeDate);
+		final OrderSpecifier<?>[] orderSpecifiers = generatedOrderSpecifiers(dirSortList);
 
-
-		//Create query
-		final CriteriaBuilder cb = em.getCriteriaBuilder();
-		final CriteriaQuery<ConsolidatedDto> cq = cb.createQuery(ConsolidatedDto.class);
-
-		//Define FROM
-		final Root<Securities> tSecurities = cq.from(Securities.class);
-		final Join<Securities, History> tHistory = tSecurities.join(Securities_.historySet);
-
-		//Define DTO projection
-		cq.select(cb.construct(
-				ConsolidatedDto.class,
-				tSecurities.get(Securities_.SEC_ID),
-				tSecurities.get(Securities_.REG_NUMBER),
-				tSecurities.get(Securities_.NAME),
-				tSecurities.get(Securities_.EMITENT_TITLE),
-				tHistory.get(History_.TRADE_DATE),
-				tHistory.get(History_.NUM_TRADES),
-				tHistory.get(History_.OPEN),
-				tHistory.get(History_.CLOSE)
-		));
-
-		//Define WHERE
-		final ParameterExpression<String> parameterEmitentTitle = cb.parameter(String.class, Securities_.EMITENT_TITLE);
-		final ParameterExpression<Date> parameterTradeDate = cb.parameter(Date.class, History_.TRADE_DATE);
-
-		final Predicate likeEmitentTitle = cb.like(tSecurities.get(Securities_.EMITENT_TITLE), parameterEmitentTitle);
-		final Predicate equalTradeDate = cb.equal(tHistory.<Date>get(History_.TRADE_DATE), parameterTradeDate);
-		Predicate[] predicates = {null, likeEmitentTitle};
-		cq.where(predicates);
-/*
-		//Define ORDER BY
-		cq.orderBy(List.of(cb.desc(tSecurities.get(Phone_.id)), cb.asc(tSecurities.get(Phone_.number))));
-*/
-		//Execute query
-		final String filterEmitentTitle = "%" + consRequest.getFilterEmitentTitle().trim() + "%";
-		final String filterTradeDate = consRequest.getFilterTradeDate().trim();
-
-		TypedQuery<ConsolidatedDto> typedQuery = em.createQuery(cq);
-		typedQuery.setParameter(Securities_.EMITENT_TITLE, filterEmitentTitle);
-		//TODO Exception
-		typedQuery.setParameter(History_.TRADE_DATE, Date.valueOf(filterTradeDate));
-		typedQuery.getResultList().forEach(System.out::println);
+		return query
+				.select(Projections.constructor(ConsolidatedDto.class,
+						securities.secId, securities.regNumber, securities.name, securities.emitentTitle,
+						history.tradeDate, history.numTrades, history.open, history.close))
+				.from(securities).join(history).on(securities.secId.eq(history.secId))
+				.where(predicates)
+				.orderBy(orderSpecifiers)
+				.fetch();
 	}
 
-	public void findConsolidatedByParameters(String emitentTitle, Optional<Date> tradeDate, Optional<List<DirSort>> directionSortMap) {
-		log.warn(emitentTitle);
-		tradeDate.ifPresent((date)->log.warn(date.toString()));
-		directionSortMap.ifPresent(list->log.warn(list.toString()));
+	private OrderSpecifier<?>[] generatedOrderSpecifiers(List<DirSort> dirSortList) {
+		if (dirSortList.isEmpty()) return new OrderSpecifier[0];
+
+		List<OrderSpecifier<?>> orderSpecifierList = dirSortList.stream()
+				.map(dirSort -> dirSort.getName() + dirSort.getDirection())
+				.map(ORDER_SPECIFIER_MAP::get)
+				.filter(Objects::nonNull)
+				.collect(Collectors.toList());
+
+		return orderSpecifierList.toArray(OrderSpecifier<?>[]::new);
+	}
+
+	private Predicate generatedPredicate(Optional<String> emitentTitle, Optional<Date> tradeDate) {
+		return QPredicate.builder()
+				.add(emitentTitle, securities.emitentTitle::like)
+				.add(tradeDate, history.tradeDate::eq)
+				.buildAnd();
+	}
+
+	private Map<String, OrderSpecifier<?>> initOrderSpecifierMap() {
+		Map<String, OrderSpecifier<?>> result = new HashMap<>();
+
+		result.put("secIdASC", securities.secId.asc());
+		result.put("secIdDESC", securities.secId.desc());
+		result.put("regNumberASC", securities.regNumber.asc());
+		result.put("regNumberDESC", securities.regNumber.desc());
+		result.put("nameASC", securities.name.asc());
+		result.put("nameDESC", securities.name.desc());
+		result.put("emitentTitleASC", securities.emitentTitle.asc());
+		result.put("emitentTitleDESC", securities.emitentTitle.desc());
+
+		result.put("tradeDateASC", history.tradeDate.asc());
+		result.put("tradeDateDESC", history.tradeDate.desc());
+		result.put("numTradesASC", history.numTrades.asc());
+		result.put("numTradesDESC", history.numTrades.desc());
+		result.put("openASC", history.open.asc());
+		result.put("openDESC", history.open.desc());
+		result.put("closeASC", history.close.asc());
+		result.put("closeDESC", history.close.desc());
+
+		return result;
 	}
 }

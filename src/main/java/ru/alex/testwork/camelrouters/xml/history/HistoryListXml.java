@@ -1,4 +1,4 @@
-package ru.alex.testwork.xml.history;
+package ru.alex.testwork.camelrouters.xml.history;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;

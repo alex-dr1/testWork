@@ -1,7 +1,7 @@
 package ru.alex.testwork.service.impl;
 
 import org.springframework.stereotype.Service;
-import ru.alex.testwork.dto.HistoryDto;
+import ru.alex.testwork.controller.dto.HistoryDto;
 import ru.alex.testwork.entity.History;
 import ru.alex.testwork.entity.Securities;
 import ru.alex.testwork.exception.BadRestRequestException;

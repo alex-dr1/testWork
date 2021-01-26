@@ -1,22 +1,14 @@
 package ru.alex.testwork.service.impl;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Sort;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
-import ru.alex.testwork.dto.ConsRequest;
-import ru.alex.testwork.dto.ConsolidatedDto;
+import ru.alex.testwork.controller.dto.ConsolidatedRequest;
 
 import java.text.ParseException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @ActiveProfiles("test")
@@ -28,7 +20,7 @@ class ConsolidatedServiceImplTest {
 	@Autowired
 	ConsolidatedServiceImpl consolidatedService;
 
-	ConsRequest consRequest;
+	ConsolidatedRequest consRequest;
 
 	@BeforeEach
 	void setUp() {
@@ -47,7 +39,7 @@ class ConsolidatedServiceImplTest {
 
 	@Test
 	void getConsolidatedTable() throws ParseException {
-		/*final List<ConsolidatedDto> consolidatedTable = */consolidatedService.getConsolidatedTable(consRequest);
+		/*final List<ConsolidatedDto> consolidatedTable = *///consolidatedService.getConsolidatedTable(consRequest);
 //		consolidatedTable.forEach(System.out::println);
 	}
 

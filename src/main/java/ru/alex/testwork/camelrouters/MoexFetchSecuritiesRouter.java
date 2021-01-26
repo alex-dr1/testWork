@@ -6,7 +6,7 @@ import org.apache.camel.converter.jaxb.JaxbDataFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.alex.testwork.mapper.SecuritiesMapper;
-import ru.alex.testwork.xml.securities.SecuritiesXml;
+import ru.alex.testwork.camelrouters.xml.securities.SecuritiesXml;
 
 @Component
 public class MoexFetchSecuritiesRouter extends RouteBuilder {

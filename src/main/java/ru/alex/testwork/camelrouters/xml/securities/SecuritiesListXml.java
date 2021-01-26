@@ -1,4 +1,4 @@
-package ru.alex.testwork.xml.securities;
+package ru.alex.testwork.camelrouters.xml.securities;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;

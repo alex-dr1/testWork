@@ -1,70 +1,47 @@
 package ru.alex.testwork.service.impl;
 
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import ru.alex.testwork.dto.ConsRequest;
-import ru.alex.testwork.dto.ConsolidatedDto;
+import ru.alex.testwork.controller.dto.ConsolidatedRequest;
+import ru.alex.testwork.controller.dto.ConsolidatedDto;
 import ru.alex.testwork.exception.BadRestRequestException;
-import ru.alex.testwork.repository.impl.ConsolidatedRepoImpl;
+import ru.alex.testwork.repository.ConsolidatedRepo;
+import ru.alex.testwork.service.ConsolidatedService;
 import ru.alex.testwork.service.DirSort;
 
 import java.sql.Date;
-import java.text.ParseException;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
-@Slf4j
-public class ConsolidatedServiceImpl {
+public class ConsolidatedServiceImpl implements ConsolidatedService {
 
-	final ConsolidatedRepoImpl repo;
+	final ConsolidatedRepo consolidatedRepo;
 
-	public List<ConsolidatedDto> getConsolidatedTable(ConsRequest consRequest) throws ParseException {
+	@Override
+	public List<ConsolidatedDto> getAllConsolidated(ConsolidatedRequest consRequest) {
 
-		repo.getConsolidatedTable(consRequest);
-
-		/*final String emitentTitle = generatedEmitentTitle(consRequest.getFilterEmitentTitle());
+		final Optional<String> emitentTitle = generatedEmitentTitle(consRequest.getFilterEmitentTitle());
 		final Optional<Date> tradeDate = generatedTradeDate(consRequest.getFilterTradeDate());
-		final Optional<List<DirSort>> dirSorts = generatedSortList(consRequest.getSortField());
+		final List<DirSort> dirSorts = generatedSortList(consRequest.getSortField());
 
-		repo.findConsolidatedByParameters(emitentTitle, tradeDate, dirSorts);
-*/
-		return null;
+		return Collections.unmodifiableList(consolidatedRepo.findAllConsolidated(emitentTitle, tradeDate, dirSorts));
 	}
 
 	// Map to List<DirSort>
-	private Optional<List<DirSort>> generatedSortList(Map<String, String> sortField) {
-		if (sortField == null) return Optional.empty();
+	private List<DirSort> generatedSortList(Map<String, String> sortField) {
+		if (sortField == null) return new ArrayList<>();
 		try {
-			return Optional.of(sortField.entrySet().stream()
+			return sortField.entrySet().stream()
 					.map(entry -> new DirSort(entry.getKey(), Sort.Direction.fromString(entry.getValue())))
-					.collect(Collectors.toList()));
+					.collect(Collectors.toList());
 
 		} catch (IllegalArgumentException ex) {
 			throw new BadRestRequestException(ex.getMessage());
 		}
 
-	}
-
-	// TODO Delete method
-	private Optional<Map<String, Sort.Direction>> generatedSortMap(Map<String, String> sortField) {
-		if (sortField == null) return Optional.empty();
-		try {
-			return Optional.of(sortField.entrySet()
-					.stream()
-					.collect(Collectors.toMap(
-							Map.Entry::getKey,
-							direct -> Sort.Direction.fromString(direct.getValue())
-					)));
-
-		} catch (IllegalArgumentException ex) {
-			throw new BadRestRequestException(ex.getMessage());
-		}
 	}
 
 	private Optional<Date> generatedTradeDate(String filterTradeDate) {
@@ -76,12 +53,11 @@ public class ConsolidatedServiceImpl {
 		}
 	}
 
-	private String generatedEmitentTitle(String filterEmitentTitle) {
-		String result;
+	private Optional<String> generatedEmitentTitle(String filterEmitentTitle) {
 		if (filterEmitentTitle == null) {
-			return "%%";
+			return Optional.empty();
 		} else {
-			return "%" + filterEmitentTitle.trim() + "%";
+			return Optional.of("%" + filterEmitentTitle.trim() + "%");
 		}
 	}
 }

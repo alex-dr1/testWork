@@ -2,10 +2,10 @@ package ru.alex.testwork.mapper;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ru.alex.testwork.dto.SecuritiesDto;
+import ru.alex.testwork.controller.dto.SecuritiesDto;
 import ru.alex.testwork.entity.History;
 import ru.alex.testwork.entity.Securities;
-import ru.alex.testwork.xml.securities.SecuritiesXml;
+import ru.alex.testwork.camelrouters.xml.securities.SecuritiesXml;
 
 import java.util.Set;
 

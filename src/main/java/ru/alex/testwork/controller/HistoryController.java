@@ -3,7 +3,7 @@ package ru.alex.testwork.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.alex.testwork.dto.HistoryDto;
+import ru.alex.testwork.controller.dto.HistoryDto;
 import ru.alex.testwork.service.impl.HistoryServiceImpl;
 
 import java.util.List;

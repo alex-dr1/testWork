@@ -1,4 +1,4 @@
-package ru.alex.testwork.xml.securities;
+package ru.alex.testwork.camelrouters.xml.securities;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

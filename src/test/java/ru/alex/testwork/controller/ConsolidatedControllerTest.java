@@ -9,8 +9,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -27,6 +26,23 @@ class ConsolidatedControllerTest {
 	private MockMvc mockMvc;
 
 	@Test // filterTradeDate is bad
+	void getConsolidated_isOk() throws Exception {
+		final String bodyRequest = "{\n" +
+				"    \"filterEmitentTitle\": \"ечел\",\n" +
+				"    \"filterTradeDate\": \"2020-08-25\",\n" +
+				"    \"sortField\": {\n" +
+				"        \"open\": \"asc\",\n" +
+				"        \"numTrades\": \"desc\"\n" +
+				"    }\n" +
+				"}";
+
+		mockMvc.perform(get("/api/consolidated").contentType(MediaType.APPLICATION_JSON).content(bodyRequest))
+				.andExpect(status().isOk())
+
+		;
+	}
+
+	@Test // filterTradeDate is bad
 	void getConsolidated_isBadRequest0() throws Exception {
 		final String bodyRequest = "{\n" +
 				"    \"filterEmitentTitle\": \"emww\",\n" +
@@ -41,7 +57,7 @@ class ConsolidatedControllerTest {
 
 		final String expected = "{\"status\":400,\"message\":\"Expected date in format[yyyy-MM-dd]\",\"httpStatus\":\"BAD_REQUEST\"}";
 
-		mockMvc.perform(post("/api/consolidated").contentType(MediaType.APPLICATION_JSON).content(bodyRequest))
+		mockMvc.perform(get("/api/consolidated").contentType(MediaType.APPLICATION_JSON).content(bodyRequest))
 				.andExpect(status().isBadRequest())
 				.andExpect(content().json(expected))
 		;
@@ -62,7 +78,7 @@ class ConsolidatedControllerTest {
 
 		final String expected = "{\"status\":400,\"message\":\"Invalid value '-sc' for orders given! Has to be either 'desc' or 'asc' (case insensitive).\",\"httpStatus\":\"BAD_REQUEST\"}";
 
-		mockMvc.perform(post("/api/consolidated").contentType(MediaType.APPLICATION_JSON).content(bodyRequest))
+		mockMvc.perform(get("/api/consolidated").contentType(MediaType.APPLICATION_JSON).content(bodyRequest))
 				.andExpect(status().isBadRequest())
 				.andExpect(content().json(expected))
 		;

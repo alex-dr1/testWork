@@ -1,6 +1,6 @@
 package ru.alex.testwork.service;
 
-import ru.alex.testwork.dto.HistoryDto;
+import ru.alex.testwork.controller.dto.HistoryDto;
 
 import java.util.List;
 

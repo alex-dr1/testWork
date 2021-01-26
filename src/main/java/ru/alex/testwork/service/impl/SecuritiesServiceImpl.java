@@ -1,7 +1,7 @@
 package ru.alex.testwork.service.impl;
 
 import org.springframework.stereotype.Service;
-import ru.alex.testwork.dto.SecuritiesDto;
+import ru.alex.testwork.controller.dto.SecuritiesDto;
 import ru.alex.testwork.entity.Securities;
 import ru.alex.testwork.exception.BadRestRequestException;
 import ru.alex.testwork.exception.NameRuLangNotValidException;
