@@ -2,6 +2,9 @@ package ru.alex.testwork.entity;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.sql.Date;
 import java.util.Objects;
 
@@ -12,12 +15,21 @@ public class History {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
+	@NotNull
 	private Date tradeDate;
+
 	@Column(name = "sec_id", insertable = false, updatable = false, nullable = false)
 	private String secId;
-	private double numTrades;
-	private double open;
-	private double close;
+
+	@NotNull
+	private Double numTrades;
+
+	@NotNull
+	private Double open;
+
+	@NotNull
+	private Double close;
 
 	@ManyToOne
 	@JoinColumn(name = "sec_id", referencedColumnName = "sec_id")

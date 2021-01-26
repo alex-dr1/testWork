@@ -27,9 +27,11 @@ public class Securities implements Serializable {
 	@NotNull
 	private String regNumber;
 
+	@NotNull
 	@NotBlank(message = "name not blank")
 	private String name;
 
+	@NotNull
 	@NotBlank(message = "emitent title not blank")
 	private String emitentTitle;
 
