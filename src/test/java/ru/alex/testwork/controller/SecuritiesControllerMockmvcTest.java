@@ -1,29 +1,15 @@
 package ru.alex.testwork.controller;
 
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.jdbc.Sql;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@AutoConfigureMockMvc
-@ActiveProfiles("test")
-@Sql(scripts = {"/sql/mockmvc/drop_schema.sql",
-		"/sql/mockmvc/create_schema.sql",
-		"/sql/mockmvc/insert_schema.sql"})
-class SecuritiesControllerMockmvcTest {
+class SecuritiesControllerMockmvcTest extends BaseIntegrationTest {
 
 	static final String EXPECTED1 = "{\n" +
 			"    \"id\": 1,\n" +
@@ -40,14 +26,6 @@ class SecuritiesControllerMockmvcTest {
 			"    \"name\": \"Русская Аквакультура ПАО ао\",\n" +
 			"    \"emitentTitle\": \"Публичное  акционерное общество \\\"Русская Аквакультура\\\"\"\n" +
 			"}";
-	static final String EXPECTED3 = "{\n" +
-			"	 \"id\": 3,\n" +
-			"    \"secId\": \"MTLRP\",\n" +
-			"    \"regNumber\": \"2-01-55005-E\",\n" +
-			"    \"name\": \"Мечел ПАО ап\",\n" +
-			"    \"emitentTitle\": \"Публичное акционерное общество \\\"Мечел\\\"\"\n" +
-			"}";
-
 
 	@Autowired
 	private MockMvc mockMvc;

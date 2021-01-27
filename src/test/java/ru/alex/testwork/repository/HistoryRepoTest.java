@@ -3,8 +3,6 @@ package ru.alex.testwork.repository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
 import ru.alex.testwork.entity.History;
 import ru.alex.testwork.entity.Securities;
@@ -14,10 +12,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-
-@DataJpaTest
-@ActiveProfiles("test")
-class HistoryRepoTest {
+class HistoryRepoTest extends BaseRepoIntegrationTest {
 
 	@Autowired
 	HistoryRepo historyRepo;
@@ -44,7 +39,6 @@ class HistoryRepoTest {
 	}
 
 	@Test
-	@Sql("classpath:sql/securities.sql")
 	void shouldSaveAndRetrieveHistory() {
 		Securities securitiesEntity = securitiesRepo.findSecuritiesBySecId(SEC_ID).get();
 		historyEntity.setSecurities(securitiesEntity);
@@ -56,7 +50,7 @@ class HistoryRepoTest {
 
 		List<History> allHistory = historyRepo.findAllBySecId(SEC_ID);
 
-		assertThat(allHistory.get(0))
+		assertThat(allHistory.get(1))
 				.usingRecursiveComparison()
 				.ignoringFields("id")
 				.isEqualTo(savedHistory);

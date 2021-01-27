@@ -12,13 +12,7 @@ import javax.persistence.EntityManager;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-
-@DataJpaTest
-@ActiveProfiles("test")
-@Sql(scripts = {"/sql/mockmvc/drop_schema.sql",
-		"/sql/mockmvc/create_schema.sql",
-		"/sql/mockmvc/insert_schema.sql"})
-class SecuritiesRepoTest {
+class SecuritiesRepoTest extends BaseRepoIntegrationTest {
 
 	@Autowired
 	private SecuritiesRepo securitiesRepo;

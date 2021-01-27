@@ -1,58 +1,24 @@
 package ru.alex.testwork.controller;
 
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.jdbc.Sql;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+class HistoryControllerMockmvcTest extends BaseIntegrationTest {
+	static final String SECID = "ASSB";
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@AutoConfigureMockMvc
-@ActiveProfiles("test")
-@Sql(scripts = {"/sql/mockmvc/drop_schema.sql",
-		"/sql/mockmvc/create_schema.sql",
-		"/sql/mockmvc/insert_schema.sql"})
-class HistoryControllerMockmvcTest {
-	static final String SECID1 = "ASSB";
-	static final String SECID2 = "AQUA";
-	static final String SECID3 = "MTLRP";
-
-	static final String EXPECTED1 = "{\n" +
+	static final String EXPECTED = "{\n" +
 			"	 \"id\": 1,\n" +
 			"    \"secId\": \"ASSB\",\n" +
 			"    \"tradeDate\": \"2020-08-25\",\n" +
 			"    \"numTrades\": \"81.0\",\n" +
 			"    \"open\": \"0.8\",\n" +
 			"    \"close\": \"1.1\"\n" +
-			"}";
-
-	static final String EXPECTED2 = "{\n" +
-			"	 \"id\": 2,\n" +
-			"    \"secId\": \"AQUA\",\n" +
-			"    \"tradeDate\": \"2020-08-25\",\n" +
-			"    \"numTrades\": \"968.0\",\n" +
-			"    \"open\": \"221.5\",\n" +
-			"    \"close\": \"220.0\"\n" +
-			"}";
-
-	static final String EXPECTED3 = "{\n" +
-			"	 \"id\": 3,\n" +
-			"    \"secId\": \"MTLRP\",\n" +
-			"    \"tradeDate\": \"2020-08-25\",\n" +
-			"    \"numTrades\": \"2523\",\n" +
-			"    \"open\": \"73.65\",\n" +
-			"    \"close\": \"73.3\"\n" +
 			"}";
 
 	@Autowired
@@ -62,7 +28,7 @@ class HistoryControllerMockmvcTest {
 	void findHistoryById_isOk() throws Exception {
 		mockMvc.perform(get("/api/history/1"))
 				.andExpect(status().isOk())
-				.andExpect(content().json(EXPECTED1));
+				.andExpect(content().json(EXPECTED));
 	}
 
 	@Test
@@ -77,8 +43,8 @@ class HistoryControllerMockmvcTest {
 
 	@Test
 	void findHistoryBySecId_isOk() throws Exception {
-		String expected = "["+EXPECTED1+"]";
-		mockMvc.perform(get("/api/history/sec-id/" + SECID1))
+		String expected = "[" + EXPECTED + "]";
+		mockMvc.perform(get("/api/history/sec-id/" + SECID))
 				.andExpect(status().isOk())
 				.andExpect(content().json(expected));
 	}
@@ -179,7 +145,8 @@ class HistoryControllerMockmvcTest {
 				.andExpect(content().json(newHistory));
 	}
 
-	@Test // id == null
+	@Test
+		// id == null
 	void updateHistory_isBadRequest0() throws Exception {
 		final String newHistory = "{\n" +
 //				"\"id\": 3,\n" +
@@ -197,7 +164,8 @@ class HistoryControllerMockmvcTest {
 				.andExpect(content().json(expected));
 	}
 
-	@Test // secId == null
+	@Test
+		// secId == null
 	void updateHistory_isBadRequest1() throws Exception {
 		final String newHistory = "{\n" +
 				"\"id\": 3,\n" +
@@ -215,7 +183,8 @@ class HistoryControllerMockmvcTest {
 				.andExpect(content().json(expected));
 	}
 
-	@Test // secId not exists
+	@Test
+		// secId not exists
 	void updateHistory_isBadRequest3() throws Exception {
 		final String newHistory = "{\n" +
 				"\"id\": 3,\n" +

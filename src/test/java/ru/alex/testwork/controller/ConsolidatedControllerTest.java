@@ -2,30 +2,21 @@ package ru.alex.testwork.controller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@SpringBootTest
-@AutoConfigureMockMvc
-@ActiveProfiles("test")
-@Sql(scripts = {"/sql/mockmvc/drop_schema.sql",
-		"/sql/mockmvc/create_schema.sql",
-		"/sql/mockmvc/insert_schema.sql"})
-class ConsolidatedControllerTest {
+
+class ConsolidatedControllerTest extends BaseIntegrationTest {
 
 
 	@Autowired
 	private MockMvc mockMvc;
 
-	@Test // filterTradeDate is bad
+	@Test
 	void getConsolidated_isOk() throws Exception {
 		final String bodyRequest = "{\n" +
 				"    \"filterEmitentTitle\": \"ечел\",\n" +
@@ -42,7 +33,8 @@ class ConsolidatedControllerTest {
 		;
 	}
 
-	@Test // filterTradeDate is bad
+	@Test
+		// filterTradeDate is bad
 	void getConsolidated_isBadRequest0() throws Exception {
 		final String bodyRequest = "{\n" +
 				"    \"filterEmitentTitle\": \"emww\",\n" +
@@ -63,7 +55,8 @@ class ConsolidatedControllerTest {
 		;
 	}
 
-	@Test // sortField is bad
+	@Test
+		// sortField is bad
 	void getConsolidated_isBadRequest1() throws Exception {
 		final String bodyRequest = "{\n" +
 				"    \"filterEmitentTitle\": \"emww\",\n" +
