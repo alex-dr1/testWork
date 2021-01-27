@@ -51,14 +51,15 @@ class HistoryTest {
 
 	@Test
 	void shouldValidToString() {
-		String expected = "\nHistory{" +
+		String expected = "History(" +
 				"id=" + ID +
 				", tradeDate=" + TRADE_DATE +
-				", secId='" + SEC_ID + '\'' +
+				", secId=" + SEC_ID +
 				", numTrades=" + NUM_TRADES +
 				", open=" + OPEN +
 				", close=" + CLOSE +
-				'}';
+				")";
+
 		assertEquals(expected, entity.toString());
 	}
 }

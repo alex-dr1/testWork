@@ -47,13 +47,7 @@ class SecuritiesTest {
 
 	@Test
 	void shouldValidToString() {
-		String expected = "\nSecurities{id=" + ID +
-				",\n           secId='" + SEC_ID + '\'' +
-				",\n           regNumber='" + REG_NUMBER + '\'' +
-				",\n           name='" + NAME + '\'' +
-				",\n           emitentTitle='" + EMITENT_TITLE + '\'' +
-				",\n           historySet=" + HISTORY_SET +
-				"\n          }\n";
+		String expected = "Securities(id="+ID+", secId="+SEC_ID+", regNumber="+REG_NUMBER+", name="+NAME+", emitentTitle="+EMITENT_TITLE+")";
 		assertEquals(expected, entity.toString());
 	}
 
