@@ -1,0 +1,2 @@
+
+$curl -XGET 'http://localhost:8080/api/consolidated' --data '{ "filterEmitentTitle": "росс","filterTradeDate": "2020-08-25","sortField": {"open": "asc", "numTrades": "desc" }}' --header 'Content-Type: application/json' --header 'Accept: application/json'

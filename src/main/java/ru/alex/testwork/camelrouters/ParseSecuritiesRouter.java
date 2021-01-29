@@ -2,22 +2,21 @@ package ru.alex.testwork.camelrouters;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.LoggingLevel;
-import org.apache.camel.Processor;
 import org.apache.camel.ValidationException;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.converter.jaxb.JaxbDataFormat;
 import org.springframework.stereotype.Component;
-import ru.alex.testwork.entity.Securities;
-import ru.alex.testwork.mapper.SecuritiesMapper;
 import ru.alex.testwork.camelrouters.xml.securities.SecuritiesListXml;
 import ru.alex.testwork.camelrouters.xml.securities.SecuritiesXml;
+import ru.alex.testwork.entity.Securities;
+import ru.alex.testwork.mapper.SecuritiesMapper;
 import ru.alex.testwork.service.impl.SecuritiesServiceImpl;
 import ru.alex.testwork.utils.FileFinder;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
 import java.util.stream.Collectors;
+
 //TODO Const
 @Component
 public class ParseSecuritiesRouter extends RouteBuilder {
@@ -47,6 +46,7 @@ public class ParseSecuritiesRouter extends RouteBuilder {
 		from("direct:fileLoopSecurities").routeId("Router fileLoopSecurities")
 				.loop(simple("${body}"))
 				.pollEnrich("file://inbox/securities?include=securities_[0-9]*.xml&noop=true")
+				.setProperty("processFile", simple("${headers.CamelFileName}"))
 				.to("direct:validXmlSecurities")
 				.end()
 		;
@@ -73,12 +73,18 @@ public class ParseSecuritiesRouter extends RouteBuilder {
 				.unmarshal(jaxbListSec)
 				.process(this::convertListXmlToSecurities)
 				.process(this::saveToDB)
+
+				//Statistics
+				.setHeader("processedOld").exchangeProperty("processed")
+				.setBody().exchangeProperty("processFile")
+				.setProperty("processed", simple("${headers.processedOld} ${body}"))
+
 				.to("direct:endFileLoop")
 		;
 
 		// End file loop
 		from("direct:endFileLoop").routeId("Route endFileLoop")
-				.log("... file processed")
+				.log("${body} file processed")
 		;
 
 		// route in case of error

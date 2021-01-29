@@ -44,6 +44,7 @@ public class ParseHistoryRouter extends RouteBuilder {
 		from("direct:fileLoopHistory").routeId("Router fileLoopHistory")
 				.loop(simple("${body}"))
 				.pollEnrich("file://inbox/history?include=history_[0-9]*.xml&noop=true")
+				.setProperty("processFile", simple("${headers.CamelFileName}"))
 				.to("direct:validXmlHistory")
 				.end()
 		;
@@ -70,12 +71,17 @@ public class ParseHistoryRouter extends RouteBuilder {
 				.unmarshal(jaxbListHis)
 				.process(this::covertListXmlToHistory)
 				.process(this::saveToDB)
-				.end()
+
+				//Statistics
+				.setHeader("processedOld").exchangeProperty("processed")
+				.setBody().exchangeProperty("processFile")
+				.setProperty("processed",simple("${headers.processedOld} ${body}"))
+
 				.to("direct:endFileLoop")
 		;
 		// End file loop
 		from("direct:endFileLoop").routeId("Route endFileLoop")
-				.log("... file processed")
+				.log("${body} file processed")
 		;
 
 		// route in case of error

@@ -7,10 +7,12 @@ import org.springframework.stereotype.Component;
 public class ParseMainRouter extends RouteBuilder {
 	@Override
 	public void configure() throws Exception {
-from("direct:parse").routeId("Route main parse")
-		.log("Run main parse ...")
-		.to("direct:parseSecurities")
-		.to("direct:parseHistory")
-		.setBody(constant("Stop main parse"));
+		from("direct:parse").routeId("Route main parse")
+				.setProperty("processed", constant(""))
+				.log("Run main parse ...")
+				.to("direct:parseSecurities")
+				.to("direct:parseHistory")
+				.setBody().exchangeProperty("processed")
+		;
 	}
 }
