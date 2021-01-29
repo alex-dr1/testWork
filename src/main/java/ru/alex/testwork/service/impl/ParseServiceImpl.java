@@ -1,21 +1,17 @@
 package ru.alex.testwork.service.impl;
 
 
+import lombok.AllArgsConstructor;
 import org.apache.camel.ProducerTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.alex.testwork.service.ParseXmlService;
 
 @Service
+@AllArgsConstructor
 public class ParseServiceImpl implements ParseXmlService {
 
-	@Autowired
 	private final ProducerTemplate template;
-
-	public ParseServiceImpl(ProducerTemplate template) {
-		this.template = template;
-	}
-
 
 	@Override
 	public String run() {

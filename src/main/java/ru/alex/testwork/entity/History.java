@@ -5,7 +5,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.sql.Date;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -22,7 +22,7 @@ public class History {
 
 	@EqualsAndHashCode.Include
 	@NotNull
-	private Date tradeDate;
+	private LocalDate tradeDate;
 
 	@Column(name = "sec_id", insertable = false, updatable = false, nullable = false)
 	private String secId;

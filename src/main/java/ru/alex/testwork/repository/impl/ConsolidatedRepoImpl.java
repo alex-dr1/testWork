@@ -16,6 +16,7 @@ import ru.alex.testwork.service.DirSort;
 
 import javax.persistence.EntityManager;
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -31,7 +32,7 @@ public class ConsolidatedRepoImpl implements ConsolidatedRepo {
 
 	@Override
 	public List<ConsolidatedDto> findAllConsolidated(Optional<String> emitentTitle,
-													 Optional<Date> tradeDate,
+													 Optional<LocalDate> tradeDate,
 													 List<DirSort> dirSortList) {
 		final JPAQuery<Void> query = new JPAQuery<>(entityManager);
 		final Predicate predicates = generatedPredicate(emitentTitle, tradeDate);
@@ -59,7 +60,7 @@ public class ConsolidatedRepoImpl implements ConsolidatedRepo {
 		return orderSpecifierList.toArray(OrderSpecifier<?>[]::new);
 	}
 
-	private Predicate generatedPredicate(Optional<String> emitentTitle, Optional<Date> tradeDate) {
+	private Predicate generatedPredicate(Optional<String> emitentTitle, Optional<LocalDate> tradeDate) {
 		return QPredicate.builder()
 				.add(emitentTitle, securities.emitentTitle::like)
 				.add(tradeDate, history.tradeDate::eq)

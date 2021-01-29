@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -11,7 +12,7 @@ class HistoryTest {
 
 	public static final long ID = 1L;
 	public static final String SEC_ID = "DDDD";
-	public static final Date TRADE_DATE = Date.valueOf("2021-01-14");
+	public static final LocalDate TRADE_DATE = LocalDate.parse("2021-01-14");
 	public static final double NUM_TRADES = 2345.8;
 	public static final double OPEN = 10.5;
 	public static final double CLOSE = 9.3;

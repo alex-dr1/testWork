@@ -9,6 +9,8 @@ import ru.alex.testwork.camelrouters.xml.history.HistoryXml;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -17,19 +19,16 @@ class HistoryMapperTest {
 
 	public static final long ID = 1L;
 	public static final String SEC_ID = "DDDD";
-	public static final Date TRADE_DATE = Date.valueOf("2021-01-14");
+	public static final LocalDate TRADE_DATE = LocalDate.parse("2021-01-14");
 	public static final double NUM_TRADES = 2345.8;
 	public static final double OPEN = 10.5;
 	public static final double CLOSE = 9.3;
 	public static final Securities SECURITIES_ENTITY = new Securities();
-	private static final String DATA_PATTERN = "yyyy-MM-dd";
 	History entity;
 	HistoryDto dto;
-	SimpleDateFormat simpleDateFormat;
 
 	@BeforeEach
 	void setEntity() {
-		simpleDateFormat = new SimpleDateFormat(DATA_PATTERN);
 
 		entity = new History();
 		entity.setId(ID);
@@ -41,12 +40,11 @@ class HistoryMapperTest {
 		entity.setSecurities(SECURITIES_ENTITY);
 
 		dto = new HistoryDto(ID,
-				simpleDateFormat.format(TRADE_DATE),
+				TRADE_DATE.toString(),
 				SEC_ID,
 				String.valueOf(NUM_TRADES),
 				String.valueOf(OPEN),
 				String.valueOf(CLOSE));
-
 	}
 
 
@@ -54,7 +52,7 @@ class HistoryMapperTest {
 	void xmlToEntity() {
 		HistoryXml xml = new HistoryXml();
 		xml.setSecId(SEC_ID);
-		xml.setTradeDate(simpleDateFormat.format(TRADE_DATE));
+		xml.setTradeDate(TRADE_DATE.toString());
 		xml.setNumTrades(String.valueOf(NUM_TRADES));
 		xml.setOpen(String.valueOf(OPEN));
 		xml.setClose(String.valueOf(CLOSE));
@@ -66,7 +64,6 @@ class HistoryMapperTest {
 				.ignoringFields("id")
 				.ignoringFields("securities")
 				.isEqualTo(entity);
-
 	}
 
 	@Test

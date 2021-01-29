@@ -1,5 +1,6 @@
 package ru.alex.testwork.service.impl;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import ru.alex.testwork.controller.dto.HistoryDto;
 import ru.alex.testwork.entity.History;
@@ -17,6 +18,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 public class HistoryServiceImpl implements HistoryService {
 	final HistoryRepo historyRepo;
@@ -30,17 +32,21 @@ public class HistoryServiceImpl implements HistoryService {
 	}
 
 	public void saveImport(History history) {
-		Securities securities;
-		String secId = history.getSecId();
-		securities = securitiesRepo.findSecuritiesBySecId(secId).orElse(null);
-		if (securities == null) {
-			Securities securitiesMoex = moexService.fetchSecuritiesBySecId(secId);
-			//TODO if null thrown exception
-			if (securitiesMoex == null) return;
-			securities = securitiesRepo.save(securitiesMoex);
+		try {
+			String secId = history.getSecId();
+			Optional<Securities> securities = securitiesRepo.findSecuritiesBySecId(secId);
+			Securities securitiesSave = securities.orElseGet(() -> goToMoex(secId));
+			history.setSecurities(securitiesSave);
+			historyRepo.save(history);
+		}catch (SecuritiesBySecIdNotFoundException exception){
+			log.error("saveImport(): " + exception.getMessage());
 		}
-		history.setSecurities(securities);
-		historyRepo.save(history);
+	}
+
+	private Securities goToMoex(String secId) {
+		Optional<Securities> securitiesMoex = moexService.fetchSecuritiesBySecId(secId);
+		Securities securitiesSave = securitiesMoex.orElseThrow(() -> new SecuritiesBySecIdNotFoundException(secId));
+		return securitiesRepo.save(securitiesSave);
 	}
 
 	@Override

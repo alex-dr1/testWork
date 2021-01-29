@@ -2,6 +2,8 @@ package ru.alex.testwork.service;
 
 import ru.alex.testwork.entity.Securities;
 
+import java.util.Optional;
+
 public interface MoexService {
-	Securities fetchSecuritiesBySecId(String secId);
+	Optional<Securities> fetchSecuritiesBySecId(String secId);
 }

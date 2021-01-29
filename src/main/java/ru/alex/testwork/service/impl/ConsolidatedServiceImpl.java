@@ -11,6 +11,8 @@ import ru.alex.testwork.service.ConsolidatedService;
 import ru.alex.testwork.service.DirSort;
 
 import java.sql.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -24,7 +26,7 @@ public class ConsolidatedServiceImpl implements ConsolidatedService {
 	public List<ConsolidatedDto> getAllConsolidated(ConsolidatedRequest consRequest) {
 
 		final Optional<String> emitentTitle = generatedEmitentTitle(consRequest.getFilterEmitentTitle());
-		final Optional<Date> tradeDate = generatedTradeDate(consRequest.getFilterTradeDate());
+		final Optional<LocalDate> tradeDate = generatedTradeDate(consRequest.getFilterTradeDate());
 		final List<DirSort> dirSorts = generatedSortList(consRequest.getSortField());
 
 		return Collections.unmodifiableList(consolidatedRepo.findAllConsolidated(emitentTitle, tradeDate, dirSorts));
@@ -44,11 +46,11 @@ public class ConsolidatedServiceImpl implements ConsolidatedService {
 
 	}
 
-	private Optional<Date> generatedTradeDate(String filterTradeDate) {
+	private Optional<LocalDate> generatedTradeDate(String filterTradeDate) {
 		if (filterTradeDate == null) return Optional.empty();
 		try {
-			return Optional.of(Date.valueOf(filterTradeDate));
-		} catch (IllegalArgumentException ex) {
+			return Optional.of(LocalDate.parse(filterTradeDate));
+		} catch (DateTimeParseException ex) {
 			throw new BadRestRequestException("Expected date in format[yyyy-MM-dd]");
 		}
 	}

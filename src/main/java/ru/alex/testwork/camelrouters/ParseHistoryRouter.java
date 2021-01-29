@@ -1,23 +1,23 @@
 package ru.alex.testwork.camelrouters;
 
+import org.apache.camel.Exchange;
 import org.apache.camel.LoggingLevel;
-import org.apache.camel.Processor;
 import org.apache.camel.ValidationException;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.converter.jaxb.JaxbDataFormat;
 import org.springframework.stereotype.Component;
-import ru.alex.testwork.entity.History;
-import ru.alex.testwork.mapper.HistoryMapper;
 import ru.alex.testwork.camelrouters.xml.history.HistoryListXml;
 import ru.alex.testwork.camelrouters.xml.history.HistoryXml;
+import ru.alex.testwork.entity.History;
+import ru.alex.testwork.exception.SecuritiesBySecIdNotFoundException;
+import ru.alex.testwork.mapper.HistoryMapper;
 import ru.alex.testwork.service.impl.HistoryServiceImpl;
 import ru.alex.testwork.utils.FileFinder;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
 import java.util.stream.Collectors;
-
+//TODO Const
 @Component
 public class ParseHistoryRouter extends RouteBuilder {
 
@@ -29,38 +29,18 @@ public class ParseHistoryRouter extends RouteBuilder {
 		this.historyService = historyService;
 	}
 
-	Processor fileHistoryAmount = exchange -> {
-		FileFinder finder = new FileFinder("inbox/history", "history_[0-9]*.xml");
-		int amount = finder.done();
-		exchange.getIn().setBody(amount, Integer.class);
-	};
-
-	Processor covertListXmlToHistory = exchange -> {
-		List<HistoryXml> historyXmlList = exchange.getIn().getBody(HistoryListXml.class).getHistoryXmlList();
-		List<History> historyList = historyXmlList.stream()
-				.filter(historyXml -> !historyXml.getNumTrades().equals("0"))
-				.map(convertHistoryXmlToHistory())
-				.collect(Collectors.toList());
-		exchange.getIn().setBody(historyList);
-	};
-
-	private Function<HistoryXml, History> convertHistoryXmlToHistory() {
-		return HistoryMapper::xmlToEntity;
-	}
-
 	@Override
 	public void configure() throws Exception {
 		from("direct:parseHistory").routeId("Route parseHistory")
 				.log("Run parseHistory ...")
-				.process(fileHistoryAmount)
+				.process(ParseHistoryRouter::fileHistoryAmount)
 				.choice()
 				.when(simple("${body} > 0")).to("direct:fileLoopHistory")
 				.otherwise().log("file history amount = 0").to("direct:faultHistory")
 				.end()
-				.log("Stop parseHistory ...")
+				.log("Stop parseHistory")
 		;
 		//File loop
-		//TODO если файл не валид следующий не берет
 		from("direct:fileLoopHistory").routeId("Router fileLoopHistory")
 				.loop(simple("${body}"))
 				.pollEnrich("file://inbox/history?include=history_[0-9]*.xml&noop=true")
@@ -71,24 +51,31 @@ public class ParseHistoryRouter extends RouteBuilder {
 		//Valid XML
 		from("direct:validXmlHistory").routeId("Route validXmlHistory")
 				.convertBodyTo(String.class)
+
 				.doTry()
 				.to("validator:xsd/history.xsd")
 				.doCatch(ValidationException.class)
 				.log(LoggingLevel.ERROR, "Failed validation xml History")
-				.to("direct:faultHistory")
-				.end().to("direct:unmarshalHistory")
+				.setBody(constant("failed"))
+				.end()
+
+				.choice()
+				.when(simple("${body} == 'failed'")).to("direct:endFileLoop")
+				.otherwise().to("direct:unmarshalHistory")
+				.end()
 		;
 		// Unmarshal history
 		from("direct:unmarshalHistory")
 				.transform(xpath("//document/data[@id='history']/rows"))
 				.unmarshal(jaxbListHis)
-				.process(covertListXmlToHistory)
-				.process(exchange -> {
-					List<History> historyList = exchange.getIn().getBody(ArrayList.class);
-					//TODO Insert to DB
-					historyList.forEach(historyService::saveImport);
-				})
-				.setBody().simple("stop parseHistory")
+				.process(this::covertListXmlToHistory)
+				.process(this::saveToDB)
+				.end()
+				.to("direct:endFileLoop")
+		;
+		// End file loop
+		from("direct:endFileLoop").routeId("Route endFileLoop")
+				.log("... file processed")
 		;
 
 		// route in case of error
@@ -99,4 +86,24 @@ public class ParseHistoryRouter extends RouteBuilder {
 				.stop();
 	}
 
+	private static void fileHistoryAmount(Exchange exchange) {
+		FileFinder finder = new FileFinder("inbox/history", "history_[0-9]*.xml");
+		int amount = finder.done();
+		exchange.getIn().setBody(amount, Integer.class);
+	}
+
+	@SuppressWarnings("unchecked")
+	private void saveToDB(Exchange exchange) {
+		List<History> historyList = exchange.getIn().getBody(ArrayList.class);
+		historyList.forEach(historyService::saveImport);
+	}
+
+	private void covertListXmlToHistory(Exchange exchange) {
+		List<HistoryXml> historyXmlList = exchange.getIn().getBody(HistoryListXml.class).getHistoryXmlList();
+		List<History> historyList = historyXmlList.stream()
+				.filter(historyXml -> !historyXml.getNumTrades().equals("0"))
+				.map(HistoryMapper::xmlToEntity)
+				.collect(Collectors.toList());
+		exchange.getIn().setBody(historyList);
+	}
 }

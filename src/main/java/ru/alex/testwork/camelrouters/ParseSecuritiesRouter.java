@@ -1,5 +1,6 @@
 package ru.alex.testwork.camelrouters;
 
+import org.apache.camel.Exchange;
 import org.apache.camel.LoggingLevel;
 import org.apache.camel.Processor;
 import org.apache.camel.ValidationException;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-
+//TODO Const
 @Component
 public class ParseSecuritiesRouter extends RouteBuilder {
 
@@ -29,38 +30,20 @@ public class ParseSecuritiesRouter extends RouteBuilder {
 		this.securitiesService = securitiesService;
 	}
 
-	Processor fileSecuritiesAmount = exchange -> {
-		FileFinder finder = new FileFinder("inbox/securities", "securities_[0-9]*.xml");
-		int amount = finder.done();
-		exchange.getIn().setBody(amount, Integer.class);
-	};
-
-	Processor covertListXmlToSecurities = exchange -> {
-		List<SecuritiesXml> securitiesXmlList = exchange.getIn().getBody(SecuritiesListXml.class).getSecuritiesXmlList();
-		List<Securities> securitiesList = securitiesXmlList.stream()
-				.map(convertSecXmlToSecurities())
-				.collect(Collectors.toList());
-		exchange.getIn().setBody(securitiesList);
-	};
-
-	private Function<SecuritiesXml, Securities> convertSecXmlToSecurities() {
-		return SecuritiesMapper::xmlToEntity;
-	}
-
 	@Override
 	public void configure() throws Exception {
 		from("direct:parseSecurities").routeId("Route parseSecurities")
 				.log("Run parseSecurities ...")
-				.process(fileSecuritiesAmount)
+				.process(ParseSecuritiesRouter::fileSecuritiesAmount)
 				.choice()
 				.when(simple("${body} > 0")).to("direct:fileLoopSecurities")
 				.otherwise().log("file securities amount = 0").to("direct:faultSecurities")
 				.end()
-				.log("Stop parseSecurities ...")
+				.log("Stop parseSecurities")
 
 		;
+
 		//File loop
-		//TODO если файл не валид следующий не берет
 		from("direct:fileLoopSecurities").routeId("Router fileLoopSecurities")
 				.loop(simple("${body}"))
 				.pollEnrich("file://inbox/securities?include=securities_[0-9]*.xml&noop=true")
@@ -75,20 +58,27 @@ public class ParseSecuritiesRouter extends RouteBuilder {
 				.to("validator:xsd/securities.xsd")
 				.doCatch(ValidationException.class)
 				.log(LoggingLevel.ERROR, "Failed validation xml Securities")
-				.to("direct:faultSecurities")
-				.end().to("direct:unmarshalSecurities")
+				.setBody(constant("failed"))
+				.end()
+
+				.choice()
+				.when(simple("${body} == 'failed'")).to("direct:endFileLoop")
+				.otherwise().to("direct:unmarshalSecurities")
+				.end()
 		;
+
 		// Unmarshal securities
 		from("direct:unmarshalSecurities")
 				.transform(xpath("//document/data[@id='securities']/rows"))
 				.unmarshal(jaxbListSec)
-				.process(covertListXmlToSecurities)
-				.process(exchange -> {
-					//TODO Insert to DB
-					securitiesService.saveAll(exchange.getIn().getBody(ArrayList.class));
-					})
-				.setBody().simple("stop parseSecurities")
+				.process(this::convertListXmlToSecurities)
+				.process(this::saveToDB)
+				.to("direct:endFileLoop")
+		;
 
+		// End file loop
+		from("direct:endFileLoop").routeId("Route endFileLoop")
+				.log("... file processed")
 		;
 
 		// route in case of error
@@ -99,4 +89,23 @@ public class ParseSecuritiesRouter extends RouteBuilder {
 				.stop();
 	}
 
+	private static void fileSecuritiesAmount(Exchange exchange) {
+		FileFinder finder = new FileFinder("inbox/securities", "securities_[0-9]*.xml");
+		int amount = finder.done();
+		exchange.getIn().setBody(amount, Integer.class);
+	}
+
+	@SuppressWarnings("unchecked")
+	private void saveToDB(Exchange exchange) {
+		List<Securities> securitiesList = exchange.getIn().getBody(ArrayList.class);
+		securitiesService.saveAll(securitiesList);
+	}
+
+	private void convertListXmlToSecurities(Exchange exchange) {
+		List<SecuritiesXml> securitiesXmlList = exchange.getIn().getBody(SecuritiesListXml.class).getSecuritiesXmlList();
+		List<Securities> securitiesList = securitiesXmlList.stream()
+				.map(SecuritiesMapper::xmlToEntity)
+				.collect(Collectors.toList());
+		exchange.getIn().setBody(securitiesList);
+	}
 }

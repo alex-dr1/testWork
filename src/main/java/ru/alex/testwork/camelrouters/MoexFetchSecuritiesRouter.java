@@ -1,13 +1,17 @@
 package ru.alex.testwork.camelrouters;
 
-import org.apache.camel.*;
+import org.apache.camel.CamelException;
+import org.apache.camel.Exchange;
+import org.apache.camel.LoggingLevel;
+import org.apache.camel.ValidationException;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.converter.jaxb.JaxbDataFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import ru.alex.testwork.mapper.SecuritiesMapper;
 import ru.alex.testwork.camelrouters.xml.securities.SecuritiesXml;
+import ru.alex.testwork.mapper.SecuritiesMapper;
 
+//TODO Const
 @Component
 public class MoexFetchSecuritiesRouter extends RouteBuilder {
 
@@ -18,15 +22,6 @@ public class MoexFetchSecuritiesRouter extends RouteBuilder {
 		this.jaxbSec = jaxbSec;
 	}
 
-	private final Processor convertXmlToSecuritiesEntity = exchange -> {
-		SecuritiesXml xml = exchange.getIn().getBody(SecuritiesXml.class);
-		if(xml == null){
-			exchange.getIn().setBody(null);
-		} else {
-			exchange.getIn().setBody(SecuritiesMapper.xmlToEntity(xml));
-		}
-	};
-
 	@Override
 	public void configure() throws Exception {
 		// Http request to iss.moex.com
@@ -34,14 +29,19 @@ public class MoexFetchSecuritiesRouter extends RouteBuilder {
 				.setProperty("secId", simple("${body}"))
 				.setHeader("secId", exchangeProperty("secId"))
 				.setHeader(Exchange.HTTP_QUERY, simple("iss.meta=off&securities.columns=secid,name,regnumber,emitent_title&q=${headers.secId}"))
-				//https://iss.moex.com/iss/securities.xml?iss.meta=off&securities.columns=secid,name,regnumber,emitent_title&q=AFKS
 				.doTry()
 				.to("https://iss.moex.com/iss/securities.xml?httpMethod=GET")
+				.convertBodyTo(String.class)
 				.doCatch(CamelException.class)
 				.log(LoggingLevel.ERROR, "${exchangeProperty.CamelExceptionCaught}")
-				.to("direct:faultMoexService")
+				.setBody(constant("error"))
 				.end()
-				.to("direct:validXmlMoexService");
+
+				.choice()
+				.when(simple("${body} == 'error'")).to("direct:returnNull")
+				.otherwise().to("direct:validXmlMoexService")
+				.end()
+		;
 
 		//Valid XML
 		from("direct:validXmlMoexService").routeId("Route validXmlMoexService")
@@ -50,36 +50,38 @@ public class MoexFetchSecuritiesRouter extends RouteBuilder {
 				.to("validator:xsd/securities.xsd")
 				.doCatch(ValidationException.class)
 				.log(LoggingLevel.ERROR, "MoexService: Failed validation xml")
-				.to("direct:faultMoexService")
-				.end().to("direct:unmarshalMoexService");
+				.setBody(constant("error"))
+				.end()
+
+				.choice()
+				.when(simple("${body} == 'error'")).to("direct:returnNull")
+				.otherwise().to("direct:unmarshalMoexService")
+				.end()
+		;
 
 		//Unmarshal
 		from("direct:unmarshalMoexService").routeId("Route unmarshalMoexService")
 				.setHeader("secId", exchangeProperty("secId"))
 				.transform(xpath("//document/data[@id='securities']/rows/row[@secid=function:simple('${headers.secId}')]"))
-				// TODO DELETE ---------------------------------
-				//.convertBodyTo(String.class)
-				//.wireTap("direct:saveToFile")
-				// TODO DELETE ---------------------------------
 				.unmarshal(jaxbSec)
-				.process(convertXmlToSecuritiesEntity)
+				.process(MoexFetchSecuritiesRouter::convertXmlToSecuritiesEntity)
 		;
 
-		// TODO DELETE ---------------------------------
-		/*from("direct:saveToFile").routeId("saveToFile")
-				.process(exchange -> {
-					String body = exchange.getIn().getBody(String.class) + "\n";
-					exchange.getIn().setBody(body);
-				})
-				.to("file:outdir?fileName=securities.xml&fileExist=Append")
-				.stop();*/
-		// TODO DELETE ---------------------------------
-
-		// route in case of error
-		from("direct:faultMoexService")
-				.routeId("Route faultMoexService")
+		// route return body = null
+		from("direct:returnNull")
+				.routeId("Route returnNull")
 				.transform().body().setBody(constant(null))
 				.log("return: body = null")
-				.stop();
+//				.stop()
+		;
+	}
+
+	private static void convertXmlToSecuritiesEntity(Exchange exchange) {
+		SecuritiesXml xml = exchange.getIn().getBody(SecuritiesXml.class);
+		if (xml == null) {
+			exchange.getIn().setBody(null);
+		} else {
+			exchange.getIn().setBody(SecuritiesMapper.xmlToEntity(xml));
+		}
 	}
 }

@@ -11,6 +11,6 @@ from("direct:parse").routeId("Route main parse")
 		.log("Run main parse ...")
 		.to("direct:parseSecurities")
 		.to("direct:parseHistory")
-		.setBody(constant("stop main"));
+		.setBody(constant("Stop main parse"));
 	}
 }
