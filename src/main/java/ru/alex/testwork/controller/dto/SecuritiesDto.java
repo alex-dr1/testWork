@@ -1,5 +1,7 @@
 package ru.alex.testwork.controller.dto;
 
+
+import javax.validation.constraints.Pattern;
 import java.util.Objects;
 
 public class SecuritiesDto {
@@ -29,6 +31,7 @@ public class SecuritiesDto {
 		return regNumber;
 	}
 
+	@Pattern(regexp = "^[а-яА-Я0-9\\s]*$")
 	public String getName() {
 		return name;
 	}
@@ -47,7 +50,6 @@ public class SecuritiesDto {
 				", emitentTitle='" + emitentTitle + '\'' +
 				'}';
 	}
-
 
 
 	@Override

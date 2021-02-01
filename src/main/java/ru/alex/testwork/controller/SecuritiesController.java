@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.alex.testwork.controller.dto.SecuritiesDto;
 import ru.alex.testwork.service.impl.SecuritiesServiceImpl;
 
+import javax.validation.Valid;
 import java.util.List;
 
 import static org.springframework.http.ResponseEntity.status;
@@ -38,17 +39,18 @@ public class SecuritiesController {
 	}
 
 	@PostMapping
-	public ResponseEntity<SecuritiesDto> createSecurities(@RequestBody SecuritiesDto dto) {
-		return status(HttpStatus.CREATED).body(securitiesService.saveHand(dto));
+	public ResponseEntity<SecuritiesDto> createSecurities(@Valid @RequestBody SecuritiesDto dto) {
+		return status(HttpStatus.CREATED).body(securitiesService.save(dto));
 	}
 
 	@PutMapping
 	public ResponseEntity<SecuritiesDto> updateSecurities(@RequestBody SecuritiesDto dto) {
-		return status(HttpStatus.OK).body(securitiesService.updateHand(dto));
+		return status(HttpStatus.OK).body(securitiesService.update(dto));
 	}
 
 	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<Object> deleteSecurities(@PathVariable Long id) {
 		return status(HttpStatus.OK).body("Successful delete securities id: " + securitiesService.delete(id));
 	}
+
 }

@@ -158,7 +158,7 @@ class SecuritiesControllerMockmvcTest extends BaseIntegrationTest {
 				"    \"emitentTitle\": \"test1test1test1test1test1\"\n" +
 				"}";
 
-		final String expected = "{\"status\":400,\"message\":\"Not valid field NAME = russian 1\",\"httpStatus\":\"BAD_REQUEST\"}";
+		final String expected = "{\"status\":400,\"message\":\"Validation failed for field 'name'\",\"httpStatus\":\"BAD_REQUEST\"}";
 
 		mockMvc.perform(post("/api/securities").contentType(MediaType.APPLICATION_JSON).content(newSecurities))
 				.andExpect(status().isBadRequest())
@@ -230,7 +230,7 @@ class SecuritiesControllerMockmvcTest extends BaseIntegrationTest {
 				"    \"emitentTitle\": \"---Публичное акционерное общество \\\"Мечел\\\"\"\n" +
 				"}";
 
-		final String expected = "{\"status\":400,\"message\":\"Validation failed\",\"httpStatus\":\"BAD_REQUEST\"}";
+		final String expected = "{\"status\":400,\"message\":\"Error while committing the transaction\",\"httpStatus\":\"BAD_REQUEST\"}";
 
 		mockMvc.perform(put("/api/securities").contentType(MediaType.APPLICATION_JSON).content(updateSecurities))
 				.andExpect(status().isBadRequest())

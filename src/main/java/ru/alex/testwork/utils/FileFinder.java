@@ -30,7 +30,6 @@ public class FileFinder
 		try {
 			Files.walkFileTree(startingDir, this);
 		} catch (IOException e) {
-//			TODO Exception
 			e.printStackTrace();
 		}
 		return numMatches;
@@ -41,7 +40,7 @@ public class FileFinder
 	@Override
 	public FileVisitResult visitFile(Path file,
 									 BasicFileAttributes attrs) {
-		if(file.getParent().equals(startingDir)){
+		if (file.getParent().equals(startingDir)) {
 			find(file);
 		}
 		return CONTINUE;
@@ -49,9 +48,8 @@ public class FileFinder
 
 	@Override
 	public FileVisitResult visitFileFailed(Path file,
-										   IOException exc) {
-//			TODO Exception
-		System.err.println(exc);
+										   IOException e) {
+		e.printStackTrace();
 		return CONTINUE;
 	}
 }

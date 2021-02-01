@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 import ru.alex.testwork.camelrouters.xml.history.HistoryListXml;
 import ru.alex.testwork.camelrouters.xml.history.HistoryXml;
 import ru.alex.testwork.entity.History;
-import ru.alex.testwork.exception.SecuritiesBySecIdNotFoundException;
 import ru.alex.testwork.mapper.HistoryMapper;
 import ru.alex.testwork.service.impl.HistoryServiceImpl;
 import ru.alex.testwork.utils.FileFinder;
@@ -17,6 +16,7 @@ import ru.alex.testwork.utils.FileFinder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+
 //TODO Const
 @Component
 public class ParseHistoryRouter extends RouteBuilder {

@@ -1,5 +1,6 @@
 package ru.alex.testwork.service.impl;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.alex.testwork.controller.dto.SecuritiesDto;
 import ru.alex.testwork.entity.Securities;
@@ -17,15 +18,10 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
+@AllArgsConstructor
 public class SecuritiesServiceImpl implements SecuritiesService {
 
 	final SecuritiesRepo securitiesRepo;
-	final HandValidator validatorRuLang;
-
-	public SecuritiesServiceImpl(SecuritiesRepo securitiesRepo, HandValidator validatorRuLang) {
-		this.securitiesRepo = securitiesRepo;
-		this.validatorRuLang = validatorRuLang;
-	}
 
 	public void saveAll(Iterable<Securities> entities) {
 		securitiesRepo.saveAll(entities);
@@ -89,13 +85,4 @@ public class SecuritiesServiceImpl implements SecuritiesService {
 		return SecuritiesMapper.entityToDto(entity);
 	}
 
-	public SecuritiesDto saveHand(SecuritiesDto dto) {
-		if(!validatorRuLang.isValid(dto.getName())) throw new NameRuLangNotValidException(dto.getName());
-		return this.save(dto);
-	}
-
-	public SecuritiesDto updateHand(SecuritiesDto dto) {
-		if(!validatorRuLang.isValid(dto.getName())) throw new NameRuLangNotValidException(dto.getName());
-		return this.update(dto);
-	}
 }

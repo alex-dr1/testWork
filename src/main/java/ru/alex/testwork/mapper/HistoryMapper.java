@@ -4,12 +4,9 @@ import ru.alex.testwork.camelrouters.xml.history.HistoryXml;
 import ru.alex.testwork.controller.dto.HistoryDto;
 import ru.alex.testwork.entity.History;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
 public class HistoryMapper {
-
-	//TODO Mapper to bean
 
 	public static History xmlToEntity(HistoryXml xml) {
 		History history = new History();
@@ -33,8 +30,6 @@ public class HistoryMapper {
 	}
 
 	public static HistoryDto entityToDto(History entity) {
-		// TODO to bean
-
 		return new HistoryDto(entity.getId(),
 				entity.getTradeDate().toString(),
 				entity.getSecId(),
