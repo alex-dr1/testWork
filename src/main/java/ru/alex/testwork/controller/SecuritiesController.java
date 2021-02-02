@@ -2,6 +2,7 @@ package ru.alex.testwork.controller;
 
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.alex.testwork.controller.dto.SecuritiesDto;
@@ -13,7 +14,8 @@ import java.util.List;
 import static org.springframework.http.ResponseEntity.status;
 
 @RestController
-@RequestMapping(value = "/api/securities")
+@RequestMapping(value = "/api/securities", produces = MediaType.APPLICATION_JSON_VALUE)
+@CrossOrigin
 public class SecuritiesController {
 
 	final SecuritiesServiceImpl securitiesService;
